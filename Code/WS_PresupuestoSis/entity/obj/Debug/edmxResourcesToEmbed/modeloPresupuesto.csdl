@@ -1,0 +1,1217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRESUPUESTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBL_ANNO_MODULO">
+    <Key>
+      <PropertyRef Name="STRTABLA" />
+      <PropertyRef Name="STRANNO" />
+      <PropertyRef Name="STRID" />
+    </Key>
+    <Property Name="LNGIDTRANSACCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTABLA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRANNO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INTVALOR" Type="Decimal" Precision="18" Scale="5" />
+  </EntityType>
+  <EntityType Name="TBLANNO">
+    <Key>
+      <PropertyRef Name="LNGIDANNO" />
+    </Key>
+    <Property Name="LNGIDANNO" Type="Int32" Nullable="false" />
+    <Property Name="STRACIERRE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLCARGASSOCIALES">
+    <Key>
+      <PropertyRef Name="LNGIDCAGASOCIAL" />
+    </Key>
+    <Property Name="LNGIDCAGASOCIAL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCUENTACONTABLE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRDESCRIPCIONCARGASOC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+    <Property Name="FLTPORCENTAJE" Type="Decimal" Precision="18" Scale="5" />
+  </EntityType>
+  <EntityType Name="TBLCENTROCOSTO">
+    <Key>
+      <PropertyRef Name="LNGIDCENTROCOSTO" />
+    </Key>
+    <Property Name="LNGIDCENTROCOSTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRDESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBLPRESUPUESTO_PROYECCION_SALARIO" Relationship="Self.FK__TBLPRESUP__LNGID__0D44F85C" FromRole="TBLCENTROCOSTO" ToRole="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    <NavigationProperty Name="TBLPRESUPUESTOPROYECCIONINGRESO" Relationship="Self.FK__TBLPRESUP__LNGID__5224328E" FromRole="TBLCENTROCOSTO" ToRole="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    <NavigationProperty Name="TBLPROYECCION_GASTO" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO" FromRole="TBLCENTROCOSTO" ToRole="TBLPROYECCION_GASTO" />
+  </EntityType>
+  <EntityType Name="TBLCONFIGURACION">
+    <Key>
+      <PropertyRef Name="STRCONFIGURACION" />
+    </Key>
+    <Property Name="STRCONFIGURACION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRVALOR" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLCUENTACONTABLE">
+    <Key>
+      <PropertyRef Name="LNGIDCUENTACONTABLE" />
+    </Key>
+    <Property Name="LNGIDCUENTACONTABLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCUENTACONTABLE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRDESCRIPCIONCTB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBLPRESUPUESTO_PROYECCION_SALARIO" Relationship="Self.FK__TBLPRESUP__LNGID__0F2D40CE" FromRole="TBLCUENTACONTABLE" ToRole="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    <NavigationProperty Name="TBLPRESUPUESTOPROYECCIONINGRESO" Relationship="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE" FromRole="TBLCUENTACONTABLE" ToRole="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    <NavigationProperty Name="TBLPROYECCION_GASTO" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE" FromRole="TBLCUENTACONTABLE" ToRole="TBLPROYECCION_GASTO" />
+  </EntityType>
+  <EntityType Name="TBLEMPLEADO">
+    <Key>
+      <PropertyRef Name="LNGIDEMPLEADO" />
+    </Key>
+    <Property Name="LNGIDEMPLEADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STREMPLEADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRPUESTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLINFLACION">
+    <Key>
+      <PropertyRef Name="LNGIDINFLACION" />
+    </Key>
+    <Property Name="LNGIDINFLACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRAÑO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="STRSEMSTRE_1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="STRSEMSTRE_2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBLITEM">
+    <Key>
+      <PropertyRef Name="LNGIDITEM" />
+    </Key>
+    <Property Name="LNGIDITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRITEM" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPERMISOSUBITEM" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLITEM" FromRole="TBLITEM" ToRole="TBLPERMISOSUBITEM" />
+  </EntityType>
+  <EntityType Name="TBLMODULO">
+    <Key>
+      <PropertyRef Name="LNGIDMODULO" />
+    </Key>
+    <Property Name="LNGIDMODULO" Type="Int32" Nullable="false" />
+    <Property Name="STRMODULO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLMODULOITEM" Relationship="Self.FK__TBLMODULO__LNGID__4D94879B" FromRole="TBLMODULO" ToRole="TBLMODULOITEM" />
+    <NavigationProperty Name="TBLPERMISOSUBITEM" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLMODULO" FromRole="TBLMODULO" ToRole="TBLPERMISOSUBITEM" />
+  </EntityType>
+  <EntityType Name="TBLMODULOITEM">
+    <Key>
+      <PropertyRef Name="LNGIDMODULOITEM" />
+    </Key>
+    <Property Name="LNGIDMODULOITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDMODULO" Type="Int32" />
+    <Property Name="LNGIDITEM" Type="Int32" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLMODULO" Relationship="Self.FK__TBLMODULO__LNGID__4D94879B" FromRole="TBLMODULOITEM" ToRole="TBLMODULO" />
+    <NavigationProperty Name="TBLPERMISO" Relationship="Self.FK__TBLPERMIS__LNGID__52593CB8" FromRole="TBLMODULOITEM" ToRole="TBLPERMISO" />
+  </EntityType>
+  <EntityType Name="TBLMONEDA">
+    <Key>
+      <PropertyRef Name="LNGIDMONEDA" />
+    </Key>
+    <Property Name="LNGIDMONEDA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCODIGO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRDESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+    <Property Name="STRDEFAULT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPRESUPUESTO_PROYECCION_SALARIO" Relationship="Self.FK__TBLPRESUP__LNGID__0E391C95" FromRole="TBLMONEDA" ToRole="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    <NavigationProperty Name="TBLPRESUPUESTOPROYECCIONINGRESO" Relationship="Self.FK__TBLPRESUP__LNGID__531856C7" FromRole="TBLMONEDA" ToRole="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    <NavigationProperty Name="TBLTIPOCAMBIO" Relationship="Self.FK__TBLTIPOCA__LNGID__5EBF139D" FromRole="TBLMONEDA" ToRole="TBLTIPOCAMBIO" />
+    <NavigationProperty Name="TBLPROYECCION_GASTO" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLMONEDA" FromRole="TBLMONEDA" ToRole="TBLPROYECCION_GASTO" />
+  </EntityType>
+  <EntityType Name="TBLPERFIL">
+    <Key>
+      <PropertyRef Name="LNGIDPERFIL" />
+    </Key>
+    <Property Name="LNGIDPERFIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRPERFIL" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLPERMISO">
+    <Key>
+      <PropertyRef Name="LNGIDPERMISO" />
+    </Key>
+    <Property Name="LNGIDPERMISO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDMODULOITEM" Type="Int32" />
+    <Property Name="LNGIDUSUARIO" Type="Int32" />
+    <Property Name="STREDITAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRCONSULTAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRADICIONAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRELIMINAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLMODULOITEM" Relationship="Self.FK__TBLPERMIS__LNGID__52593CB8" FromRole="TBLPERMISO" ToRole="TBLMODULOITEM" />
+    <NavigationProperty Name="TBLUSUARIO" Relationship="Self.FK__TBLPERMIS__LNGID__534D60F1" FromRole="TBLPERMISO" ToRole="TBLUSUARIO" />
+  </EntityType>
+  <EntityType Name="TBLPERMISOSUBITEM">
+    <Key>
+      <PropertyRef Name="LNGIDPERMISOSUBITEM" />
+    </Key>
+    <Property Name="LNGIDPERMISOSUBITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDUSUARIO" Type="Int32" />
+    <Property Name="LNGIDMODULO" Type="Int32" />
+    <Property Name="LNGIDITEM" Type="Int32" />
+    <Property Name="LNGIDSUBITEM" Type="Int32" />
+    <Property Name="STREDITAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRCONSULTAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRADICIONAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRELIMINAR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INTIDTIPOPERMISO" Type="Int32" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLITEM" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLITEM" FromRole="TBLPERMISOSUBITEM" ToRole="TBLITEM" />
+    <NavigationProperty Name="TBLMODULO" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLMODULO" FromRole="TBLPERMISOSUBITEM" ToRole="TBLMODULO" />
+    <NavigationProperty Name="TBLTIPOPERMISO" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO" FromRole="TBLPERMISOSUBITEM" ToRole="TBLTIPOPERMISO" />
+    <NavigationProperty Name="TBLUSUARIO" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLUSUARIO" FromRole="TBLPERMISOSUBITEM" ToRole="TBLUSUARIO" />
+  </EntityType>
+  <EntityType Name="TBLPRESUPUESTO_PROYECCION_SALARIO">
+    <Key>
+      <PropertyRef Name="LNGIDTRANSACCION" />
+    </Key>
+    <Property Name="LNGIDTRANSACCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDUSUARIO" Type="Int32" />
+    <Property Name="LNGIDCENTROCOSTO" Type="Int32" />
+    <Property Name="LNGIDMONEDA" Type="Int32" />
+    <Property Name="LNGIDCUENTACONTABLE" Type="Int32" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="Int32" />
+    <Property Name="LNGIDFUNCIONARIO" Type="Int32" />
+    <Property Name="STRPUESTO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="FLTENERO" Type="Double" />
+    <Property Name="FLTFEBRERO" Type="Double" />
+    <Property Name="FLTMARZO" Type="Double" />
+    <Property Name="FLTABRIL" Type="Double" />
+    <Property Name="FLTMAYO" Type="Double" />
+    <Property Name="FLTJUNIO" Type="Double" />
+    <Property Name="FLTJULIO" Type="Double" />
+    <Property Name="FLTAGOSTO" Type="Double" />
+    <Property Name="FLTSEPTIEMBRE" Type="Double" />
+    <Property Name="FLTOCTUBRE" Type="Double" />
+    <Property Name="FLTNOVIEMBRE" Type="Double" />
+    <Property Name="FLTDICIEMBRE" Type="Double" />
+    <Property Name="LNGIDTIPOLEGISLACION" Type="Int32" />
+    <Property Name="STRSEMSTRE_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRSEMSTRE_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DTRFECHA" Type="DateTime" Precision="3" />
+    <Property Name="LNGIDCARGASOCIAL" Type="Int32" />
+    <Property Name="STRMONTO_COLONES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRMONTO_DOLARES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRESTADOPORC1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRESTADOPORC2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STRANNO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLCENTROCOSTO" Relationship="Self.FK__TBLPRESUP__LNGID__0D44F85C" FromRole="TBLPRESUPUESTO_PROYECCION_SALARIO" ToRole="TBLCENTROCOSTO" />
+    <NavigationProperty Name="TBLCUENTACONTABLE" Relationship="Self.FK__TBLPRESUP__LNGID__0F2D40CE" FromRole="TBLPRESUPUESTO_PROYECCION_SALARIO" ToRole="TBLCUENTACONTABLE" />
+    <NavigationProperty Name="TBLMONEDA" Relationship="Self.FK__TBLPRESUP__LNGID__0E391C95" FromRole="TBLPRESUPUESTO_PROYECCION_SALARIO" ToRole="TBLMONEDA" />
+    <NavigationProperty Name="TBLUSUARIO" Relationship="Self.FK__TBLPRESUP__LNGID__0C50D423" FromRole="TBLPRESUPUESTO_PROYECCION_SALARIO" ToRole="TBLUSUARIO" />
+    <NavigationProperty Name="TBLTIPOPRESUPUESTO" Relationship="Self.FK__TBLPRESUP__LNGID__10216507" FromRole="TBLPRESUPUESTO_PROYECCION_SALARIO" ToRole="TBLTIPOPRESUPUESTO" />
+    <NavigationProperty Name="TBLTIPOLEGISLACION" Relationship="Self.FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION" FromRole="TBLPRESUPUESTO_PROYECCION_SALARIO" ToRole="TBLTIPOLEGISLACION" />
+  </EntityType>
+  <EntityType Name="TBLPRESUPUESTOPROYECCIONINGRESO">
+    <Key>
+      <PropertyRef Name="LNGIDTRANSACCIONING" />
+    </Key>
+    <Property Name="LNGIDTRANSACCIONING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="Int32" />
+    <Property Name="LNGIDTIPOINGRESO" Type="Int32" />
+    <Property Name="LNGIDCENTROCOSTO" Type="Int32" />
+    <Property Name="LNGIDMONEDA" Type="Int32" />
+    <Property Name="LNGIDCUETACONTABLE" Type="Int32" />
+    <Property Name="STRENERO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRFEBRERO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRMARZO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRABRIL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRMAYO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRJUNIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRJULIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRAGOSTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRSEPTIEMBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STROCTUBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRNOVIEMBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRDICIEMBRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRDETALLE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LNGIDTIPOPROYECCION" Type="Int32" />
+    <Property Name="STRMONTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRESTADO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LNGIDUSUARIO" Type="Int32" />
+    <Property Name="DTRFECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBLCENTROCOSTO" Relationship="Self.FK__TBLPRESUP__LNGID__5224328E" FromRole="TBLPRESUPUESTOPROYECCIONINGRESO" ToRole="TBLCENTROCOSTO" />
+    <NavigationProperty Name="TBLCUENTACONTABLE" Relationship="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE" FromRole="TBLPRESUPUESTOPROYECCIONINGRESO" ToRole="TBLCUENTACONTABLE" />
+    <NavigationProperty Name="TBLMONEDA" Relationship="Self.FK__TBLPRESUP__LNGID__531856C7" FromRole="TBLPRESUPUESTOPROYECCIONINGRESO" ToRole="TBLMONEDA" />
+    <NavigationProperty Name="TBLTIPOPRESUPUESTO" Relationship="Self.FK__TBLPRESUP__LNGID__51300E55" FromRole="TBLPRESUPUESTOPROYECCIONINGRESO" ToRole="TBLTIPOPRESUPUESTO" />
+    <NavigationProperty Name="TBLUSUARIO" Relationship="Self.FK__TBLPRESUP__LNGID__540C7B00" FromRole="TBLPRESUPUESTOPROYECCIONINGRESO" ToRole="TBLUSUARIO" />
+    <NavigationProperty Name="TBLTIPOPROYECCION" Relationship="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION" FromRole="TBLPRESUPUESTOPROYECCIONINGRESO" ToRole="TBLTIPOPROYECCION" />
+  </EntityType>
+  <EntityType Name="TBLPROYECCION_GASTO">
+    <Key>
+      <PropertyRef Name="LNGIDPROYECCIONGASTO" />
+    </Key>
+    <Property Name="LNGIDPROYECCIONGASTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDCUENTACONTABLE" Type="Int32" />
+    <Property Name="LNGIDCENTROCOSTO" Type="Int32" />
+    <Property Name="LNGIDMONEDA" Type="Int32" />
+    <Property Name="STRENERO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRFEBRERO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRMARZO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRABRIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRMAYO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRJUNIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRJULIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRAGOSTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRSEPTIEMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STROCTUBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRNOVIEMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRDICIEMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DTRFECHA" Type="DateTime" Precision="0" />
+    <Property Name="STRMONTO_COLONES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRMONTO_DOLARES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRPRESUPUESTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="Int32" />
+    <Property Name="STRDETALLE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LNGIDPROYECTO" Type="Int32" />
+    <Property Name="LNGIDUSUARIO" Type="Int32" />
+    <Property Name="LNGIDTIPOPROYECCION" Type="Int32" />
+    <Property Name="LNGIDTIPOGASTO" Type="Int32" />
+    <Property Name="STRANNO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLCENTROCOSTO" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO" FromRole="TBLPROYECCION_GASTO" ToRole="TBLCENTROCOSTO" />
+    <NavigationProperty Name="TBLCUENTACONTABLE" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE" FromRole="TBLPROYECCION_GASTO" ToRole="TBLCUENTACONTABLE" />
+    <NavigationProperty Name="TBLMONEDA" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLMONEDA" FromRole="TBLPROYECCION_GASTO" ToRole="TBLMONEDA" />
+    <NavigationProperty Name="TBLTIPOPRESUPUESTO" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO" FromRole="TBLPROYECCION_GASTO" ToRole="TBLTIPOPRESUPUESTO" />
+  </EntityType>
+  <EntityType Name="TBLPROYECTO">
+    <Key>
+      <PropertyRef Name="LNGIDPROYECTO" />
+    </Key>
+    <Property Name="LNGIDPROYECTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCODIGO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="STRDESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBLTIPOGASTO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOGASTO" />
+    </Key>
+    <Property Name="LNGIDTIPOGASTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTIPOGASTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLTIPOINGRESO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOINGRESO" />
+    </Key>
+    <Property Name="LNGIDTIPOINGRESO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTIPOINGRESO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLTIPOLEGISLACION">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOLEGISLACION" />
+    </Key>
+    <Property Name="LNGIDTIPOLEGISLACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTIPOLEGISLACION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPRESUPUESTO_PROYECCION_SALARIO" Relationship="Self.FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION" FromRole="TBLTIPOLEGISLACION" ToRole="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+  </EntityType>
+  <EntityType Name="TBLTIPOPERMISO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOPERMISO" />
+    </Key>
+    <Property Name="LNGIDTIPOPERMISO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTIPOPERMISO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPERMISOSUBITEM" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO" FromRole="TBLTIPOPERMISO" ToRole="TBLPERMISOSUBITEM" />
+  </EntityType>
+  <EntityType Name="TBLTIPOPRESUPUESTO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+    </Key>
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTIPOPRESUPUESTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPRESUPUESTO_PROYECCION_SALARIO" Relationship="Self.FK__TBLPRESUP__LNGID__10216507" FromRole="TBLTIPOPRESUPUESTO" ToRole="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    <NavigationProperty Name="TBLPRESUPUESTOPROYECCIONINGRESO" Relationship="Self.FK__TBLPRESUP__LNGID__51300E55" FromRole="TBLTIPOPRESUPUESTO" ToRole="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    <NavigationProperty Name="TBLPROYECCION_GASTO" Relationship="Self.FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO" FromRole="TBLTIPOPRESUPUESTO" ToRole="TBLPROYECCION_GASTO" />
+    <NavigationProperty Name="TBLTIPOCAMBIO" Relationship="Self.FK__TBLTIPOCA__LNGID__5FB337D6" FromRole="TBLTIPOPRESUPUESTO" ToRole="TBLTIPOCAMBIO" />
+  </EntityType>
+  <EntityType Name="TBLTIPOPROYECCION">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOPROYECCION" />
+    </Key>
+    <Property Name="LNGIDTIPOPROYECCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRTIPOPROYECCION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPRESUPUESTOPROYECCIONINGRESO" Relationship="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION" FromRole="TBLTIPOPROYECCION" ToRole="TBLPRESUPUESTOPROYECCIONINGRESO" />
+  </EntityType>
+  <EntityType Name="TBLUSUARIO">
+    <Key>
+      <PropertyRef Name="LNGIDUSUARIO" />
+    </Key>
+    <Property Name="LNGIDUSUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDPERFIL" Type="Int32" />
+    <Property Name="STRUSUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STRNOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STRDOMINIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPERMISO" Relationship="Self.FK__TBLPERMIS__LNGID__534D60F1" FromRole="TBLUSUARIO" ToRole="TBLPERMISO" />
+    <NavigationProperty Name="TBLPERMISOSUBITEM" Relationship="Self.FK_TBLPERMISOSUBITEM_TBLUSUARIO" FromRole="TBLUSUARIO" ToRole="TBLPERMISOSUBITEM" />
+    <NavigationProperty Name="TBLPRESUPUESTO_PROYECCION_SALARIO" Relationship="Self.FK__TBLPRESUP__LNGID__0C50D423" FromRole="TBLUSUARIO" ToRole="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    <NavigationProperty Name="TBLPRESUPUESTOPROYECCIONINGRESO" Relationship="Self.FK__TBLPRESUP__LNGID__540C7B00" FromRole="TBLUSUARIO" ToRole="TBLPRESUPUESTOPROYECCIONINGRESO" />
+  </EntityType>
+  <EntityType Name="CENTRO_COSTO">
+    <Key>
+      <PropertyRef Name="CENTRO_COSTO1" />
+      <PropertyRef Name="DESCRIPCION" />
+      <PropertyRef Name="ACEPTA_DATOS" />
+      <PropertyRef Name="TIPO" />
+    </Key>
+    <Property Name="CENTRO_COSTO1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACEPTA_DATOS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NoteExistsFlag" Type="Byte" />
+    <Property Name="RecordDate" Type="DateTime" Precision="3" />
+    <Property Name="RowPointer" Type="Guid" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="REPORTE_PRESUPUESTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="U_AGRUPACION_1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="U_AGRUPACION_2" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="U_AGRUPACION_3" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CUENTA_CONTABLE">
+    <Key>
+      <PropertyRef Name="CUENTA_CONTABLE1" />
+      <PropertyRef Name="DESCRIPCION" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="TIPO_DETALLADO" />
+      <PropertyRef Name="TIPO_OAF" />
+      <PropertyRef Name="SALDO_NORMAL" />
+      <PropertyRef Name="CONVERSION" />
+      <PropertyRef Name="TIPO_CAMBIO" />
+      <PropertyRef Name="ACEPTA_DATOS" />
+      <PropertyRef Name="CONSOLIDA" />
+      <PropertyRef Name="USA_CENTRO_COSTO" />
+      <PropertyRef Name="USUARIO" />
+      <PropertyRef Name="FECHA_HORA" />
+      <PropertyRef Name="USUARIO_ULT_MOD" />
+      <PropertyRef Name="FCH_HORA_ULT_MOD" />
+      <PropertyRef Name="ACEPTA_UNIDADES" />
+      <PropertyRef Name="USO_RESTRINGIDO" />
+      <PropertyRef Name="VALIDA_PRESUP_CR" />
+      <PropertyRef Name="USA_CONTA_ELECTRO" />
+      <PropertyRef Name="VERSION" />
+    </Key>
+    <Property Name="CUENTA_CONTABLE1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SECCION_CUENTA" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="UNIDAD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIPO_DETALLADO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIPO_OAF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SALDO_NORMAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONVERSION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIPO_CAMBIO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACEPTA_DATOS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONSOLIDA" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USA_CENTRO_COSTO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOTAS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="USUARIO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_HORA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="USUARIO_ULT_MOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FCH_HORA_ULT_MOD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ACEPTA_UNIDADES" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USO_RESTRINGIDO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORIGEN_CONVERSION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NoteExistsFlag" Type="Byte" />
+    <Property Name="RecordDate" Type="DateTime" Precision="3" />
+    <Property Name="RowPointer" Type="Guid" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="REPORTE_PRESUPUESTO_GRUPO_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REPORTE_PRESUPUESTO_GRUPO_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REPORTE_PRESUPUESTO_GRUPO_3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VALIDA_PRESUP_CR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="U_AGRUPACION_1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="U_AGRUPACION_2" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="U_AGRUPACION_3" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="CUENTA_IFRS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="USA_CONTA_ELECTRO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VERSION" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_INI_CE" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_FIN_CE" Type="DateTime" Precision="3" />
+    <Property Name="COD_AGRUPADOR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DESC_COD_AGRUP" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SUB_CTA_DE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESC_SUB_CTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NIVEL" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLCENTROCOSTO_bak">
+    <Key>
+      <PropertyRef Name="LNGIDCENTROCOSTO" />
+    </Key>
+    <Property Name="LNGIDCENTROCOSTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STRDESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STRACTIVO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBLcuentacontable_bak">
+    <Key>
+      <PropertyRef Name="LNGIDCUENTACONTABLE" />
+    </Key>
+    <Property Name="LNGIDCUENTACONTABLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STRCUENTACONTABLE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STRDESCRIPCIONCTB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DTMFECHA" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBLTIPOCAMBIO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOCAMBIO" />
+    </Key>
+    <Property Name="LNGIDTIPOCAMBIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LNGIDANNO" Type="Int32" />
+    <Property Name="LNGIDMONEDA" Type="Int32" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="Int32" />
+    <Property Name="FLTENERO" Type="Double" />
+    <Property Name="FLTFEBRERO" Type="Double" />
+    <Property Name="FLTMARZO" Type="Double" />
+    <Property Name="FLTABRIL" Type="Double" />
+    <Property Name="FLTMAYO" Type="Double" />
+    <Property Name="FLTJUNIO" Type="Double" />
+    <Property Name="FLTJULIO" Type="Double" />
+    <Property Name="FLTAGOSTO" Type="Double" />
+    <Property Name="FLTSEPTIEMBRE" Type="Double" />
+    <Property Name="FLTOCTUBRE" Type="Double" />
+    <Property Name="FLTNOVIEMBRE" Type="Double" />
+    <Property Name="FLTDICIEMBRE" Type="Double" />
+    <Property Name="DTRFECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBLMONEDA" Relationship="Self.FK__TBLTIPOCA__LNGID__5EBF139D" FromRole="TBLTIPOCAMBIO" ToRole="TBLMONEDA" />
+    <NavigationProperty Name="TBLTIPOPRESUPUESTO" Relationship="Self.FK__TBLTIPOCA__LNGID__5FB337D6" FromRole="TBLTIPOCAMBIO" ToRole="TBLTIPOPRESUPUESTO" />
+  </EntityType>
+  <Association Name="FK__TBLPRESUP__LNGID__0D44F85C">
+    <End Role="TBLCENTROCOSTO" Type="Self.TBLCENTROCOSTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCENTROCOSTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__5224328E">
+    <End Role="TBLCENTROCOSTO" Type="Self.TBLCENTROCOSTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCENTROCOSTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO">
+    <End Role="TBLCENTROCOSTO" Type="Self.TBLCENTROCOSTO" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCENTROCOSTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0F2D40CE">
+    <End Role="TBLCUENTACONTABLE" Type="Self.TBLCUENTACONTABLE" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCUENTACONTABLE">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE">
+    <End Role="TBLCUENTACONTABLE" Type="Self.TBLCUENTACONTABLE" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCUENTACONTABLE">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDCUETACONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE">
+    <End Role="TBLCUENTACONTABLE" Type="Self.TBLCUENTACONTABLE" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCUENTACONTABLE">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLITEM">
+    <End Role="TBLITEM" Type="Self.TBLITEM" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLITEM">
+        <PropertyRef Name="LNGIDITEM" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="LNGIDITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLMODULO__LNGID__4D94879B">
+    <End Role="TBLMODULO" Type="Self.TBLMODULO" Multiplicity="0..1" />
+    <End Role="TBLMODULOITEM" Type="Self.TBLMODULOITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMODULO">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Principal>
+      <Dependent Role="TBLMODULOITEM">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLMODULO">
+    <End Role="TBLMODULO" Type="Self.TBLMODULO" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMODULO">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPERMIS__LNGID__52593CB8">
+    <End Role="TBLMODULOITEM" Type="Self.TBLMODULOITEM" Multiplicity="0..1" />
+    <End Role="TBLPERMISO" Type="Self.TBLPERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMODULOITEM">
+        <PropertyRef Name="LNGIDMODULOITEM" />
+      </Principal>
+      <Dependent Role="TBLPERMISO">
+        <PropertyRef Name="LNGIDMODULOITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0E391C95">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__531856C7">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLTIPOCA__LNGID__5EBF139D">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLTIPOCAMBIO" Type="Self.TBLTIPOCAMBIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLTIPOCAMBIO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLMONEDA">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPERMIS__LNGID__534D60F1">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPERMISO" Type="Self.TBLPERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPERMISO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO">
+    <End Role="TBLTIPOPERMISO" Type="Self.TBLTIPOPERMISO" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPERMISO">
+        <PropertyRef Name="LNGIDTIPOPERMISO" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="INTIDTIPOPERMISO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLUSUARIO">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0C50D423">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__10216507">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION">
+    <End Role="TBLTIPOLEGISLACION" Type="Self.TBLTIPOLEGISLACION" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOLEGISLACION">
+        <PropertyRef Name="LNGIDTIPOLEGISLACION" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDTIPOLEGISLACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__51300E55">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__540C7B00">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION">
+    <End Role="TBLTIPOPROYECCION" Type="Self.TBLTIPOPROYECCION" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPROYECCION">
+        <PropertyRef Name="LNGIDTIPOPROYECCION" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDTIPOPROYECCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLTIPOCA__LNGID__5FB337D6">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLTIPOCAMBIO" Type="Self.TBLTIPOCAMBIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLTIPOCAMBIO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PRESUPUESTOEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_ANNO_MODULO" EntityType="Self.TBL_ANNO_MODULO" />
+    <EntitySet Name="TBLANNO" EntityType="Self.TBLANNO" />
+    <EntitySet Name="TBLCARGASSOCIALES" EntityType="Self.TBLCARGASSOCIALES" />
+    <EntitySet Name="TBLCENTROCOSTO" EntityType="Self.TBLCENTROCOSTO" />
+    <EntitySet Name="TBLCONFIGURACION" EntityType="Self.TBLCONFIGURACION" />
+    <EntitySet Name="TBLCUENTACONTABLE" EntityType="Self.TBLCUENTACONTABLE" />
+    <EntitySet Name="TBLEMPLEADO" EntityType="Self.TBLEMPLEADO" />
+    <EntitySet Name="TBLINFLACION" EntityType="Self.TBLINFLACION" />
+    <EntitySet Name="TBLITEM" EntityType="Self.TBLITEM" />
+    <EntitySet Name="TBLMODULO" EntityType="Self.TBLMODULO" />
+    <EntitySet Name="TBLMODULOITEM" EntityType="Self.TBLMODULOITEM" />
+    <EntitySet Name="TBLMONEDA" EntityType="Self.TBLMONEDA" />
+    <EntitySet Name="TBLPERFIL" EntityType="Self.TBLPERFIL" />
+    <EntitySet Name="TBLPERMISO" EntityType="Self.TBLPERMISO" />
+    <EntitySet Name="TBLPERMISOSUBITEM" EntityType="Self.TBLPERMISOSUBITEM" />
+    <EntitySet Name="TBLPRESUPUESTO_PROYECCION_SALARIO" EntityType="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    <EntitySet Name="TBLPRESUPUESTOPROYECCIONINGRESO" EntityType="Self.TBLPRESUPUESTOPROYECCIONINGRESO" />
+    <EntitySet Name="TBLPROYECCION_GASTO" EntityType="Self.TBLPROYECCION_GASTO" />
+    <EntitySet Name="TBLPROYECTO" EntityType="Self.TBLPROYECTO" />
+    <EntitySet Name="TBLTIPOGASTO" EntityType="Self.TBLTIPOGASTO" />
+    <EntitySet Name="TBLTIPOINGRESO" EntityType="Self.TBLTIPOINGRESO" />
+    <EntitySet Name="TBLTIPOLEGISLACION" EntityType="Self.TBLTIPOLEGISLACION" />
+    <EntitySet Name="TBLTIPOPERMISO" EntityType="Self.TBLTIPOPERMISO" />
+    <EntitySet Name="TBLTIPOPRESUPUESTO" EntityType="Self.TBLTIPOPRESUPUESTO" />
+    <EntitySet Name="TBLTIPOPROYECCION" EntityType="Self.TBLTIPOPROYECCION" />
+    <EntitySet Name="TBLUSUARIO" EntityType="Self.TBLUSUARIO" />
+    <EntitySet Name="CENTRO_COSTO" EntityType="Self.CENTRO_COSTO" />
+    <EntitySet Name="CUENTA_CONTABLE" EntityType="Self.CUENTA_CONTABLE" />
+    <EntitySet Name="TBLCENTROCOSTO_bak" EntityType="Self.TBLCENTROCOSTO_bak" />
+    <EntitySet Name="TBLcuentacontable_bak" EntityType="Self.TBLcuentacontable_bak" />
+    <EntitySet Name="TBLTIPOCAMBIO" EntityType="Self.TBLTIPOCAMBIO" />
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0D44F85C" Association="Self.FK__TBLPRESUP__LNGID__0D44F85C">
+      <End Role="TBLCENTROCOSTO" EntitySet="TBLCENTROCOSTO" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__5224328E" Association="Self.FK__TBLPRESUP__LNGID__5224328E">
+      <End Role="TBLCENTROCOSTO" EntitySet="TBLCENTROCOSTO" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO" Association="Self.FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO">
+      <End Role="TBLCENTROCOSTO" EntitySet="TBLCENTROCOSTO" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0F2D40CE" Association="Self.FK__TBLPRESUP__LNGID__0F2D40CE">
+      <End Role="TBLCUENTACONTABLE" EntitySet="TBLCUENTACONTABLE" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE" Association="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE">
+      <End Role="TBLCUENTACONTABLE" EntitySet="TBLCUENTACONTABLE" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE" Association="Self.FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE">
+      <End Role="TBLCUENTACONTABLE" EntitySet="TBLCUENTACONTABLE" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLITEM" Association="Self.FK_TBLPERMISOSUBITEM_TBLITEM">
+      <End Role="TBLITEM" EntitySet="TBLITEM" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLMODULO__LNGID__4D94879B" Association="Self.FK__TBLMODULO__LNGID__4D94879B">
+      <End Role="TBLMODULO" EntitySet="TBLMODULO" />
+      <End Role="TBLMODULOITEM" EntitySet="TBLMODULOITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLMODULO" Association="Self.FK_TBLPERMISOSUBITEM_TBLMODULO">
+      <End Role="TBLMODULO" EntitySet="TBLMODULO" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPERMIS__LNGID__52593CB8" Association="Self.FK__TBLPERMIS__LNGID__52593CB8">
+      <End Role="TBLMODULOITEM" EntitySet="TBLMODULOITEM" />
+      <End Role="TBLPERMISO" EntitySet="TBLPERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0E391C95" Association="Self.FK__TBLPRESUP__LNGID__0E391C95">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__531856C7" Association="Self.FK__TBLPRESUP__LNGID__531856C7">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLTIPOCA__LNGID__5EBF139D" Association="Self.FK__TBLTIPOCA__LNGID__5EBF139D">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLTIPOCAMBIO" EntitySet="TBLTIPOCAMBIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLMONEDA" Association="Self.FK_TBLPROYECCION_GASTO_TBLMONEDA">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPERMIS__LNGID__534D60F1" Association="Self.FK__TBLPERMIS__LNGID__534D60F1">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPERMISO" EntitySet="TBLPERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO" Association="Self.FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO">
+      <End Role="TBLTIPOPERMISO" EntitySet="TBLTIPOPERMISO" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLUSUARIO" Association="Self.FK_TBLPERMISOSUBITEM_TBLUSUARIO">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0C50D423" Association="Self.FK__TBLPRESUP__LNGID__0C50D423">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__10216507" Association="Self.FK__TBLPRESUP__LNGID__10216507">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION" Association="Self.FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION">
+      <End Role="TBLTIPOLEGISLACION" EntitySet="TBLTIPOLEGISLACION" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__51300E55" Association="Self.FK__TBLPRESUP__LNGID__51300E55">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__540C7B00" Association="Self.FK__TBLPRESUP__LNGID__540C7B00">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION" Association="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION">
+      <End Role="TBLTIPOPROYECCION" EntitySet="TBLTIPOPROYECCION" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO" Association="Self.FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLTIPOCA__LNGID__5FB337D6" Association="Self.FK__TBLTIPOCA__LNGID__5FB337D6">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLTIPOCAMBIO" EntitySet="TBLTIPOCAMBIO" />
+    </AssociationSet>
+    <FunctionImport Name="SP_ACTUALIZAR_CARGASOCIAL">
+      <Parameter Name="ANNO" Mode="In" Type="Int32" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_CENTRO_COSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_CIERRE_ANNO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_CONFIGURACION">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_ESTADO_CENTROCOSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ESTADO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_ESTADO_PROY_CENTRO_COSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_INFLACION">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_MONEDA">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_PRE_PROY_INGRESO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_PROYECCION_GASTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZAR_PROYECTOxCENTROCOSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALIZARPERMISOCENTROCOSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ACTUALZIAR_TIPOINGRESO_CUENTACONTABLE">
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ELIMINAR_PRE_PRO_SALARIO">
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ELIMINAR_PRE_PROY_INGRESO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ELIMINAR_PRESUPUESTO_GASTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EVALUAR_PERMISOS">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+      <Parameter Name="PETICION" Mode="In" Type="String" />
+      <Parameter Name="RPTA" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LOGIN_USUARIO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_PERMISO_USUARIO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_PERMISOCENTROCOSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_PRE_PROY_INGRESO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_PRE_PROY_SALARIO">
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_PROYECCION_GASTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_PROYECTOSINCENTROCOSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENER_TIPO_CAMBIO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="Int32" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERANNO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERCARGASSOCIALES">
+      <Parameter Name="ANNO" Mode="In" Type="Int32" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERCENTRODECOSTO">
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="IDTIPOPERMISO" Mode="In" Type="Int32" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERCUENTACONTABLE">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERCUENTACONTABLExTIPOGASTO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERGASTOS_X_CENTROCOSTO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERINFLACION">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERMONEDA">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERPLANTILLAGASTO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERPLANTILLASALARIO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERPROYECTOXCENTRODECOSTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERTIPOGASTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERTIPOINGREGOSCUENTACONTABLE">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERTIPOINGRESO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERTIPOINGRESOCENTROCOSTO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTENERTIPOPROYECCION" ReturnType="Collection(PRESUPUESTOModel.SP_OBTENERTIPOPROYECCION_Result)">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBTERNERCENTROCOSTOxTIPOINGRESO">
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REGISTRAR_PERMISO_USUARIO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REGISTRAR_PLANTILLA_GASTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REGISTRAR_PLANTILLA_SALARIO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REGISTRAR_PRE_PROY_SALARIO">
+      <Parameter Name="TIPOLEGISLACION" Mode="In" Type="String" />
+      <Parameter Name="ANNO" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REGISTRAR_PROYECTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REGISTRAR_TIPO_CAMBIO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTE_COMPARATIVO_GASTO_X_CENTROCOSTO">
+      <Parameter Name="FECHAINICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTE_COMPARATIVO_SALARIO_X_CENTROCOSTOS">
+      <Parameter Name="FECHAINICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTE_EXACTUS">
+      <Parameter Name="FECHAINICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTE_GASTOS_X_CENTROCOSTO">
+      <Parameter Name="FECHAINICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTE_GASTOS_X_PARTIDA">
+      <Parameter Name="FECHAINICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTE_SALARIOS_X_CENTROCOSTO">
+      <Parameter Name="FECHAINICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTEPRESUPUESTOGASTO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_REPORTEPRESUPUESTOGASTO_MALO">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SINCRONIZACION_EXACTUS">
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="ITEM" Mode="In" Type="String" />
+      <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_OBTENERTIPOPROYECCION_Result">
+    <Property Type="Int32" Name="LNGIDTIPOPROYECCION" Nullable="false" />
+    <Property Type="String" Name="STRTIPOPROYECCION" Nullable="true" MaxLength="30" />
+  </ComplexType>
+</Schema>

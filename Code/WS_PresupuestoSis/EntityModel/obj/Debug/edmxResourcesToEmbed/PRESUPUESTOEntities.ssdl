@@ -1,0 +1,1074 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRESUPUESTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PRESUPUESTO.dbo.CENTRO_COSTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CENTRO_COSTO">
+    <Key>
+      <PropertyRef Name="CENTRO_COSTO" />
+      <PropertyRef Name="DESCRIPCION" />
+      <PropertyRef Name="ACEPTA_DATOS" />
+      <PropertyRef Name="TIPO" />
+    </Key>
+    <Property Name="CENTRO_COSTO" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ACEPTA_DATOS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="NoteExistsFlag" Type="tinyint" />
+    <Property Name="RecordDate" Type="datetime" />
+    <Property Name="RowPointer" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="30" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="REPORTE_PRESUPUESTO" Type="varchar" MaxLength="100" />
+    <Property Name="U_AGRUPACION_1" Type="varchar" MaxLength="35" />
+    <Property Name="U_AGRUPACION_2" Type="varchar" MaxLength="35" />
+    <Property Name="U_AGRUPACION_3" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PRESUPUESTO.dbo.CUENTA_CONTABLE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CUENTA_CONTABLE">
+    <Key>
+      <PropertyRef Name="CUENTA_CONTABLE" />
+      <PropertyRef Name="DESCRIPCION" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="TIPO_DETALLADO" />
+      <PropertyRef Name="TIPO_OAF" />
+      <PropertyRef Name="SALDO_NORMAL" />
+      <PropertyRef Name="CONVERSION" />
+      <PropertyRef Name="TIPO_CAMBIO" />
+      <PropertyRef Name="ACEPTA_DATOS" />
+      <PropertyRef Name="CONSOLIDA" />
+      <PropertyRef Name="USA_CENTRO_COSTO" />
+      <PropertyRef Name="USUARIO" />
+      <PropertyRef Name="FECHA_HORA" />
+      <PropertyRef Name="USUARIO_ULT_MOD" />
+      <PropertyRef Name="FCH_HORA_ULT_MOD" />
+      <PropertyRef Name="ACEPTA_UNIDADES" />
+      <PropertyRef Name="USO_RESTRINGIDO" />
+      <PropertyRef Name="VALIDA_PRESUP_CR" />
+      <PropertyRef Name="USA_CONTA_ELECTRO" />
+      <PropertyRef Name="VERSION" />
+    </Key>
+    <Property Name="CUENTA_CONTABLE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="SECCION_CUENTA" Type="varchar" MaxLength="4" />
+    <Property Name="UNIDAD" Type="varchar" MaxLength="15" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="TIPO_DETALLADO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="TIPO_OAF" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="SALDO_NORMAL" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CONVERSION" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="TIPO_CAMBIO" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="ACEPTA_DATOS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CONSOLIDA" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="USA_CENTRO_COSTO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="NOTAS" Type="text" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FECHA_HORA" Type="datetime" Nullable="false" />
+    <Property Name="USUARIO_ULT_MOD" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FCH_HORA_ULT_MOD" Type="datetime" Nullable="false" />
+    <Property Name="ACEPTA_UNIDADES" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="USO_RESTRINGIDO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGEN_CONVERSION" Type="varchar" MaxLength="1" />
+    <Property Name="NoteExistsFlag" Type="tinyint" />
+    <Property Name="RecordDate" Type="datetime" />
+    <Property Name="RowPointer" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="30" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="REPORTE_PRESUPUESTO_GRUPO_1" Type="varchar" MaxLength="100" />
+    <Property Name="REPORTE_PRESUPUESTO_GRUPO_2" Type="varchar" MaxLength="100" />
+    <Property Name="REPORTE_PRESUPUESTO_GRUPO_3" Type="varchar" MaxLength="100" />
+    <Property Name="VALIDA_PRESUP_CR" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="U_AGRUPACION_1" Type="varchar" MaxLength="35" />
+    <Property Name="U_AGRUPACION_2" Type="varchar" MaxLength="35" />
+    <Property Name="U_AGRUPACION_3" Type="varchar" MaxLength="35" />
+    <Property Name="CUENTA_IFRS" Type="varchar" MaxLength="25" />
+    <Property Name="USA_CONTA_ELECTRO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="VERSION" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="FECHA_INI_CE" Type="datetime" />
+    <Property Name="FECHA_FIN_CE" Type="datetime" />
+    <Property Name="COD_AGRUPADOR" Type="varchar" MaxLength="15" />
+    <Property Name="DESC_COD_AGRUP" Type="varchar" MaxLength="60" />
+    <Property Name="SUB_CTA_DE" Type="varchar" MaxLength="100" />
+    <Property Name="DESC_SUB_CTA" Type="varchar" MaxLength="100" />
+    <Property Name="NIVEL" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBL_ANNO_MODULO">
+    <Key>
+      <PropertyRef Name="STRTABLA" />
+      <PropertyRef Name="STRANNO" />
+      <PropertyRef Name="STRID" />
+    </Key>
+    <Property Name="LNGIDTRANSACCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTABLA" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="STRANNO" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="STRID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+    <Property Name="INTVALOR" Type="numeric" Precision="18" Scale="5" />
+  </EntityType>
+  <EntityType Name="TBLANNO">
+    <Key>
+      <PropertyRef Name="LNGIDANNO" />
+    </Key>
+    <Property Name="LNGIDANNO" Type="int" Nullable="false" />
+    <Property Name="STRACIERRE" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLANNO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLANNO_CUENTACONTABLE">
+          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+          <Property Name="LNGIDANNO" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLCARGASOCIAL_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLCARGASOCIAL_CUENTACONTABLE">
+          <Property Name="LNGIDCARGASOCIAL" Type="int" />
+          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+        </EntityType>-->
+  <EntityType Name="TBLCARGASSOCIALES">
+    <Key>
+      <PropertyRef Name="LNGIDCAGASOCIAL" />
+    </Key>
+    <Property Name="LNGIDCAGASOCIAL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCUENTACONTABLE" Type="varchar" MaxLength="30" />
+    <Property Name="STRDESCRIPCIONCARGASOC" Type="varchar" MaxLength="100" />
+    <Property Name="DTMFECHA" Type="datetime" />
+    <Property Name="FLTPORCENTAJE" Type="numeric" Precision="18" Scale="5" />
+  </EntityType>
+  <EntityType Name="TBLCENTROCOSTO">
+    <Key>
+      <PropertyRef Name="LNGIDCENTROCOSTO" />
+    </Key>
+    <Property Name="LNGIDCENTROCOSTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCODIGO" Type="varchar" MaxLength="20" />
+    <Property Name="STRDESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+    <Property Name="DTMFECHA" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PRESUPUESTO.dbo.TBLCENTROCOSTO_bak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLCENTROCOSTO_bak">
+    <Key>
+      <PropertyRef Name="LNGIDCENTROCOSTO" />
+    </Key>
+    <Property Name="LNGIDCENTROCOSTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCODIGO" Type="varchar" MaxLength="20" />
+    <Property Name="STRDESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+    <Property Name="DTMFECHA" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLCENTROCOSTO_CUENTACONTABLE">
+          <Property Name="LNGIDCENTROCOSTO" Type="int" />
+          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+        </EntityType>-->
+  <EntityType Name="TBLCONFIGURACION">
+    <Key>
+      <PropertyRef Name="STRCONFIGURACION" />
+    </Key>
+    <Property Name="STRCONFIGURACION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="STRVALOR" Type="varchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="TBLCUENTACONTABLE">
+    <Key>
+      <PropertyRef Name="LNGIDCUENTACONTABLE" />
+    </Key>
+    <Property Name="LNGIDCUENTACONTABLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCUENTACONTABLE" Type="varchar" MaxLength="30" />
+    <Property Name="STRDESCRIPCIONCTB" Type="varchar" MaxLength="100" />
+    <Property Name="DTMFECHA" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PRESUPUESTO.dbo.TBLcuentacontable_bak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLcuentacontable_bak">
+    <Key>
+      <PropertyRef Name="LNGIDCUENTACONTABLE" />
+    </Key>
+    <Property Name="LNGIDCUENTACONTABLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCUENTACONTABLE" Type="varchar" MaxLength="30" />
+    <Property Name="STRDESCRIPCIONCTB" Type="varchar" MaxLength="100" />
+    <Property Name="DTMFECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBLEMPLEADO">
+    <Key>
+      <PropertyRef Name="LNGIDEMPLEADO" />
+    </Key>
+    <Property Name="LNGIDEMPLEADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STREMPLEADO" Type="varchar" MaxLength="50" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+    <Property Name="STRPUESTO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLINFLACION">
+    <Key>
+      <PropertyRef Name="LNGIDINFLACION" />
+    </Key>
+    <Property Name="LNGIDINFLACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRAÑO" Type="varchar" MaxLength="5" />
+    <Property Name="STRSEMSTRE_1" Type="varchar" MaxLength="10" />
+    <Property Name="STRSEMSTRE_2" Type="varchar" MaxLength="10" />
+    <Property Name="DTMFECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBLITEM">
+    <Key>
+      <PropertyRef Name="LNGIDITEM" />
+    </Key>
+    <Property Name="LNGIDITEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRITEM" Type="varchar" MaxLength="400" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TBLMODULO">
+    <Key>
+      <PropertyRef Name="LNGIDMODULO" />
+    </Key>
+    <Property Name="LNGIDMODULO" Type="int" Nullable="false" />
+    <Property Name="STRMODULO" Type="varchar" MaxLength="30" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TBLMODULOITEM">
+    <Key>
+      <PropertyRef Name="LNGIDMODULOITEM" />
+    </Key>
+    <Property Name="LNGIDMODULOITEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDMODULO" Type="int" />
+    <Property Name="LNGIDITEM" Type="int" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TBLMONEDA">
+    <Key>
+      <PropertyRef Name="LNGIDMONEDA" />
+    </Key>
+    <Property Name="LNGIDMONEDA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCODIGO" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="STRDESCRIPCION" Type="varchar" MaxLength="100" />
+    <Property Name="DTMFECHA" Type="datetime" />
+    <Property Name="STRDEFAULT" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TBLPERFIL">
+    <Key>
+      <PropertyRef Name="LNGIDPERFIL" />
+    </Key>
+    <Property Name="LNGIDPERFIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRPERFIL" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="TBLPERMISO">
+    <Key>
+      <PropertyRef Name="LNGIDPERMISO" />
+    </Key>
+    <Property Name="LNGIDPERMISO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDMODULOITEM" Type="int" />
+    <Property Name="LNGIDUSUARIO" Type="int" />
+    <Property Name="STREDITAR" Type="varchar" MaxLength="1" />
+    <Property Name="STRCONSULTAR" Type="varchar" MaxLength="1" />
+    <Property Name="STRADICIONAR" Type="varchar" MaxLength="1" />
+    <Property Name="STRELIMINAR" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TBLPERMISOSUBITEM">
+    <Key>
+      <PropertyRef Name="LNGIDPERMISOSUBITEM" />
+    </Key>
+    <Property Name="LNGIDPERMISOSUBITEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDUSUARIO" Type="int" />
+    <Property Name="LNGIDMODULO" Type="int" />
+    <Property Name="LNGIDITEM" Type="int" />
+    <Property Name="LNGIDSUBITEM" Type="int" />
+    <Property Name="STREDITAR" Type="varchar" MaxLength="1" />
+    <Property Name="STRCONSULTAR" Type="varchar" MaxLength="1" />
+    <Property Name="STRADICIONAR" Type="varchar" MaxLength="1" />
+    <Property Name="STRELIMINAR" Type="varchar" MaxLength="1" />
+    <Property Name="INTIDTIPOPERMISO" Type="int" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TBLPRESUPUESTO_PROYECCION_SALARIO">
+    <Key>
+      <PropertyRef Name="LNGIDTRANSACCION" />
+    </Key>
+    <Property Name="LNGIDTRANSACCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDUSUARIO" Type="int" />
+    <Property Name="LNGIDCENTROCOSTO" Type="int" />
+    <Property Name="LNGIDMONEDA" Type="int" />
+    <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="int" />
+    <Property Name="LNGIDFUNCIONARIO" Type="int" />
+    <Property Name="STRPUESTO" Type="varchar" MaxLength="300" />
+    <Property Name="FLTENERO" Type="float" />
+    <Property Name="FLTFEBRERO" Type="float" />
+    <Property Name="FLTMARZO" Type="float" />
+    <Property Name="FLTABRIL" Type="float" />
+    <Property Name="FLTMAYO" Type="float" />
+    <Property Name="FLTJUNIO" Type="float" />
+    <Property Name="FLTJULIO" Type="float" />
+    <Property Name="FLTAGOSTO" Type="float" />
+    <Property Name="FLTSEPTIEMBRE" Type="float" />
+    <Property Name="FLTOCTUBRE" Type="float" />
+    <Property Name="FLTNOVIEMBRE" Type="float" />
+    <Property Name="FLTDICIEMBRE" Type="float" />
+    <Property Name="LNGIDTIPOLEGISLACION" Type="int" />
+    <Property Name="STRSEMSTRE_1" Type="varchar" MaxLength="20" />
+    <Property Name="STRSEMSTRE_2" Type="varchar" MaxLength="20" />
+    <Property Name="DTRFECHA" Type="datetime" />
+    <Property Name="LNGIDCARGASOCIAL" Type="int" />
+    <Property Name="STRMONTO_COLONES" Type="varchar" MaxLength="30" />
+    <Property Name="STRMONTO_DOLARES" Type="varchar" MaxLength="30" />
+    <Property Name="STRESTADOPORC1" Type="varchar" MaxLength="1" />
+    <Property Name="STRESTADOPORC2" Type="varchar" MaxLength="1" />
+    <Property Name="STRANNO" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="TBLPRESUPUESTOPROYECCIONINGRESO">
+    <Key>
+      <PropertyRef Name="LNGIDTRANSACCIONING" />
+    </Key>
+    <Property Name="LNGIDTRANSACCIONING" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="int" />
+    <Property Name="LNGIDTIPOINGRESO" Type="int" />
+    <Property Name="LNGIDCENTROCOSTO" Type="int" />
+    <Property Name="LNGIDMONEDA" Type="int" />
+    <Property Name="LNGIDCUETACONTABLE" Type="int" />
+    <Property Name="STRENERO" Type="varchar" MaxLength="20" />
+    <Property Name="STRFEBRERO" Type="varchar" MaxLength="20" />
+    <Property Name="STRMARZO" Type="varchar" MaxLength="20" />
+    <Property Name="STRABRIL" Type="varchar" MaxLength="20" />
+    <Property Name="STRMAYO" Type="varchar" MaxLength="20" />
+    <Property Name="STRJUNIO" Type="varchar" MaxLength="20" />
+    <Property Name="STRJULIO" Type="varchar" MaxLength="20" />
+    <Property Name="STRAGOSTO" Type="varchar" MaxLength="20" />
+    <Property Name="STRSEPTIEMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="STROCTUBRE" Type="varchar" MaxLength="20" />
+    <Property Name="STRNOVIEMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="STRDICIEMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="STRDETALLE" Type="varchar" MaxLength="30" />
+    <Property Name="LNGIDTIPOPROYECCION" Type="int" />
+    <Property Name="STRMONTO" Type="varchar" MaxLength="30" />
+    <Property Name="STRESTADO" Type="varchar" MaxLength="1" />
+    <Property Name="LNGIDUSUARIO" Type="int" />
+    <Property Name="DTRFECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBLPROYECCION_GASTO">
+    <Key>
+      <PropertyRef Name="LNGIDPROYECCIONGASTO" />
+    </Key>
+    <Property Name="LNGIDPROYECCIONGASTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+    <Property Name="LNGIDCENTROCOSTO" Type="int" />
+    <Property Name="LNGIDMONEDA" Type="int" />
+    <Property Name="STRENERO" Type="varchar" MaxLength="100" />
+    <Property Name="STRFEBRERO" Type="varchar" MaxLength="100" />
+    <Property Name="STRMARZO" Type="varchar" MaxLength="100" />
+    <Property Name="STRABRIL" Type="varchar" MaxLength="100" />
+    <Property Name="STRMAYO" Type="varchar" MaxLength="100" />
+    <Property Name="STRJUNIO" Type="varchar" MaxLength="100" />
+    <Property Name="STRJULIO" Type="varchar" MaxLength="100" />
+    <Property Name="STRAGOSTO" Type="varchar" MaxLength="100" />
+    <Property Name="STRSEPTIEMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="STROCTUBRE" Type="varchar" MaxLength="100" />
+    <Property Name="STRNOVIEMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="STRDICIEMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="DTRFECHA" Type="date" />
+    <Property Name="STRMONTO_COLONES" Type="varchar" MaxLength="30" />
+    <Property Name="STRMONTO_DOLARES" Type="varchar" MaxLength="30" />
+    <Property Name="STRPRESUPUESTO" Type="varchar" MaxLength="50" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="int" />
+    <Property Name="STRDETALLE" Type="varchar" MaxLength="30" />
+    <Property Name="LNGIDPROYECTO" Type="int" />
+    <Property Name="LNGIDUSUARIO" Type="int" />
+    <Property Name="LNGIDTIPOPROYECCION" Type="int" />
+    <Property Name="LNGIDTIPOGASTO" Type="int" />
+    <Property Name="STRANNO" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="TBLPROYECTO">
+    <Key>
+      <PropertyRef Name="LNGIDPROYECTO" />
+    </Key>
+    <Property Name="LNGIDPROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRCODIGO" Type="varchar" MaxLength="15" />
+    <Property Name="STRDESCRIPCION" Type="varchar" MaxLength="100" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+    <Property Name="DTMFECHA" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLPROYECTOCENTRODECOSTO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLPROYECTOCENTRODECOSTO">
+          <Property Name="LNGIDCENTROCOSTO" Type="int" />
+          <Property Name="LNGIDPROYECTO" Type="int" />
+          <Property Name="DTMFECHA" Type="datetime" />
+          <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PRESUPUESTO.dbo.TBLTIPOCAMBIO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLTIPOCAMBIO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOCAMBIO" />
+    </Key>
+    <Property Name="LNGIDTIPOCAMBIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDANNO" Type="int" />
+    <Property Name="LNGIDMONEDA" Type="int" />
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="int" />
+    <Property Name="FLTENERO" Type="float" />
+    <Property Name="FLTFEBRERO" Type="float" />
+    <Property Name="FLTMARZO" Type="float" />
+    <Property Name="FLTABRIL" Type="float" />
+    <Property Name="FLTMAYO" Type="float" />
+    <Property Name="FLTJUNIO" Type="float" />
+    <Property Name="FLTJULIO" Type="float" />
+    <Property Name="FLTAGOSTO" Type="float" />
+    <Property Name="FLTSEPTIEMBRE" Type="float" />
+    <Property Name="FLTOCTUBRE" Type="float" />
+    <Property Name="FLTNOVIEMBRE" Type="float" />
+    <Property Name="FLTDICIEMBRE" Type="float" />
+    <Property Name="DTRFECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBLTIPOGASTO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOGASTO" />
+    </Key>
+    <Property Name="LNGIDTIPOGASTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTIPOGASTO" Type="varchar" MaxLength="30" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOGASTO_CENTRODECOSTO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLTIPOGASTO_CENTRODECOSTO">
+          <Property Name="LNGIDTIPOGASTO" Type="int" />
+          <Property Name="LNGIDCENTROCOSTO" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOGASTO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLTIPOGASTO_CUENTACONTABLE">
+          <Property Name="LNGIDTIPOGASTO" Type="int" />
+          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+        </EntityType>-->
+  <EntityType Name="TBLTIPOINGRESO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOINGRESO" />
+    </Key>
+    <Property Name="LNGIDTIPOINGRESO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTIPOINGRESO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CENTROCOSTO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLTIPOINGRESO_CENTROCOSTO">
+          <Property Name="LNGIDTIPOINGRESO" Type="int" />
+          <Property Name="LNGIDCENTROCOSTO" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLTIPOINGRESO_CUENTACONTABLE">
+          <Property Name="LNGIDTIPOINGRESO" Type="int" />
+          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
+        </EntityType>-->
+  <EntityType Name="TBLTIPOLEGISLACION">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOLEGISLACION" />
+    </Key>
+    <Property Name="LNGIDTIPOLEGISLACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTIPOLEGISLACION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLTIPOPERMISO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOPERMISO" />
+    </Key>
+    <Property Name="LNGIDTIPOPERMISO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTIPOPERMISO" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TBLTIPOPRESUPUESTO">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+    </Key>
+    <Property Name="LNGIDTIPOPRESUPUESTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTIPOPRESUPUESTO" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TBLTIPOPROYECCION">
+    <Key>
+      <PropertyRef Name="LNGIDTIPOPROYECCION" />
+    </Key>
+    <Property Name="LNGIDTIPOPROYECCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STRTIPOPROYECCION" Type="varchar" MaxLength="30" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TBLUSUARIO">
+    <Key>
+      <PropertyRef Name="LNGIDUSUARIO" />
+    </Key>
+    <Property Name="LNGIDUSUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LNGIDPERFIL" Type="int" />
+    <Property Name="STRUSUARIO" Type="varchar" MaxLength="50" />
+    <Property Name="STRNOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="STRDOMINIO" Type="varchar" MaxLength="50" />
+    <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLANNO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLANNO_C__LNGID__4D5F7D71" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLANNO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLANNO_C__LNGID__4E53A1AA" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLCARGASOCIAL_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLCARGAS__LNGID__503BEA1C" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLCARGASOCIAL_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLCARGAS__LNGID__74AE54BC" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLCENTRO__LNGID__51300E55" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLCENTRO__LNGID__5224328E" />-->
+  <Association Name="FK__TBLMODULO__LNGID__4D94879B">
+    <End Role="TBLMODULO" Type="Self.TBLMODULO" Multiplicity="0..1" />
+    <End Role="TBLMODULOITEM" Type="Self.TBLMODULOITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMODULO">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Principal>
+      <Dependent Role="TBLMODULOITEM">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPERMIS__LNGID__52593CB8">
+    <End Role="TBLMODULOITEM" Type="Self.TBLMODULOITEM" Multiplicity="0..1" />
+    <End Role="TBLPERMISO" Type="Self.TBLPERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMODULOITEM">
+        <PropertyRef Name="LNGIDMODULOITEM" />
+      </Principal>
+      <Dependent Role="TBLPERMISO">
+        <PropertyRef Name="LNGIDMODULOITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPERMIS__LNGID__534D60F1">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPERMISO" Type="Self.TBLPERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPERMISO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0C50D423">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0D44F85C">
+    <End Role="TBLCENTROCOSTO" Type="Self.TBLCENTROCOSTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCENTROCOSTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0E391C95">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__0F2D40CE">
+    <End Role="TBLCUENTACONTABLE" Type="Self.TBLCUENTACONTABLE" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCUENTACONTABLE">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__10216507">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__51300E55">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__5224328E">
+    <End Role="TBLCENTROCOSTO" Type="Self.TBLCENTROCOSTO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCENTROCOSTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__531856C7">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLPRESUP__LNGID__540C7B00">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLTIPOCA__LNGID__5EBF139D">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLTIPOCAMBIO" Type="Self.TBLTIPOCAMBIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLTIPOCAMBIO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBLTIPOCA__LNGID__5FB337D6">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLTIPOCAMBIO" Type="Self.TBLTIPOCAMBIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLTIPOCAMBIO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CENTROCOSTO' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLTIPOIN__LNGID__6AEFE058" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CENTROCOSTO' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLTIPOIN__LNGID__6BE40491" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLTIPOIN__LNGID__6CD828CA" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__TBLTIPOIN__LNGID__6DCC4D03" />-->
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLITEM">
+    <End Role="TBLITEM" Type="Self.TBLITEM" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLITEM">
+        <PropertyRef Name="LNGIDITEM" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="LNGIDITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLMODULO">
+    <End Role="TBLMODULO" Type="Self.TBLMODULO" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMODULO">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="LNGIDMODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO">
+    <End Role="TBLTIPOPERMISO" Type="Self.TBLTIPOPERMISO" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPERMISO">
+        <PropertyRef Name="LNGIDTIPOPERMISO" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="INTIDTIPOPERMISO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERMISOSUBITEM_TBLUSUARIO">
+    <End Role="TBLUSUARIO" Type="Self.TBLUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLUSUARIO">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLPERMISOSUBITEM">
+        <PropertyRef Name="LNGIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION">
+    <End Role="TBLTIPOLEGISLACION" Type="Self.TBLTIPOLEGISLACION" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" Type="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOLEGISLACION">
+        <PropertyRef Name="LNGIDTIPOLEGISLACION" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <PropertyRef Name="LNGIDTIPOLEGISLACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE">
+    <End Role="TBLCUENTACONTABLE" Type="Self.TBLCUENTACONTABLE" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCUENTACONTABLE">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDCUETACONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION">
+    <End Role="TBLTIPOPROYECCION" Type="Self.TBLTIPOPROYECCION" Multiplicity="0..1" />
+    <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" Type="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPROYECCION">
+        <PropertyRef Name="LNGIDTIPOPROYECCION" />
+      </Principal>
+      <Dependent Role="TBLPRESUPUESTOPROYECCIONINGRESO">
+        <PropertyRef Name="LNGIDTIPOPROYECCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO">
+    <End Role="TBLCENTROCOSTO" Type="Self.TBLCENTROCOSTO" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCENTROCOSTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDCENTROCOSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE">
+    <End Role="TBLCUENTACONTABLE" Type="Self.TBLCUENTACONTABLE" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCUENTACONTABLE">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDCUENTACONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLMONEDA">
+    <End Role="TBLMONEDA" Type="Self.TBLMONEDA" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMONEDA">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDMONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO">
+    <End Role="TBLTIPOPRESUPUESTO" Type="Self.TBLTIPOPRESUPUESTO" Multiplicity="0..1" />
+    <End Role="TBLPROYECCION_GASTO" Type="Self.TBLPROYECCION_GASTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTIPOPRESUPUESTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Principal>
+      <Dependent Role="TBLPROYECCION_GASTO">
+        <PropertyRef Name="LNGIDTIPOPRESUPUESTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PRESUPUESTOModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ANNO_MODULO" EntityType="Self.TBL_ANNO_MODULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLANNO" EntityType="Self.TBLANNO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLCARGASSOCIALES" EntityType="Self.TBLCARGASSOCIALES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLCENTROCOSTO" EntityType="Self.TBLCENTROCOSTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLCONFIGURACION" EntityType="Self.TBLCONFIGURACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLCUENTACONTABLE" EntityType="Self.TBLCUENTACONTABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLEMPLEADO" EntityType="Self.TBLEMPLEADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLINFLACION" EntityType="Self.TBLINFLACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLITEM" EntityType="Self.TBLITEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLMODULO" EntityType="Self.TBLMODULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLMODULOITEM" EntityType="Self.TBLMODULOITEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLMONEDA" EntityType="Self.TBLMONEDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPERFIL" EntityType="Self.TBLPERFIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPERMISO" EntityType="Self.TBLPERMISO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPERMISOSUBITEM" EntityType="Self.TBLPERMISOSUBITEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPRESUPUESTO_PROYECCION_SALARIO" EntityType="Self.TBLPRESUPUESTO_PROYECCION_SALARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPRESUPUESTOPROYECCIONINGRESO" EntityType="Self.TBLPRESUPUESTOPROYECCIONINGRESO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPROYECCION_GASTO" EntityType="Self.TBLPROYECCION_GASTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPROYECTO" EntityType="Self.TBLPROYECTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTIPOGASTO" EntityType="Self.TBLTIPOGASTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTIPOINGRESO" EntityType="Self.TBLTIPOINGRESO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTIPOLEGISLACION" EntityType="Self.TBLTIPOLEGISLACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTIPOPERMISO" EntityType="Self.TBLTIPOPERMISO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTIPOPRESUPUESTO" EntityType="Self.TBLTIPOPRESUPUESTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTIPOPROYECCION" EntityType="Self.TBLTIPOPROYECCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLUSUARIO" EntityType="Self.TBLUSUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CENTRO_COSTO" EntityType="Self.CENTRO_COSTO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CENTRO_COSTO].[CENTRO_COSTO] AS [CENTRO_COSTO], 
+    [CENTRO_COSTO].[DESCRIPCION] AS [DESCRIPCION], 
+    [CENTRO_COSTO].[ACEPTA_DATOS] AS [ACEPTA_DATOS], 
+    [CENTRO_COSTO].[TIPO] AS [TIPO], 
+    [CENTRO_COSTO].[NoteExistsFlag] AS [NoteExistsFlag], 
+    [CENTRO_COSTO].[RecordDate] AS [RecordDate], 
+    [CENTRO_COSTO].[RowPointer] AS [RowPointer], 
+    [CENTRO_COSTO].[CreatedBy] AS [CreatedBy], 
+    [CENTRO_COSTO].[UpdatedBy] AS [UpdatedBy], 
+    [CENTRO_COSTO].[CreateDate] AS [CreateDate], 
+    [CENTRO_COSTO].[REPORTE_PRESUPUESTO] AS [REPORTE_PRESUPUESTO], 
+    [CENTRO_COSTO].[U_AGRUPACION_1] AS [U_AGRUPACION_1], 
+    [CENTRO_COSTO].[U_AGRUPACION_2] AS [U_AGRUPACION_2], 
+    [CENTRO_COSTO].[U_AGRUPACION_3] AS [U_AGRUPACION_3]
+    FROM [dbo].[CENTRO_COSTO] AS [CENTRO_COSTO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CUENTA_CONTABLE" EntityType="Self.CUENTA_CONTABLE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CUENTA_CONTABLE].[CUENTA_CONTABLE] AS [CUENTA_CONTABLE], 
+    [CUENTA_CONTABLE].[SECCION_CUENTA] AS [SECCION_CUENTA], 
+    [CUENTA_CONTABLE].[UNIDAD] AS [UNIDAD], 
+    [CUENTA_CONTABLE].[DESCRIPCION] AS [DESCRIPCION], 
+    [CUENTA_CONTABLE].[TIPO] AS [TIPO], 
+    [CUENTA_CONTABLE].[TIPO_DETALLADO] AS [TIPO_DETALLADO], 
+    [CUENTA_CONTABLE].[TIPO_OAF] AS [TIPO_OAF], 
+    [CUENTA_CONTABLE].[SALDO_NORMAL] AS [SALDO_NORMAL], 
+    [CUENTA_CONTABLE].[CONVERSION] AS [CONVERSION], 
+    [CUENTA_CONTABLE].[TIPO_CAMBIO] AS [TIPO_CAMBIO], 
+    [CUENTA_CONTABLE].[ACEPTA_DATOS] AS [ACEPTA_DATOS], 
+    [CUENTA_CONTABLE].[CONSOLIDA] AS [CONSOLIDA], 
+    [CUENTA_CONTABLE].[USA_CENTRO_COSTO] AS [USA_CENTRO_COSTO], 
+    [CUENTA_CONTABLE].[NOTAS] AS [NOTAS], 
+    [CUENTA_CONTABLE].[USUARIO] AS [USUARIO], 
+    [CUENTA_CONTABLE].[FECHA_HORA] AS [FECHA_HORA], 
+    [CUENTA_CONTABLE].[USUARIO_ULT_MOD] AS [USUARIO_ULT_MOD], 
+    [CUENTA_CONTABLE].[FCH_HORA_ULT_MOD] AS [FCH_HORA_ULT_MOD], 
+    [CUENTA_CONTABLE].[ACEPTA_UNIDADES] AS [ACEPTA_UNIDADES], 
+    [CUENTA_CONTABLE].[USO_RESTRINGIDO] AS [USO_RESTRINGIDO], 
+    [CUENTA_CONTABLE].[ORIGEN_CONVERSION] AS [ORIGEN_CONVERSION], 
+    [CUENTA_CONTABLE].[NoteExistsFlag] AS [NoteExistsFlag], 
+    [CUENTA_CONTABLE].[RecordDate] AS [RecordDate], 
+    [CUENTA_CONTABLE].[RowPointer] AS [RowPointer], 
+    [CUENTA_CONTABLE].[CreatedBy] AS [CreatedBy], 
+    [CUENTA_CONTABLE].[UpdatedBy] AS [UpdatedBy], 
+    [CUENTA_CONTABLE].[CreateDate] AS [CreateDate], 
+    [CUENTA_CONTABLE].[REPORTE_PRESUPUESTO_GRUPO_1] AS [REPORTE_PRESUPUESTO_GRUPO_1], 
+    [CUENTA_CONTABLE].[REPORTE_PRESUPUESTO_GRUPO_2] AS [REPORTE_PRESUPUESTO_GRUPO_2], 
+    [CUENTA_CONTABLE].[REPORTE_PRESUPUESTO_GRUPO_3] AS [REPORTE_PRESUPUESTO_GRUPO_3], 
+    [CUENTA_CONTABLE].[VALIDA_PRESUP_CR] AS [VALIDA_PRESUP_CR], 
+    [CUENTA_CONTABLE].[U_AGRUPACION_1] AS [U_AGRUPACION_1], 
+    [CUENTA_CONTABLE].[U_AGRUPACION_2] AS [U_AGRUPACION_2], 
+    [CUENTA_CONTABLE].[U_AGRUPACION_3] AS [U_AGRUPACION_3], 
+    [CUENTA_CONTABLE].[CUENTA_IFRS] AS [CUENTA_IFRS], 
+    [CUENTA_CONTABLE].[USA_CONTA_ELECTRO] AS [USA_CONTA_ELECTRO], 
+    [CUENTA_CONTABLE].[VERSION] AS [VERSION], 
+    [CUENTA_CONTABLE].[FECHA_INI_CE] AS [FECHA_INI_CE], 
+    [CUENTA_CONTABLE].[FECHA_FIN_CE] AS [FECHA_FIN_CE], 
+    [CUENTA_CONTABLE].[COD_AGRUPADOR] AS [COD_AGRUPADOR], 
+    [CUENTA_CONTABLE].[DESC_COD_AGRUP] AS [DESC_COD_AGRUP], 
+    [CUENTA_CONTABLE].[SUB_CTA_DE] AS [SUB_CTA_DE], 
+    [CUENTA_CONTABLE].[DESC_SUB_CTA] AS [DESC_SUB_CTA], 
+    [CUENTA_CONTABLE].[NIVEL] AS [NIVEL]
+    FROM [dbo].[CUENTA_CONTABLE] AS [CUENTA_CONTABLE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLCENTROCOSTO_bak" EntityType="Self.TBLCENTROCOSTO_bak" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLCENTROCOSTO_bak].[LNGIDCENTROCOSTO] AS [LNGIDCENTROCOSTO], 
+    [TBLCENTROCOSTO_bak].[STRCODIGO] AS [STRCODIGO], 
+    [TBLCENTROCOSTO_bak].[STRDESCRIPCION] AS [STRDESCRIPCION], 
+    [TBLCENTROCOSTO_bak].[STRACTIVO] AS [STRACTIVO], 
+    [TBLCENTROCOSTO_bak].[DTMFECHA] AS [DTMFECHA]
+    FROM [dbo].[TBLCENTROCOSTO_bak] AS [TBLCENTROCOSTO_bak]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLcuentacontable_bak" EntityType="Self.TBLcuentacontable_bak" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLcuentacontable_bak].[LNGIDCUENTACONTABLE] AS [LNGIDCUENTACONTABLE], 
+    [TBLcuentacontable_bak].[STRCUENTACONTABLE] AS [STRCUENTACONTABLE], 
+    [TBLcuentacontable_bak].[STRDESCRIPCIONCTB] AS [STRDESCRIPCIONCTB], 
+    [TBLcuentacontable_bak].[DTMFECHA] AS [DTMFECHA]
+    FROM [dbo].[TBLcuentacontable_bak] AS [TBLcuentacontable_bak]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLTIPOCAMBIO" EntityType="Self.TBLTIPOCAMBIO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLTIPOCAMBIO].[LNGIDTIPOCAMBIO] AS [LNGIDTIPOCAMBIO], 
+    [TBLTIPOCAMBIO].[LNGIDANNO] AS [LNGIDANNO], 
+    [TBLTIPOCAMBIO].[LNGIDMONEDA] AS [LNGIDMONEDA], 
+    [TBLTIPOCAMBIO].[LNGIDTIPOPRESUPUESTO] AS [LNGIDTIPOPRESUPUESTO], 
+    [TBLTIPOCAMBIO].[FLTENERO] AS [FLTENERO], 
+    [TBLTIPOCAMBIO].[FLTFEBRERO] AS [FLTFEBRERO], 
+    [TBLTIPOCAMBIO].[FLTMARZO] AS [FLTMARZO], 
+    [TBLTIPOCAMBIO].[FLTABRIL] AS [FLTABRIL], 
+    [TBLTIPOCAMBIO].[FLTMAYO] AS [FLTMAYO], 
+    [TBLTIPOCAMBIO].[FLTJUNIO] AS [FLTJUNIO], 
+    [TBLTIPOCAMBIO].[FLTJULIO] AS [FLTJULIO], 
+    [TBLTIPOCAMBIO].[FLTAGOSTO] AS [FLTAGOSTO], 
+    [TBLTIPOCAMBIO].[FLTSEPTIEMBRE] AS [FLTSEPTIEMBRE], 
+    [TBLTIPOCAMBIO].[FLTOCTUBRE] AS [FLTOCTUBRE], 
+    [TBLTIPOCAMBIO].[FLTNOVIEMBRE] AS [FLTNOVIEMBRE], 
+    [TBLTIPOCAMBIO].[FLTDICIEMBRE] AS [FLTDICIEMBRE], 
+    [TBLTIPOCAMBIO].[DTRFECHA] AS [DTRFECHA]
+    FROM [dbo].[TBLTIPOCAMBIO] AS [TBLTIPOCAMBIO]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__TBLMODULO__LNGID__4D94879B" Association="Self.FK__TBLMODULO__LNGID__4D94879B">
+      <End Role="TBLMODULO" EntitySet="TBLMODULO" />
+      <End Role="TBLMODULOITEM" EntitySet="TBLMODULOITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPERMIS__LNGID__52593CB8" Association="Self.FK__TBLPERMIS__LNGID__52593CB8">
+      <End Role="TBLMODULOITEM" EntitySet="TBLMODULOITEM" />
+      <End Role="TBLPERMISO" EntitySet="TBLPERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPERMIS__LNGID__534D60F1" Association="Self.FK__TBLPERMIS__LNGID__534D60F1">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPERMISO" EntitySet="TBLPERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0C50D423" Association="Self.FK__TBLPRESUP__LNGID__0C50D423">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0D44F85C" Association="Self.FK__TBLPRESUP__LNGID__0D44F85C">
+      <End Role="TBLCENTROCOSTO" EntitySet="TBLCENTROCOSTO" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0E391C95" Association="Self.FK__TBLPRESUP__LNGID__0E391C95">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__0F2D40CE" Association="Self.FK__TBLPRESUP__LNGID__0F2D40CE">
+      <End Role="TBLCUENTACONTABLE" EntitySet="TBLCUENTACONTABLE" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__10216507" Association="Self.FK__TBLPRESUP__LNGID__10216507">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__51300E55" Association="Self.FK__TBLPRESUP__LNGID__51300E55">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__5224328E" Association="Self.FK__TBLPRESUP__LNGID__5224328E">
+      <End Role="TBLCENTROCOSTO" EntitySet="TBLCENTROCOSTO" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__531856C7" Association="Self.FK__TBLPRESUP__LNGID__531856C7">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLPRESUP__LNGID__540C7B00" Association="Self.FK__TBLPRESUP__LNGID__540C7B00">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLTIPOCA__LNGID__5EBF139D" Association="Self.FK__TBLTIPOCA__LNGID__5EBF139D">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLTIPOCAMBIO" EntitySet="TBLTIPOCAMBIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBLTIPOCA__LNGID__5FB337D6" Association="Self.FK__TBLTIPOCA__LNGID__5FB337D6">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLTIPOCAMBIO" EntitySet="TBLTIPOCAMBIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLITEM" Association="Self.FK_TBLPERMISOSUBITEM_TBLITEM">
+      <End Role="TBLITEM" EntitySet="TBLITEM" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLMODULO" Association="Self.FK_TBLPERMISOSUBITEM_TBLMODULO">
+      <End Role="TBLMODULO" EntitySet="TBLMODULO" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO" Association="Self.FK_TBLPERMISOSUBITEM_TBLTIPOPERMISO">
+      <End Role="TBLTIPOPERMISO" EntitySet="TBLTIPOPERMISO" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERMISOSUBITEM_TBLUSUARIO" Association="Self.FK_TBLPERMISOSUBITEM_TBLUSUARIO">
+      <End Role="TBLUSUARIO" EntitySet="TBLUSUARIO" />
+      <End Role="TBLPERMISOSUBITEM" EntitySet="TBLPERMISOSUBITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION" Association="Self.FK_TBLPRESUPUESTO_PROYECCION_SALARIO_TBLTIPOLEGISLACION">
+      <End Role="TBLTIPOLEGISLACION" EntitySet="TBLTIPOLEGISLACION" />
+      <End Role="TBLPRESUPUESTO_PROYECCION_SALARIO" EntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE" Association="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLCUENTACONTABLE">
+      <End Role="TBLCUENTACONTABLE" EntitySet="TBLCUENTACONTABLE" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION" Association="Self.FK_TBLPRESUPUESTOPROYECCIONINGRESO_TBLTIPOPROYECCION">
+      <End Role="TBLTIPOPROYECCION" EntitySet="TBLTIPOPROYECCION" />
+      <End Role="TBLPRESUPUESTOPROYECCIONINGRESO" EntitySet="TBLPRESUPUESTOPROYECCIONINGRESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO" Association="Self.FK_TBLPROYECCION_GASTO_TBLCENTROCOSTO">
+      <End Role="TBLCENTROCOSTO" EntitySet="TBLCENTROCOSTO" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE" Association="Self.FK_TBLPROYECCION_GASTO_TBLCUENTACONTABLE">
+      <End Role="TBLCUENTACONTABLE" EntitySet="TBLCUENTACONTABLE" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLMONEDA" Association="Self.FK_TBLPROYECCION_GASTO_TBLMONEDA">
+      <End Role="TBLMONEDA" EntitySet="TBLMONEDA" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO" Association="Self.FK_TBLPROYECCION_GASTO_TBLTIPOPRESUPUESTO">
+      <End Role="TBLTIPOPRESUPUESTO" EntitySet="TBLTIPOPRESUPUESTO" />
+      <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
