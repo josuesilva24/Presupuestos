@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PRESUPUESTOModelStoreContainer" CdmEntityContainer="PRESUPUESTOEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ANNO_MODULO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBL_ANNO_MODULO">
+        <MappingFragment StoreEntitySet="TBL_ANNO_MODULO">
+          <ScalarProperty Name="LNGIDTRANSACCION" ColumnName="LNGIDTRANSACCION" />
+          <ScalarProperty Name="STRTABLA" ColumnName="STRTABLA" />
+          <ScalarProperty Name="STRANNO" ColumnName="STRANNO" />
+          <ScalarProperty Name="STRID" ColumnName="STRID" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+          <ScalarProperty Name="INTVALOR" ColumnName="INTVALOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLANNO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLANNO">
+        <MappingFragment StoreEntitySet="TBLANNO">
+          <ScalarProperty Name="LNGIDANNO" ColumnName="LNGIDANNO" />
+          <ScalarProperty Name="STRACIERRE" ColumnName="STRACIERRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCARGASSOCIALES">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLCARGASSOCIALES">
+        <MappingFragment StoreEntitySet="TBLCARGASSOCIALES">
+          <ScalarProperty Name="LNGIDCAGASOCIAL" ColumnName="LNGIDCAGASOCIAL" />
+          <ScalarProperty Name="STRCUENTACONTABLE" ColumnName="STRCUENTACONTABLE" />
+          <ScalarProperty Name="STRDESCRIPCIONCARGASOC" ColumnName="STRDESCRIPCIONCARGASOC" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+          <ScalarProperty Name="FLTPORCENTAJE" ColumnName="FLTPORCENTAJE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCENTROCOSTO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLCENTROCOSTO">
+        <MappingFragment StoreEntitySet="TBLCENTROCOSTO">
+          <ScalarProperty Name="LNGIDCENTROCOSTO" ColumnName="LNGIDCENTROCOSTO" />
+          <ScalarProperty Name="STRCODIGO" ColumnName="STRCODIGO" />
+          <ScalarProperty Name="STRDESCRIPCION" ColumnName="STRDESCRIPCION" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCONFIGURACION">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLCONFIGURACION">
+        <MappingFragment StoreEntitySet="TBLCONFIGURACION">
+          <ScalarProperty Name="STRCONFIGURACION" ColumnName="STRCONFIGURACION" />
+          <ScalarProperty Name="STRVALOR" ColumnName="STRVALOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCUENTACONTABLE">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLCUENTACONTABLE">
+        <MappingFragment StoreEntitySet="TBLCUENTACONTABLE">
+          <ScalarProperty Name="LNGIDCUENTACONTABLE" ColumnName="LNGIDCUENTACONTABLE" />
+          <ScalarProperty Name="STRCUENTACONTABLE" ColumnName="STRCUENTACONTABLE" />
+          <ScalarProperty Name="STRDESCRIPCIONCTB" ColumnName="STRDESCRIPCIONCTB" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLEMPLEADO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLEMPLEADO">
+        <MappingFragment StoreEntitySet="TBLEMPLEADO">
+          <ScalarProperty Name="LNGIDEMPLEADO" ColumnName="LNGIDEMPLEADO" />
+          <ScalarProperty Name="STREMPLEADO" ColumnName="STREMPLEADO" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+          <ScalarProperty Name="STRPUESTO" ColumnName="STRPUESTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLINFLACION">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLINFLACION">
+        <MappingFragment StoreEntitySet="TBLINFLACION">
+          <ScalarProperty Name="LNGIDINFLACION" ColumnName="LNGIDINFLACION" />
+          <ScalarProperty Name="STRAÑO" ColumnName="STRAÑO" />
+          <ScalarProperty Name="STRSEMSTRE_1" ColumnName="STRSEMSTRE_1" />
+          <ScalarProperty Name="STRSEMSTRE_2" ColumnName="STRSEMSTRE_2" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLITEM">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLITEM">
+        <MappingFragment StoreEntitySet="TBLITEM">
+          <ScalarProperty Name="LNGIDITEM" ColumnName="LNGIDITEM" />
+          <ScalarProperty Name="STRITEM" ColumnName="STRITEM" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLMODULO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLMODULO">
+        <MappingFragment StoreEntitySet="TBLMODULO">
+          <ScalarProperty Name="LNGIDMODULO" ColumnName="LNGIDMODULO" />
+          <ScalarProperty Name="STRMODULO" ColumnName="STRMODULO" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLMODULOITEM">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLMODULOITEM">
+        <MappingFragment StoreEntitySet="TBLMODULOITEM">
+          <ScalarProperty Name="LNGIDMODULOITEM" ColumnName="LNGIDMODULOITEM" />
+          <ScalarProperty Name="LNGIDMODULO" ColumnName="LNGIDMODULO" />
+          <ScalarProperty Name="LNGIDITEM" ColumnName="LNGIDITEM" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLMONEDA">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLMONEDA">
+        <MappingFragment StoreEntitySet="TBLMONEDA">
+          <ScalarProperty Name="LNGIDMONEDA" ColumnName="LNGIDMONEDA" />
+          <ScalarProperty Name="STRCODIGO" ColumnName="STRCODIGO" />
+          <ScalarProperty Name="STRDESCRIPCION" ColumnName="STRDESCRIPCION" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+          <ScalarProperty Name="STRDEFAULT" ColumnName="STRDEFAULT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPERFIL">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPERFIL">
+        <MappingFragment StoreEntitySet="TBLPERFIL">
+          <ScalarProperty Name="LNGIDPERFIL" ColumnName="LNGIDPERFIL" />
+          <ScalarProperty Name="STRPERFIL" ColumnName="STRPERFIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPERMISO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPERMISO">
+        <MappingFragment StoreEntitySet="TBLPERMISO">
+          <ScalarProperty Name="LNGIDPERMISO" ColumnName="LNGIDPERMISO" />
+          <ScalarProperty Name="LNGIDMODULOITEM" ColumnName="LNGIDMODULOITEM" />
+          <ScalarProperty Name="LNGIDUSUARIO" ColumnName="LNGIDUSUARIO" />
+          <ScalarProperty Name="STREDITAR" ColumnName="STREDITAR" />
+          <ScalarProperty Name="STRCONSULTAR" ColumnName="STRCONSULTAR" />
+          <ScalarProperty Name="STRADICIONAR" ColumnName="STRADICIONAR" />
+          <ScalarProperty Name="STRELIMINAR" ColumnName="STRELIMINAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPERMISOSUBITEM">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPERMISOSUBITEM">
+        <MappingFragment StoreEntitySet="TBLPERMISOSUBITEM">
+          <ScalarProperty Name="LNGIDPERMISOSUBITEM" ColumnName="LNGIDPERMISOSUBITEM" />
+          <ScalarProperty Name="LNGIDUSUARIO" ColumnName="LNGIDUSUARIO" />
+          <ScalarProperty Name="LNGIDMODULO" ColumnName="LNGIDMODULO" />
+          <ScalarProperty Name="LNGIDITEM" ColumnName="LNGIDITEM" />
+          <ScalarProperty Name="LNGIDSUBITEM" ColumnName="LNGIDSUBITEM" />
+          <ScalarProperty Name="STREDITAR" ColumnName="STREDITAR" />
+          <ScalarProperty Name="STRCONSULTAR" ColumnName="STRCONSULTAR" />
+          <ScalarProperty Name="STRADICIONAR" ColumnName="STRADICIONAR" />
+          <ScalarProperty Name="STRELIMINAR" ColumnName="STRELIMINAR" />
+          <ScalarProperty Name="INTIDTIPOPERMISO" ColumnName="INTIDTIPOPERMISO" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPRESUPUESTO_PROYECCION_SALARIO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPRESUPUESTO_PROYECCION_SALARIO">
+        <MappingFragment StoreEntitySet="TBLPRESUPUESTO_PROYECCION_SALARIO">
+          <ScalarProperty Name="LNGIDTRANSACCION" ColumnName="LNGIDTRANSACCION" />
+          <ScalarProperty Name="LNGIDUSUARIO" ColumnName="LNGIDUSUARIO" />
+          <ScalarProperty Name="LNGIDCENTROCOSTO" ColumnName="LNGIDCENTROCOSTO" />
+          <ScalarProperty Name="LNGIDMONEDA" ColumnName="LNGIDMONEDA" />
+          <ScalarProperty Name="LNGIDCUENTACONTABLE" ColumnName="LNGIDCUENTACONTABLE" />
+          <ScalarProperty Name="LNGIDTIPOPRESUPUESTO" ColumnName="LNGIDTIPOPRESUPUESTO" />
+          <ScalarProperty Name="LNGIDFUNCIONARIO" ColumnName="LNGIDFUNCIONARIO" />
+          <ScalarProperty Name="STRPUESTO" ColumnName="STRPUESTO" />
+          <ScalarProperty Name="FLTENERO" ColumnName="FLTENERO" />
+          <ScalarProperty Name="FLTFEBRERO" ColumnName="FLTFEBRERO" />
+          <ScalarProperty Name="FLTMARZO" ColumnName="FLTMARZO" />
+          <ScalarProperty Name="FLTABRIL" ColumnName="FLTABRIL" />
+          <ScalarProperty Name="FLTMAYO" ColumnName="FLTMAYO" />
+          <ScalarProperty Name="FLTJUNIO" ColumnName="FLTJUNIO" />
+          <ScalarProperty Name="FLTJULIO" ColumnName="FLTJULIO" />
+          <ScalarProperty Name="FLTAGOSTO" ColumnName="FLTAGOSTO" />
+          <ScalarProperty Name="FLTSEPTIEMBRE" ColumnName="FLTSEPTIEMBRE" />
+          <ScalarProperty Name="FLTOCTUBRE" ColumnName="FLTOCTUBRE" />
+          <ScalarProperty Name="FLTNOVIEMBRE" ColumnName="FLTNOVIEMBRE" />
+          <ScalarProperty Name="FLTDICIEMBRE" ColumnName="FLTDICIEMBRE" />
+          <ScalarProperty Name="LNGIDTIPOLEGISLACION" ColumnName="LNGIDTIPOLEGISLACION" />
+          <ScalarProperty Name="STRSEMSTRE_1" ColumnName="STRSEMSTRE_1" />
+          <ScalarProperty Name="STRSEMSTRE_2" ColumnName="STRSEMSTRE_2" />
+          <ScalarProperty Name="DTRFECHA" ColumnName="DTRFECHA" />
+          <ScalarProperty Name="LNGIDCARGASOCIAL" ColumnName="LNGIDCARGASOCIAL" />
+          <ScalarProperty Name="STRMONTO_COLONES" ColumnName="STRMONTO_COLONES" />
+          <ScalarProperty Name="STRMONTO_DOLARES" ColumnName="STRMONTO_DOLARES" />
+          <ScalarProperty Name="STRESTADOPORC1" ColumnName="STRESTADOPORC1" />
+          <ScalarProperty Name="STRESTADOPORC2" ColumnName="STRESTADOPORC2" />
+          <ScalarProperty Name="STRANNO" ColumnName="STRANNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPRESUPUESTOPROYECCIONINGRESO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPRESUPUESTOPROYECCIONINGRESO">
+        <MappingFragment StoreEntitySet="TBLPRESUPUESTOPROYECCIONINGRESO">
+          <ScalarProperty Name="LNGIDTRANSACCIONING" ColumnName="LNGIDTRANSACCIONING" />
+          <ScalarProperty Name="LNGIDTIPOPRESUPUESTO" ColumnName="LNGIDTIPOPRESUPUESTO" />
+          <ScalarProperty Name="LNGIDTIPOINGRESO" ColumnName="LNGIDTIPOINGRESO" />
+          <ScalarProperty Name="LNGIDCENTROCOSTO" ColumnName="LNGIDCENTROCOSTO" />
+          <ScalarProperty Name="LNGIDMONEDA" ColumnName="LNGIDMONEDA" />
+          <ScalarProperty Name="LNGIDCUETACONTABLE" ColumnName="LNGIDCUETACONTABLE" />
+          <ScalarProperty Name="STRENERO" ColumnName="STRENERO" />
+          <ScalarProperty Name="STRFEBRERO" ColumnName="STRFEBRERO" />
+          <ScalarProperty Name="STRMARZO" ColumnName="STRMARZO" />
+          <ScalarProperty Name="STRABRIL" ColumnName="STRABRIL" />
+          <ScalarProperty Name="STRMAYO" ColumnName="STRMAYO" />
+          <ScalarProperty Name="STRJUNIO" ColumnName="STRJUNIO" />
+          <ScalarProperty Name="STRJULIO" ColumnName="STRJULIO" />
+          <ScalarProperty Name="STRAGOSTO" ColumnName="STRAGOSTO" />
+          <ScalarProperty Name="STRSEPTIEMBRE" ColumnName="STRSEPTIEMBRE" />
+          <ScalarProperty Name="STROCTUBRE" ColumnName="STROCTUBRE" />
+          <ScalarProperty Name="STRNOVIEMBRE" ColumnName="STRNOVIEMBRE" />
+          <ScalarProperty Name="STRDICIEMBRE" ColumnName="STRDICIEMBRE" />
+          <ScalarProperty Name="STRDETALLE" ColumnName="STRDETALLE" />
+          <ScalarProperty Name="LNGIDTIPOPROYECCION" ColumnName="LNGIDTIPOPROYECCION" />
+          <ScalarProperty Name="STRMONTO" ColumnName="STRMONTO" />
+          <ScalarProperty Name="STRESTADO" ColumnName="STRESTADO" />
+          <ScalarProperty Name="LNGIDUSUARIO" ColumnName="LNGIDUSUARIO" />
+          <ScalarProperty Name="DTRFECHA" ColumnName="DTRFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPROYECCION_GASTO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPROYECCION_GASTO">
+        <MappingFragment StoreEntitySet="TBLPROYECCION_GASTO">
+          <ScalarProperty Name="LNGIDPROYECCIONGASTO" ColumnName="LNGIDPROYECCIONGASTO" />
+          <ScalarProperty Name="LNGIDCUENTACONTABLE" ColumnName="LNGIDCUENTACONTABLE" />
+          <ScalarProperty Name="LNGIDCENTROCOSTO" ColumnName="LNGIDCENTROCOSTO" />
+          <ScalarProperty Name="LNGIDMONEDA" ColumnName="LNGIDMONEDA" />
+          <ScalarProperty Name="STRENERO" ColumnName="STRENERO" />
+          <ScalarProperty Name="STRFEBRERO" ColumnName="STRFEBRERO" />
+          <ScalarProperty Name="STRMARZO" ColumnName="STRMARZO" />
+          <ScalarProperty Name="STRABRIL" ColumnName="STRABRIL" />
+          <ScalarProperty Name="STRMAYO" ColumnName="STRMAYO" />
+          <ScalarProperty Name="STRJUNIO" ColumnName="STRJUNIO" />
+          <ScalarProperty Name="STRJULIO" ColumnName="STRJULIO" />
+          <ScalarProperty Name="STRAGOSTO" ColumnName="STRAGOSTO" />
+          <ScalarProperty Name="STRSEPTIEMBRE" ColumnName="STRSEPTIEMBRE" />
+          <ScalarProperty Name="STROCTUBRE" ColumnName="STROCTUBRE" />
+          <ScalarProperty Name="STRNOVIEMBRE" ColumnName="STRNOVIEMBRE" />
+          <ScalarProperty Name="STRDICIEMBRE" ColumnName="STRDICIEMBRE" />
+          <ScalarProperty Name="DTRFECHA" ColumnName="DTRFECHA" />
+          <ScalarProperty Name="STRMONTO_COLONES" ColumnName="STRMONTO_COLONES" />
+          <ScalarProperty Name="STRMONTO_DOLARES" ColumnName="STRMONTO_DOLARES" />
+          <ScalarProperty Name="STRPRESUPUESTO" ColumnName="STRPRESUPUESTO" />
+          <ScalarProperty Name="LNGIDTIPOPRESUPUESTO" ColumnName="LNGIDTIPOPRESUPUESTO" />
+          <ScalarProperty Name="STRDETALLE" ColumnName="STRDETALLE" />
+          <ScalarProperty Name="LNGIDPROYECTO" ColumnName="LNGIDPROYECTO" />
+          <ScalarProperty Name="LNGIDUSUARIO" ColumnName="LNGIDUSUARIO" />
+          <ScalarProperty Name="LNGIDTIPOPROYECCION" ColumnName="LNGIDTIPOPROYECCION" />
+          <ScalarProperty Name="LNGIDTIPOGASTO" ColumnName="LNGIDTIPOGASTO" />
+          <ScalarProperty Name="STRANNO" ColumnName="STRANNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPROYECTO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLPROYECTO">
+        <MappingFragment StoreEntitySet="TBLPROYECTO">
+          <ScalarProperty Name="LNGIDPROYECTO" ColumnName="LNGIDPROYECTO" />
+          <ScalarProperty Name="STRCODIGO" ColumnName="STRCODIGO" />
+          <ScalarProperty Name="STRDESCRIPCION" ColumnName="STRDESCRIPCION" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOGASTO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOGASTO">
+        <MappingFragment StoreEntitySet="TBLTIPOGASTO">
+          <ScalarProperty Name="LNGIDTIPOGASTO" ColumnName="LNGIDTIPOGASTO" />
+          <ScalarProperty Name="STRTIPOGASTO" ColumnName="STRTIPOGASTO" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOINGRESO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOINGRESO">
+        <MappingFragment StoreEntitySet="TBLTIPOINGRESO">
+          <ScalarProperty Name="LNGIDTIPOINGRESO" ColumnName="LNGIDTIPOINGRESO" />
+          <ScalarProperty Name="STRTIPOINGRESO" ColumnName="STRTIPOINGRESO" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOLEGISLACION">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOLEGISLACION">
+        <MappingFragment StoreEntitySet="TBLTIPOLEGISLACION">
+          <ScalarProperty Name="LNGIDTIPOLEGISLACION" ColumnName="LNGIDTIPOLEGISLACION" />
+          <ScalarProperty Name="STRTIPOLEGISLACION" ColumnName="STRTIPOLEGISLACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOPERMISO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOPERMISO">
+        <MappingFragment StoreEntitySet="TBLTIPOPERMISO">
+          <ScalarProperty Name="LNGIDTIPOPERMISO" ColumnName="LNGIDTIPOPERMISO" />
+          <ScalarProperty Name="STRTIPOPERMISO" ColumnName="STRTIPOPERMISO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOPRESUPUESTO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOPRESUPUESTO">
+        <MappingFragment StoreEntitySet="TBLTIPOPRESUPUESTO">
+          <ScalarProperty Name="LNGIDTIPOPRESUPUESTO" ColumnName="LNGIDTIPOPRESUPUESTO" />
+          <ScalarProperty Name="STRTIPOPRESUPUESTO" ColumnName="STRTIPOPRESUPUESTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOPROYECCION">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOPROYECCION">
+        <MappingFragment StoreEntitySet="TBLTIPOPROYECCION">
+          <ScalarProperty Name="LNGIDTIPOPROYECCION" ColumnName="LNGIDTIPOPROYECCION" />
+          <ScalarProperty Name="STRTIPOPROYECCION" ColumnName="STRTIPOPROYECCION" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLUSUARIO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLUSUARIO">
+        <MappingFragment StoreEntitySet="TBLUSUARIO">
+          <ScalarProperty Name="LNGIDUSUARIO" ColumnName="LNGIDUSUARIO" />
+          <ScalarProperty Name="LNGIDPERFIL" ColumnName="LNGIDPERFIL" />
+          <ScalarProperty Name="STRUSUARIO" ColumnName="STRUSUARIO" />
+          <ScalarProperty Name="STRNOMBRE" ColumnName="STRNOMBRE" />
+          <ScalarProperty Name="STRDOMINIO" ColumnName="STRDOMINIO" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CENTRO_COSTO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.CENTRO_COSTO">
+        <MappingFragment StoreEntitySet="CENTRO_COSTO">
+          <ScalarProperty Name="CENTRO_COSTO1" ColumnName="CENTRO_COSTO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ACEPTA_DATOS" ColumnName="ACEPTA_DATOS" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="NoteExistsFlag" ColumnName="NoteExistsFlag" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="RowPointer" ColumnName="RowPointer" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="REPORTE_PRESUPUESTO" ColumnName="REPORTE_PRESUPUESTO" />
+          <ScalarProperty Name="U_AGRUPACION_1" ColumnName="U_AGRUPACION_1" />
+          <ScalarProperty Name="U_AGRUPACION_2" ColumnName="U_AGRUPACION_2" />
+          <ScalarProperty Name="U_AGRUPACION_3" ColumnName="U_AGRUPACION_3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUENTA_CONTABLE">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.CUENTA_CONTABLE">
+        <MappingFragment StoreEntitySet="CUENTA_CONTABLE">
+          <ScalarProperty Name="CUENTA_CONTABLE1" ColumnName="CUENTA_CONTABLE" />
+          <ScalarProperty Name="SECCION_CUENTA" ColumnName="SECCION_CUENTA" />
+          <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="TIPO_DETALLADO" ColumnName="TIPO_DETALLADO" />
+          <ScalarProperty Name="TIPO_OAF" ColumnName="TIPO_OAF" />
+          <ScalarProperty Name="SALDO_NORMAL" ColumnName="SALDO_NORMAL" />
+          <ScalarProperty Name="CONVERSION" ColumnName="CONVERSION" />
+          <ScalarProperty Name="TIPO_CAMBIO" ColumnName="TIPO_CAMBIO" />
+          <ScalarProperty Name="ACEPTA_DATOS" ColumnName="ACEPTA_DATOS" />
+          <ScalarProperty Name="CONSOLIDA" ColumnName="CONSOLIDA" />
+          <ScalarProperty Name="USA_CENTRO_COSTO" ColumnName="USA_CENTRO_COSTO" />
+          <ScalarProperty Name="NOTAS" ColumnName="NOTAS" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="FECHA_HORA" ColumnName="FECHA_HORA" />
+          <ScalarProperty Name="USUARIO_ULT_MOD" ColumnName="USUARIO_ULT_MOD" />
+          <ScalarProperty Name="FCH_HORA_ULT_MOD" ColumnName="FCH_HORA_ULT_MOD" />
+          <ScalarProperty Name="ACEPTA_UNIDADES" ColumnName="ACEPTA_UNIDADES" />
+          <ScalarProperty Name="USO_RESTRINGIDO" ColumnName="USO_RESTRINGIDO" />
+          <ScalarProperty Name="ORIGEN_CONVERSION" ColumnName="ORIGEN_CONVERSION" />
+          <ScalarProperty Name="NoteExistsFlag" ColumnName="NoteExistsFlag" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="RowPointer" ColumnName="RowPointer" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="REPORTE_PRESUPUESTO_GRUPO_1" ColumnName="REPORTE_PRESUPUESTO_GRUPO_1" />
+          <ScalarProperty Name="REPORTE_PRESUPUESTO_GRUPO_2" ColumnName="REPORTE_PRESUPUESTO_GRUPO_2" />
+          <ScalarProperty Name="REPORTE_PRESUPUESTO_GRUPO_3" ColumnName="REPORTE_PRESUPUESTO_GRUPO_3" />
+          <ScalarProperty Name="VALIDA_PRESUP_CR" ColumnName="VALIDA_PRESUP_CR" />
+          <ScalarProperty Name="U_AGRUPACION_1" ColumnName="U_AGRUPACION_1" />
+          <ScalarProperty Name="U_AGRUPACION_2" ColumnName="U_AGRUPACION_2" />
+          <ScalarProperty Name="U_AGRUPACION_3" ColumnName="U_AGRUPACION_3" />
+          <ScalarProperty Name="CUENTA_IFRS" ColumnName="CUENTA_IFRS" />
+          <ScalarProperty Name="USA_CONTA_ELECTRO" ColumnName="USA_CONTA_ELECTRO" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="FECHA_INI_CE" ColumnName="FECHA_INI_CE" />
+          <ScalarProperty Name="FECHA_FIN_CE" ColumnName="FECHA_FIN_CE" />
+          <ScalarProperty Name="COD_AGRUPADOR" ColumnName="COD_AGRUPADOR" />
+          <ScalarProperty Name="DESC_COD_AGRUP" ColumnName="DESC_COD_AGRUP" />
+          <ScalarProperty Name="SUB_CTA_DE" ColumnName="SUB_CTA_DE" />
+          <ScalarProperty Name="DESC_SUB_CTA" ColumnName="DESC_SUB_CTA" />
+          <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCENTROCOSTO_bak">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLCENTROCOSTO_bak">
+        <MappingFragment StoreEntitySet="TBLCENTROCOSTO_bak">
+          <ScalarProperty Name="LNGIDCENTROCOSTO" ColumnName="LNGIDCENTROCOSTO" />
+          <ScalarProperty Name="STRCODIGO" ColumnName="STRCODIGO" />
+          <ScalarProperty Name="STRDESCRIPCION" ColumnName="STRDESCRIPCION" />
+          <ScalarProperty Name="STRACTIVO" ColumnName="STRACTIVO" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLcuentacontable_bak">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLcuentacontable_bak">
+        <MappingFragment StoreEntitySet="TBLcuentacontable_bak">
+          <ScalarProperty Name="LNGIDCUENTACONTABLE" ColumnName="LNGIDCUENTACONTABLE" />
+          <ScalarProperty Name="STRCUENTACONTABLE" ColumnName="STRCUENTACONTABLE" />
+          <ScalarProperty Name="STRDESCRIPCIONCTB" ColumnName="STRDESCRIPCIONCTB" />
+          <ScalarProperty Name="DTMFECHA" ColumnName="DTMFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLTIPOCAMBIO">
+      <EntityTypeMapping TypeName="PRESUPUESTOModel.TBLTIPOCAMBIO">
+        <MappingFragment StoreEntitySet="TBLTIPOCAMBIO">
+          <ScalarProperty Name="LNGIDTIPOCAMBIO" ColumnName="LNGIDTIPOCAMBIO" />
+          <ScalarProperty Name="LNGIDANNO" ColumnName="LNGIDANNO" />
+          <ScalarProperty Name="LNGIDMONEDA" ColumnName="LNGIDMONEDA" />
+          <ScalarProperty Name="LNGIDTIPOPRESUPUESTO" ColumnName="LNGIDTIPOPRESUPUESTO" />
+          <ScalarProperty Name="FLTENERO" ColumnName="FLTENERO" />
+          <ScalarProperty Name="FLTFEBRERO" ColumnName="FLTFEBRERO" />
+          <ScalarProperty Name="FLTMARZO" ColumnName="FLTMARZO" />
+          <ScalarProperty Name="FLTABRIL" ColumnName="FLTABRIL" />
+          <ScalarProperty Name="FLTMAYO" ColumnName="FLTMAYO" />
+          <ScalarProperty Name="FLTJUNIO" ColumnName="FLTJUNIO" />
+          <ScalarProperty Name="FLTJULIO" ColumnName="FLTJULIO" />
+          <ScalarProperty Name="FLTAGOSTO" ColumnName="FLTAGOSTO" />
+          <ScalarProperty Name="FLTSEPTIEMBRE" ColumnName="FLTSEPTIEMBRE" />
+          <ScalarProperty Name="FLTOCTUBRE" ColumnName="FLTOCTUBRE" />
+          <ScalarProperty Name="FLTNOVIEMBRE" ColumnName="FLTNOVIEMBRE" />
+          <ScalarProperty Name="FLTDICIEMBRE" ColumnName="FLTDICIEMBRE" />
+          <ScalarProperty Name="DTRFECHA" ColumnName="DTRFECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
