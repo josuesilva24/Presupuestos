@@ -17,6 +17,10 @@ namespace WS_PresupuestoSis
         {
             return new CatalogosProcces().GetCentrosCosto();
         }
+        public bool updaCentrsCosto(int id, string estado)
+        {
+            return new CatalogosProcces().UpdateCentrocosto(id, estado);
+        }
 
         public string GetData(int value)
         {
