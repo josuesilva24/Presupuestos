@@ -11,8 +11,7 @@ namespace Presupuesto.Controllers
     {
         public ActionResult Index()
         {
-            CentroCostos ct = new CentroCostos();
-              ct.getCentroCostos();
+            
             return View();
         }
 

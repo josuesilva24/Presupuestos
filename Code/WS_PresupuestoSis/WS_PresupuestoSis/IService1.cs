@@ -25,6 +25,8 @@ namespace WS_PresupuestoSis
 
         [OperationContract]
         List<CentroCostosMap> updateCentroCosto();
+
+
     }
  
 

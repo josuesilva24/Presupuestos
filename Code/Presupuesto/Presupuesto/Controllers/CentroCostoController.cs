@@ -24,7 +24,7 @@ namespace Presupuesto.Controllers
         
         JsonResult updateCentroCosto()
         {
-            return new JsonResult() { Data = Channel.u(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = "", JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
 
