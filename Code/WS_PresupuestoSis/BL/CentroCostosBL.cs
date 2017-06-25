@@ -1,26 +1,23 @@
-﻿using LD;
+﻿using System;
+using LD;
 using System.Collections.Generic;
 using ModelMap;
-using System.Linq;
 
 namespace BL
 {
     public class CentroCostosBL:BaseModel
     {
 
-        public CentroCostosLD _CentroCostos
-        {
-            get
-            {
-                return new CentroCostosLD();
-            }
-        }
+#region Dependencias
+        readonly Lazy<CentroCostosLD> _centroCostosLd = new Lazy<CentroCostosLD>(() => new CentroCostosLD());
+        CentroCostosLD CentroCostosLd { get { return _centroCostosLd.Value; } }
+#endregion
+        
 
-
-        public List<CentroCostosMap> getCentroCostos()
+        public List<CentroCostosMap> GetCentroCostos()
         {
             var ListaCentroCostos = new List<CentroCostosMap>();
-            foreach (var item in _CentroCostos.getCentrosCosto().ToList())
+            foreach (var item in CentroCostosLd.getCentrosCosto().ToList())
             {
                 ListaCentroCostos.Add
                     (

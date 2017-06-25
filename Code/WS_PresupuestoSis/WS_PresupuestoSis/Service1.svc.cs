@@ -15,7 +15,7 @@ namespace WS_PresupuestoSis
     {
         public List<CentroCostosMap> getCentrosCosto()
         {
-            return new CatalogosProcces().getCentrosCosto();
+            return new CatalogosProcces().GetCentrosCosto();
         }
 
         public string GetData(int value)
