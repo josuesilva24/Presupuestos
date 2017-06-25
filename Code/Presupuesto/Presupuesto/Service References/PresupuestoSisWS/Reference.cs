@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Presupuesto.Presupuesto_WS {
+namespace Presupuesto.PresupuestoSisWS {
     using System.Runtime.Serialization;
     using System;
     
@@ -84,7 +84,16 @@ namespace Presupuesto.Presupuesto_WS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -93,6 +102,19 @@ namespace Presupuesto.Presupuesto_WS {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codigo {
+            get {
+                return this.CodigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoField, value) != true)) {
+                    this.CodigoField = value;
+                    this.RaisePropertyChanged("Codigo");
+                }
             }
         }
         
@@ -109,6 +131,32 @@ namespace Presupuesto.Presupuesto_WS {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -120,7 +168,7 @@ namespace Presupuesto.Presupuesto_WS {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Presupuesto_WS.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PresupuestoSisWS.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -130,25 +178,25 @@ namespace Presupuesto.Presupuesto_WS {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        Presupuesto.Presupuesto_WS.CompositeType GetDataUsingDataContract(Presupuesto.Presupuesto_WS.CompositeType composite);
+        Presupuesto.PresupuestoSisWS.CompositeType GetDataUsingDataContract(Presupuesto.PresupuestoSisWS.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<Presupuesto.Presupuesto_WS.CompositeType> GetDataUsingDataContractAsync(Presupuesto.Presupuesto_WS.CompositeType composite);
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CompositeType> GetDataUsingDataContractAsync(Presupuesto.PresupuestoSisWS.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCentrosCosto", ReplyAction="http://tempuri.org/IService1/getCentrosCostoResponse")]
-        Presupuesto.Presupuesto_WS.CentroCostosMap[] getCentrosCosto();
+        Presupuesto.PresupuestoSisWS.CentroCostosMap[] getCentrosCosto();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCentrosCosto", ReplyAction="http://tempuri.org/IService1/getCentrosCostoResponse")]
-        System.Threading.Tasks.Task<Presupuesto.Presupuesto_WS.CentroCostosMap[]> getCentrosCostoAsync();
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CentroCostosMap[]> getCentrosCostoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Presupuesto.Presupuesto_WS.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : Presupuesto.PresupuestoSisWS.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Presupuesto.Presupuesto_WS.IService1>, Presupuesto.Presupuesto_WS.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<Presupuesto.PresupuestoSisWS.IService1>, Presupuesto.PresupuestoSisWS.IService1 {
         
         public Service1Client() {
         }
@@ -177,19 +225,19 @@ namespace Presupuesto.Presupuesto_WS {
             return base.Channel.GetDataAsync(value);
         }
         
-        public Presupuesto.Presupuesto_WS.CompositeType GetDataUsingDataContract(Presupuesto.Presupuesto_WS.CompositeType composite) {
+        public Presupuesto.PresupuestoSisWS.CompositeType GetDataUsingDataContract(Presupuesto.PresupuestoSisWS.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<Presupuesto.Presupuesto_WS.CompositeType> GetDataUsingDataContractAsync(Presupuesto.Presupuesto_WS.CompositeType composite) {
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CompositeType> GetDataUsingDataContractAsync(Presupuesto.PresupuestoSisWS.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public Presupuesto.Presupuesto_WS.CentroCostosMap[] getCentrosCosto() {
+        public Presupuesto.PresupuestoSisWS.CentroCostosMap[] getCentrosCosto() {
             return base.Channel.getCentrosCosto();
         }
         
-        public System.Threading.Tasks.Task<Presupuesto.Presupuesto_WS.CentroCostosMap[]> getCentrosCostoAsync() {
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CentroCostosMap[]> getCentrosCostoAsync() {
             return base.Channel.getCentrosCostoAsync();
         }
     }

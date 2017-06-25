@@ -7,10 +7,28 @@ namespace LD
 {
     public  class CentroCostosLD:BaseModel
     {
-        public IQueryable<CENTRO_COSTO> getCentrosCosto()
+        public IQueryable<TBLCENTROCOSTO> getCentrosCosto()
         {
-            var a= Model.CENTRO_COSTO;
-            return a;
+            return Model.TBLCENTROCOSTO;
+        }
+
+        public IQueryable<TBLCENTROCOSTO> getCentrosCostoPorId(int id)
+        {
+            return  Model.TBLCENTROCOSTO.Where(e => e.LNGIDCENTROCOSTO == id);
+        }
+        public bool updateCentroCosto(int id, string estado)
+        {
+
+            var CC = getCentrosCostoPorId(id).FirstOrDefault();
+
+            if (CC != null)
+            {
+                CC.STRACTIVO = estado;
+                Model.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
     }
 }

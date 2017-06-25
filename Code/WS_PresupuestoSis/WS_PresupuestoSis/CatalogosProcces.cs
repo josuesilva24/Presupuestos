@@ -14,7 +14,13 @@ namespace WS_PresupuestoSis
 
         public List<CentroCostosMap> GetCentrosCosto()
         {
-            return CentroCostosBl.GetCentroCostos();
+            return CentroCostosBl.getCentroCostos();
+        }
+
+
+        public bool UpdateCentrocosto(int id, string estado)
+        {
+            return CentroCostosBl.updateCentroCosto(id, estado);
         }
 
     }
