@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ModelMap;
 using BL;
 
@@ -6,16 +7,14 @@ namespace WS_PresupuestoSis
 {
     public class CatalogosProcces
     {
-        public CentroCostosBL centroCostosBL
+        #region Dependencias
+        readonly Lazy<CentroCostosBL> _centroCostosBl = new Lazy<CentroCostosBL>(() => new CentroCostosBL());
+        CentroCostosBL CentroCostosBl { get { return _centroCostosBl.Value; } }
+        #endregion
+
+        public List<CentroCostosMap> GetCentrosCosto()
         {
-            get
-            {
-                return new CentroCostosBL();
-            }
-        }
-        public List<CentroCostosMap> getCentrosCosto()
-        {
-             return centroCostosBL.getCentroCostos();
+            return CentroCostosBl.GetCentroCostos();
         }
 
     }
