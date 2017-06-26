@@ -24,9 +24,10 @@ namespace WS_PresupuestoSis
          List<CentroCostosMap> getCentrosCosto();
 
         [OperationContract]
-        List<CentroCostosMap> updateCentroCosto();
+        bool updateCentroCosto(int id, string estado);
 
-
+        [OperationContract]
+        List<ProyectoCentroCostosMap> getProyectosCentrosCosto();
     }
  
 

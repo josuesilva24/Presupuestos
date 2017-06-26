@@ -30,5 +30,16 @@ namespace LD
 
             return false;
         }
+
+         public IQueryable<TBLPROYECTO> getProyectosCentrosCosto()
+        {
+            return Model.TBLPROYECTO;
+        }
+        public IQueryable<TBLPROYECTO> getProyectosCentrosCostoPorId(int id)
+        {
+            return Model.TBLPROYECTO.Where(e => e.LNGIDPROYECTO == id);
+        }
+
+
     }
 }

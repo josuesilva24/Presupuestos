@@ -16,15 +16,27 @@ namespace Presupuesto.Controllers
             return View();
         }
 
-        JsonResult getCentrosCosto()
+        public ActionResult ProyectoCentroCosto()
+        {
+            return View();
+        }
+
+
+      public  JsonResult getCentrosCosto()
         {
             return new JsonResult() { Data = Channel.getCentrosCosto() , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
         
-        JsonResult updateCentroCosto()
+   public JsonResult updateCentroCosto(string IdBD, string Estado)
         {
-            return new JsonResult() { Data = "", JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = Channel.updateCentroCosto(Convert.ToInt32(IdBD), Estado) , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+        }
+
+        public JsonResult getProyectosCentrosCosto()
+        {
+            return new JsonResult() { Data = Channel.getProyectosCentrosCosto(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
 

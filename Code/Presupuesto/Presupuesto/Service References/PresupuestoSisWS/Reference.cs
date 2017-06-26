@@ -93,7 +93,7 @@ namespace Presupuesto.PresupuestoSisWS {
         private string EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private int IdBDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -145,14 +145,107 @@ namespace Presupuesto.PresupuestoSisWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
+        public int IdBD {
             get {
-                return this.IdField;
+                return this.IdBDField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((this.IdBDField.Equals(value) != true)) {
+                    this.IdBDField = value;
+                    this.RaisePropertyChanged("IdBD");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProyectoCentroCostosMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class ProyectoCentroCostosMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdBDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codigo {
+            get {
+                return this.CodigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoField, value) != true)) {
+                    this.CodigoField = value;
+                    this.RaisePropertyChanged("Codigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdBD {
+            get {
+                return this.IdBDField;
+            }
+            set {
+                if ((this.IdBDField.Equals(value) != true)) {
+                    this.IdBDField = value;
+                    this.RaisePropertyChanged("IdBD");
                 }
             }
         }
@@ -188,6 +281,18 @@ namespace Presupuesto.PresupuestoSisWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCentrosCosto", ReplyAction="http://tempuri.org/IService1/getCentrosCostoResponse")]
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CentroCostosMap[]> getCentrosCostoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateCentroCosto", ReplyAction="http://tempuri.org/IService1/updateCentroCostoResponse")]
+        bool updateCentroCosto(int id, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateCentroCosto", ReplyAction="http://tempuri.org/IService1/updateCentroCostoResponse")]
+        System.Threading.Tasks.Task<bool> updateCentroCostoAsync(int id, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProyectosCentrosCosto", ReplyAction="http://tempuri.org/IService1/getProyectosCentrosCostoResponse")]
+        Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[] getProyectosCentrosCosto();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProyectosCentrosCosto", ReplyAction="http://tempuri.org/IService1/getProyectosCentrosCostoResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[]> getProyectosCentrosCostoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -239,6 +344,22 @@ namespace Presupuesto.PresupuestoSisWS {
         
         public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CentroCostosMap[]> getCentrosCostoAsync() {
             return base.Channel.getCentrosCostoAsync();
+        }
+        
+        public bool updateCentroCosto(int id, string estado) {
+            return base.Channel.updateCentroCosto(id, estado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateCentroCostoAsync(int id, string estado) {
+            return base.Channel.updateCentroCostoAsync(id, estado);
+        }
+        
+        public Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[] getProyectosCentrosCosto() {
+            return base.Channel.getProyectosCentrosCosto();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[]> getProyectosCentrosCostoAsync() {
+            return base.Channel.getProyectosCentrosCostoAsync();
         }
     }
 }

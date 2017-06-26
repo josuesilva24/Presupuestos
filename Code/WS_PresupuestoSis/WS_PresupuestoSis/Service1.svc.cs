@@ -17,7 +17,7 @@ namespace WS_PresupuestoSis
         {
             return new CatalogosProcces().GetCentrosCosto();
         }
-        public bool updaCentrsCosto(int id, string estado)
+        public bool updateCentroCosto(int id, string estado)
         {
             return new CatalogosProcces().UpdateCentrocosto(id, estado);
         }
@@ -38,6 +38,11 @@ namespace WS_PresupuestoSis
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public List<ProyectoCentroCostosMap> getProyectosCentrosCosto()
+        {
+            return new CatalogosProcces().GetProyectosCentrosCosto();
         }
     }
 }

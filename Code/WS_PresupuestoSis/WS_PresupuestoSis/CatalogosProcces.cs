@@ -23,5 +23,9 @@ namespace WS_PresupuestoSis
             return CentroCostosBl.updateCentroCosto(id, estado);
         }
 
+        public List<ProyectoCentroCostosMap> GetProyectosCentrosCosto()
+        {
+            return CentroCostosBl.getProyectoCentroCostos();
+        }
     }
 }
