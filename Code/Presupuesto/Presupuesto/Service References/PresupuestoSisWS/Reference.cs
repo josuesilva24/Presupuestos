@@ -177,6 +177,9 @@ namespace Presupuesto.PresupuestoSisWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CentroCostoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CodigoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -195,6 +198,19 @@ namespace Presupuesto.PresupuestoSisWS {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CentroCosto {
+            get {
+                return this.CentroCostoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CentroCostoField, value) != true)) {
+                    this.CentroCostoField = value;
+                    this.RaisePropertyChanged("CentroCosto");
+                }
             }
         }
         
