@@ -23,6 +23,7 @@
   <xs:element name="ArrayOfProyectoCentroCostosMap" nillable="true" type="tns:ArrayOfProyectoCentroCostosMap" />
   <xs:complexType name="ProyectoCentroCostosMap">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CentroCosto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />

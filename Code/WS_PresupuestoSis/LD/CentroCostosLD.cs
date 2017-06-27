@@ -33,6 +33,14 @@ namespace LD
 
          public IQueryable<TBLPROYECTO> getProyectosCentrosCosto()
         {
+            /*
+                SELECT	t2.* 
+                FROM	TBLPROYECTO pro
+                JOIN	TBLPROYECTOCENTRODECOSTO t ON t.LNGIDPROYECTO = pro.LNGIDPROYECTO
+                JOIN	TBLCENTROCOSTO t2 ON t2.LNGIDCENTROCOSTO = t.LNGIDCENTROCOSTO
+                WHERE	t2.STRACTIVO = 'S'
+             */
+
             return Model.TBLPROYECTO;
         }
         public IQueryable<TBLPROYECTO> getProyectosCentrosCostoPorId(int id)
