@@ -24,10 +24,10 @@ namespace BL
                     (
                         new CentroCostosMap
                         {
-                            Id = item.LNGIDCENTROCOSTO,
+                            IdBD = item.LNGIDCENTROCOSTO,
                             Descripcion = item.STRDESCRIPCION,
                             Codigo = item.STRCODIGO,
-                            Estado = item.STRACTIVO
+                            Estado = item.STRACTIVO == "S" ? "Activo":"Inactivo"
                         }
                         );
 
@@ -42,6 +42,27 @@ namespace BL
         {
           return  CentroCostosLd.updateCentroCosto(id,estado);
 
+        }
+
+
+        public List<ProyectoCentroCostosMap> getProyectoCentroCostos()
+        {
+            var ListaProyectos = new List<ProyectoCentroCostosMap>();
+            foreach (var item in CentroCostosLd.getProyectosCentrosCosto().ToList())
+            {
+                ListaProyectos.Add
+                    (
+                        new ProyectoCentroCostosMap
+                        {
+                            IdBD = item.LNGIDPROYECTO,
+                            Descripcion = item.STRDESCRIPCION,
+                            Codigo = item.STRCODIGO,
+                            Estado = item.STRACTIVO == "S" ? "Activo" : "Inactivo"
+                        }
+                        );
+            }
+
+            return ListaProyectos;
         }
 
 

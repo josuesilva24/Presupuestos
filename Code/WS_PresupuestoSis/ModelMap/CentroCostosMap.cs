@@ -2,7 +2,16 @@
 {
     public class CentroCostosMap
     {
-        public int Id { get; set; }
+        public int IdBD { get; set; }
+        public string Descripcion { get; set; }
+        public string Codigo { get; set; }
+        public string Estado { get; set; }
+    }
+
+
+    public class ProyectoCentroCostosMap
+    {
+        public int IdBD { get; set; }
         public string Descripcion { get; set; }
         public string Codigo { get; set; }
         public string Estado { get; set; }

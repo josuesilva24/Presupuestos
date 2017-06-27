@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CentroCostoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InflacionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -319,7 +320,10 @@
     <Content Include="fonts\fontawesome4.5\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\CentroCosto\CentroCosto.js" />
+    <Content Include="Scripts\CentroCosto\ProyectoCentroCosto.js" />
     <Content Include="Scripts\demo.min.js" />
+    <Content Include="Scripts\Inflaciones\Inflaciones.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -341,6 +345,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Scripts\libs\jquery-2.1.1.min.map" />
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.InflacionMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\PresupuestoSisWS\Service1.disco" />
     <None Include="Service References\PresupuestoSisWS\configuration91.svcinfo" />
     <None Include="Service References\PresupuestoSisWS\configuration.svcinfo" />
@@ -395,11 +405,16 @@
     <None Include="Service References\PresupuestoSisWS\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\CentroCosto\Index.cshtml" />
+    <Content Include="Views\CentroCosto\ProyectoCentroCosto.cshtml" />
+    <Content Include="Views\Inflaciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\plugin\" />
-    <Folder Include="Views\CentroCosto\" />
+    <Folder Include="Scripts\smart-chat-ui\" />
+    <Folder Include="Scripts\smartwidgets\" />
+    <Folder Include="Scripts\speech\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

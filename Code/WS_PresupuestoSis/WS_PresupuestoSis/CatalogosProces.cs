@@ -5,7 +5,7 @@ using BL;
 
 namespace WS_PresupuestoSis
 {
-    public class CatalogosProcces
+    public class CatalogosProces
     {
         #region Dependencias
         readonly Lazy<CentroCostosBL> _centroCostosBl = new Lazy<CentroCostosBL>(() => new CentroCostosBL());
@@ -23,5 +23,9 @@ namespace WS_PresupuestoSis
             return CentroCostosBl.updateCentroCosto(id, estado);
         }
 
+        public List<ProyectoCentroCostosMap> GetProyectosCentrosCosto()
+        {
+            return CentroCostosBl.getProyectoCentroCostos();
+        }
     }
 }
