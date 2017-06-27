@@ -57,9 +57,10 @@ namespace BL
                             IdBD = item.LNGIDPROYECTO,
                             Descripcion = item.STRDESCRIPCION,
                             Codigo = item.STRCODIGO,
-                            Estado = item.STRACTIVO == "S" ? "Activo" : "Inactivo"
+                            Estado = item.STRACTIVO == "S" ? "Activo" : "Inactivo",
+                            CentroCosto = "CentroCosto"
                         }
-                        );
+                    );
             }
 
             return ListaProyectos;

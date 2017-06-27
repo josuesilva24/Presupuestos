@@ -6,7 +6,7 @@
         editurl: 'clientArray',
         datatype: "json",
         height: 'auto',
-        colNames: ['', 'IdBD', 'Descripción', 'Código', 'Estado', 'Centro de costo'],
+        colNames: ['', 'IdBD', 'Descripción', 'Código', 'Estado', 'CentroCosto'],
         colModel: [{
             name: 'act',
             index: 'act',
@@ -48,7 +48,7 @@
             edittype: 'select',
             editoptions: {
                 dataUrl: "getCentrosCosto",
-                cacheUrlData: true,
+                cacheUrlData: false,
                 buildSelect: function (data) {
 
                     var dataa = data.split('-'), i = 0, s = '<select>', d;
