@@ -15,11 +15,11 @@ namespace WS_PresupuestoSis
     {
         public List<CentroCostosMap> getCentrosCosto()
         {
-            return new CatalogosProcces().GetCentrosCosto();
+            return new CatalogosProces().GetCentrosCosto();
         }
-        public bool updaCentrsCosto(int id, string estado)
+        public bool updateCentroCosto(int id, string estado)
         {
-            return new CatalogosProcces().UpdateCentrocosto(id, estado);
+            return new CatalogosProces().UpdateCentrocosto(id, estado);
         }
 
         public string GetData(int value)
@@ -38,6 +38,26 @@ namespace WS_PresupuestoSis
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public List<ProyectoCentroCostosMap> getProyectosCentrosCosto()
+        {
+            return new CatalogosProces().GetProyectosCentrosCosto();
+        }
+
+        public List<InflacionMap> getInflaciones()
+        {
+            return new InflacionProcess().GetInflaciones();
+        }
+
+        public bool UpdateInflaciones(int id, string semestreI, string semestreII)
+        {
+            return new InflacionProcess().UdpdateInflacion( id,  semestreI,  semestreII);
+        }
+
+        public bool AddInflaciones(string anno, string semestreI, string semestreII)
+        {
+            return new InflacionProcess().AddInflacion(anno,semestreI,semestreII);
         }
     }
 }

@@ -11,8 +11,39 @@
       <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBD" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CentroCostosMap" nillable="true" type="tns:CentroCostosMap" />
+  <xs:complexType name="ArrayOfProyectoCentroCostosMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProyectoCentroCostosMap" nillable="true" type="tns:ProyectoCentroCostosMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProyectoCentroCostosMap" nillable="true" type="tns:ArrayOfProyectoCentroCostosMap" />
+  <xs:complexType name="ProyectoCentroCostosMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBD" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProyectoCentroCostosMap" nillable="true" type="tns:ProyectoCentroCostosMap" />
+  <xs:complexType name="ArrayOfInflacionMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InflacionMap" nillable="true" type="tns:InflacionMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInflacionMap" nillable="true" type="tns:ArrayOfInflacionMap" />
+  <xs:complexType name="InflacionMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdBD" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimerSemestre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoSemestre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InflacionMap" nillable="true" type="tns:InflacionMap" />
 </xs:schema>

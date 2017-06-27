@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InflacionLD.cs" />
     <Compile Include="BaseModel.cs" />
     <Compile Include="CentroCostosLD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
