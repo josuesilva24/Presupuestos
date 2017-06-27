@@ -1,55 +1,57 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
     pageSetUp();
 
     jQuery("#jqgrid").jqGrid({
-        url: 'getCentrosCosto',
-      //  editurl: 'clientArray',
+        url: 'getInflaciones',
+        //  editurl: 'clientArray',
         datatype: "json",
-        height : 'auto',
-        colNames: ['', 'IdBD','Descripción', 'Código', 'Estado'],
-        colModel : [{
-            name : 'act',
-            index : 'act',
+        height: 'auto',
+        colNames: ['', 'IdBD', 'Año', 'I Semestre', 'II Semestre'],
+        colModel: [{
+            name: 'act',
+            index: 'act',
             sortable: false,
             search: false,
-            hidden:true
-            
+            hidden: true
+
         },
            {
                name: 'IdBD',
                index: 'IdBD',
                editable: true,
-               hidden:true
+               hidden: true
            },
         {
-            name: 'Descripcion',
-            index: 'Descripcion',
-            editable : false
-        }, {
-            name: 'Codigo',
-            index: 'Codigo',
-            editable : false
-        }, {
-            name: 'Estado',
-            index : 'Estado',
-            align : "center",
+            name: 'Anno',
+            index: 'Anno',
             editable: true,
-            edittype: "select",
-            editoptions: {
-                value: "S:Activo;N:Inactivo;",
-            },
+            edittype: 'select',
+            search: true,
+            editoptions: { value: "2015:2015;2016:2016;2017:2017;2018:2018;2019:2019;2020:2020;2021:2021;2022:2022;2023:2023;2024:2024;2025:2025;2026:2026;2027:2027;2028:2028;2029:2029;2030:2030" }
+        },
+        {
+            name: 'PrimerSemestre',
+            index: 'PrimerSemestre',
+            editable: true,
             search:false
-            
-        }],
-        rowNum : 10,
-        rowList : [10, 20, 30],
-        pager : '#pjqgrid',
-        sortname : 'id',
-        toolbarfilter : true,
-        viewrecords : true,
+
+        },
+          {
+              name: 'SegundoSemestre',
+              index: 'SegundoSemestre',
+              search:false,
+              editable: true
+          },
+   ],
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        pager: '#pjqgrid',
+        sortname: 'id',
+        toolbarfilter: true,
+        viewrecords: true,
         sortorder: "asc",
-        editurl: 'updateCentroCosto',
-        gridComplete : function() {
+        editurl: 'updateInflacion',
+        gridComplete: function () {
             //var ids = jQuery("#jqgrid").jqGrid('getDataIDs');
             //for (var i = 0; i < ids.length; i++) {
             //    var cl = ids[i];
@@ -57,14 +59,14 @@
             //    se = "<button class='btn btn-xs btn-default' data-original-title='Save Row' onclick=\"jQuery('#jqgrid').saveRow('" + cl + "'); \"><i class='fa fa-save'></i></button>";
             //    ca = "<button class='btn btn-xs btn-default' data-original-title='Cancel' onclick=\"jQuery('#jqgrid').restoreRow('" + cl + "');\"><i class='fa fa-times'></i></button>";
             //    ce = "<button class='btn btn-xs btn-default' onclick=\"jQuery('#jqgrid').restoreRow('"+cl+"');\"><i class='fa fa-times'></i></button>";
-                //jQuery("#jqgrid").jqGrid('setRowData',ids[i],{act:be+se+ce});
-                //jQuery("#jqgrid").jqGrid('setRowData', ids[i], {
-                //    act : be + se + ca
-                //});
-          //  }
+            //jQuery("#jqgrid").jqGrid('setRowData',ids[i],{act:be+se+ce});
+            //jQuery("#jqgrid").jqGrid('setRowData', ids[i], {
+            //    act : be + se + ca
+            //});
+            //  }
         },
-        caption : "Centros de costos",
-        multiselect : false,
+        caption: "Inflación",
+        multiselect: false,
         autowidth: true,
         loadError: function (jqXHR, textStatus, errorThrown) {
             alert(errorThrown);
@@ -75,17 +77,17 @@
 
     });
     jQuery("#jqgrid").jqGrid('navGrid', "#pjqgrid", {
-        edit : false,
-        add : false,
+        edit: false,
+        add: false,
         del: false,
         search: false
-                      
+
     });
     $('#jqgrid').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false });
 
-    jQuery("#jqgrid").jqGrid('inlineNav', "#pjqgrid",{
-        edit : true,
-        add : false,
+    jQuery("#jqgrid").jqGrid('inlineNav', "#pjqgrid", {
+        edit: true,
+        add: true,
         del: false,
         editParams: function (val) {
             if (!val) {
@@ -104,15 +106,15 @@
 
     /* Add tooltips */
     $('.navtable .ui-pg-button').tooltip({
-        container : 'body'
+        container: 'body'
     });
 
-    jQuery("#m1").click(function() {
+    jQuery("#m1").click(function () {
         var s;
         s = jQuery("#jqgrid").jqGrid('getGridParam', 'selarrrow');
         alert(s);
     });
-    jQuery("#m1s").click(function() {
+    jQuery("#m1s").click(function () {
         jQuery("#jqgrid").jqGrid('setSelection', "13");
     });
 
@@ -152,16 +154,16 @@
 
 })
 
-$(window).on('resize.jqGrid', function() {
+$(window).on('resize.jqGrid', function () {
     $("#jqgrid").jqGrid('setGridWidth', $("#content").width());
 })
 
 
-    var _gaq = _gaq || [];
+var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 _gaq.push(['_trackPageview']);
 
-(function() {
+(function () {
     var ga = document.createElement('script');
     ga.type = 'text/javascript';
     ga.async = true;

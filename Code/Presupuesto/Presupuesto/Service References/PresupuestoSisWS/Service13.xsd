@@ -30,4 +30,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProyectoCentroCostosMap" nillable="true" type="tns:ProyectoCentroCostosMap" />
+  <xs:complexType name="ArrayOfInflacionMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InflacionMap" nillable="true" type="tns:InflacionMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInflacionMap" nillable="true" type="tns:ArrayOfInflacionMap" />
+  <xs:complexType name="InflacionMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdBD" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimerSemestre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoSemestre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InflacionMap" nillable="true" type="tns:InflacionMap" />
 </xs:schema>

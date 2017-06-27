@@ -13,7 +13,7 @@ namespace WS_PresupuestoSis
     [ServiceContract]
     public interface IService1
     {
-
+        #region Centro de costo
         [OperationContract]
         string GetData(int value);
 
@@ -28,8 +28,19 @@ namespace WS_PresupuestoSis
 
         [OperationContract]
         List<ProyectoCentroCostosMap> getProyectosCentrosCosto();
+        #endregion
+        #region inflacion
+        [OperationContract]
+        List<InflacionMap> getInflaciones();
+
+        [OperationContract]
+        bool UpdateInflaciones(int id, string semestreI, string semestreII);
+
+        [OperationContract]
+        bool AddInflaciones(string anno, string semestreI, string semestreII);
+        #endregion
     }
- 
+
 
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

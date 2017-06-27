@@ -260,6 +260,115 @@ namespace Presupuesto.PresupuestoSisWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InflacionMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class InflacionMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AnnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdBDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrimerSemestreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SegundoSemestreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Anno {
+            get {
+                return this.AnnoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnnoField, value) != true)) {
+                    this.AnnoField = value;
+                    this.RaisePropertyChanged("Anno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdBD {
+            get {
+                return this.IdBDField;
+            }
+            set {
+                if ((this.IdBDField.Equals(value) != true)) {
+                    this.IdBDField = value;
+                    this.RaisePropertyChanged("IdBD");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PrimerSemestre {
+            get {
+                return this.PrimerSemestreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrimerSemestreField, value) != true)) {
+                    this.PrimerSemestreField = value;
+                    this.RaisePropertyChanged("PrimerSemestre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SegundoSemestre {
+            get {
+                return this.SegundoSemestreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SegundoSemestreField, value) != true)) {
+                    this.SegundoSemestreField = value;
+                    this.RaisePropertyChanged("SegundoSemestre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PresupuestoSisWS.IService1")]
     public interface IService1 {
@@ -293,6 +402,24 @@ namespace Presupuesto.PresupuestoSisWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProyectosCentrosCosto", ReplyAction="http://tempuri.org/IService1/getProyectosCentrosCostoResponse")]
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[]> getProyectosCentrosCostoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getInflaciones", ReplyAction="http://tempuri.org/IService1/getInflacionesResponse")]
+        Presupuesto.PresupuestoSisWS.InflacionMap[] getInflaciones();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getInflaciones", ReplyAction="http://tempuri.org/IService1/getInflacionesResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.InflacionMap[]> getInflacionesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateInflaciones", ReplyAction="http://tempuri.org/IService1/UpdateInflacionesResponse")]
+        bool UpdateInflaciones(int id, string semestreI, string semestreII);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateInflaciones", ReplyAction="http://tempuri.org/IService1/UpdateInflacionesResponse")]
+        System.Threading.Tasks.Task<bool> UpdateInflacionesAsync(int id, string semestreI, string semestreII);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddInflaciones", ReplyAction="http://tempuri.org/IService1/AddInflacionesResponse")]
+        bool AddInflaciones(string anno, string semestreI, string semestreII);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddInflaciones", ReplyAction="http://tempuri.org/IService1/AddInflacionesResponse")]
+        System.Threading.Tasks.Task<bool> AddInflacionesAsync(string anno, string semestreI, string semestreII);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -360,6 +487,30 @@ namespace Presupuesto.PresupuestoSisWS {
         
         public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[]> getProyectosCentrosCostoAsync() {
             return base.Channel.getProyectosCentrosCostoAsync();
+        }
+        
+        public Presupuesto.PresupuestoSisWS.InflacionMap[] getInflaciones() {
+            return base.Channel.getInflaciones();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.InflacionMap[]> getInflacionesAsync() {
+            return base.Channel.getInflacionesAsync();
+        }
+        
+        public bool UpdateInflaciones(int id, string semestreI, string semestreII) {
+            return base.Channel.UpdateInflaciones(id, semestreI, semestreII);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateInflacionesAsync(int id, string semestreI, string semestreII) {
+            return base.Channel.UpdateInflacionesAsync(id, semestreI, semestreII);
+        }
+        
+        public bool AddInflaciones(string anno, string semestreI, string semestreII) {
+            return base.Channel.AddInflaciones(anno, semestreI, semestreII);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddInflacionesAsync(string anno, string semestreI, string semestreII) {
+            return base.Channel.AddInflacionesAsync(anno, semestreI, semestreII);
         }
     }
 }

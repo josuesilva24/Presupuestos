@@ -5,7 +5,7 @@ using BL;
 
 namespace WS_PresupuestoSis
 {
-    public class CatalogosProcces
+    public class CatalogosProces
     {
         #region Dependencias
         readonly Lazy<CentroCostosBL> _centroCostosBl = new Lazy<CentroCostosBL>(() => new CentroCostosBL());

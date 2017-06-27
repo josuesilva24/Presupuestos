@@ -38,6 +38,24 @@
   <wsdl:message name="IService1_getProyectosCentrosCosto_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProyectosCentrosCostoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getInflaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInflaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getInflaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInflacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateInflaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInflaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateInflaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInflacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddInflaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInflaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddInflaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInflacionesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -58,6 +76,18 @@
     <wsdl:operation name="getProyectosCentrosCosto">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProyectosCentrosCosto" message="tns:IService1_getProyectosCentrosCosto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProyectosCentrosCostoResponse" message="tns:IService1_getProyectosCentrosCosto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInflaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getInflaciones" message="tns:IService1_getInflaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getInflacionesResponse" message="tns:IService1_getInflaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInflaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateInflaciones" message="tns:IService1_UpdateInflaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateInflacionesResponse" message="tns:IService1_UpdateInflaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInflaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddInflaciones" message="tns:IService1_AddInflaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddInflacionesResponse" message="tns:IService1_AddInflaciones_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -100,6 +130,33 @@
     </wsdl:operation>
     <wsdl:operation name="getProyectosCentrosCosto">
       <soap:operation soapAction="http://tempuri.org/IService1/getProyectosCentrosCosto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInflaciones">
+      <soap:operation soapAction="http://tempuri.org/IService1/getInflaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInflaciones">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateInflaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInflaciones">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddInflaciones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
