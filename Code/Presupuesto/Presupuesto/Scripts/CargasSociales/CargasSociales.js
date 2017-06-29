@@ -2,11 +2,11 @@
     pageSetUp();
 
     jQuery("#jqgrid").jqGrid({
-        url: 'getInflaciones',
+        url: '',
         //  editurl: 'clientArray',
         datatype: "json",
         height: 'auto',
-        colNames: ['', 'IdBD', 'Año', 'I Semestre', 'II Semestre'],
+        colNames: ['', 'IdBD', 'Cuenta Contable', 'Descripción', 'Porcentaje'],
         colModel: [{
             name: 'act',
             index: 'act',
@@ -22,30 +22,27 @@
                hidden: true
            },
         {
-            name: 'Anno',
-            index: 'Anno',
-            editable: true,
-            edittype: 'select',
-            search: true,
-            editoptions: { value: "2015:2015;2016:2016;2017:2017;2018:2018;2019:2019;2020:2020;2021:2021;2022:2022;2023:2023;2024:2024;2025:2025;2026:2026;2027:2027;2028:2028;2029:2029;2030:2030" }
+            name: 'CuentaContable',
+            index: 'CuentaContable',
+            editable: false,
+            search: false,
+            hidden: false
         },
         {
-            name: 'PrimerSemestre',
-            index: 'PrimerSemestre',
-            editable: true,
-            search: false,
-            edittype:'number'
+            name: 'Descripcion',
+            index: 'Descripcion',
+            editable: false,
+            search: false
 
         },
           {
-              name: 'SegundoSemestre',
-              index: 'SegundoSemestre',
-              search:false,
+              name: 'Porcentaje',
+              index: 'Porcentaje',
+              search: false,
               editable: true,
-              edittype: 'number'
-
+              formatter: 'number',
           },
-   ],
+        ],
         rowNum: 10,
         rowList: [10, 20, 30],
         pager: '#pjqgrid',
@@ -53,7 +50,7 @@
         toolbarfilter: true,
         viewrecords: true,
         sortorder: "asc",
-        editurl: 'updateInflacion',
+        editurl: '',
         gridComplete: function () {
             //var ids = jQuery("#jqgrid").jqGrid('getDataIDs');
             //for (var i = 0; i < ids.length; i++) {

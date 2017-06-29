@@ -25,7 +25,7 @@ namespace Presupuesto.Controllers
         public JsonResult updateInflacion(string IdBD, string anno, string PrimerSemestre, string SegundoSemestre)
         {
             if(IdBD.Equals("jqg1"))
-            return new JsonResult() { Data = Channel.AddInflaciones( anno, PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = Channel.AddInflaciones(Convert.ToInt32(anno), PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
             return new JsonResult() { Data = Channel.UpdateInflaciones( Convert.ToInt32(IdBD), PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }

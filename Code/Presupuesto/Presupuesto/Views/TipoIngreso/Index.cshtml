@@ -1,9 +1,16 @@
-﻿<h2>Index</h2>
+﻿
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index</h2>
 
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-<script src="~/Scripts/PPingresos/PPingresos.js"></script>
+<script src="~/Scripts/CargasSociales/CargasSociales.js"></script>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 
@@ -38,9 +45,9 @@
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
-                    <!-- PAGE HEADER --><i class="fa-fw fa fa-home"></i> Ingresos <span>
-                        >@ViewBag.tipo
-                        <input hidden="hidden" id="tipo" value="@ViewBag.tipo;" />
+                    <!-- PAGE HEADER --><i class="fa-fw fa fa-home"></i> Mantenimientos <span>
+                        >
+                        Tipo de ingreso
                     </span>
                 </h1>
             </div>
@@ -57,46 +64,13 @@
 
             <!-- row -->
             <div class="row">
-                <article class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <label>Ingresos</label>
-                    <select name="carlist" form="carform">
-                        <option value="xx">Xx</option>
-                        <option value="xx">XX</option>
-                        <option value="xx">Xx</option>
-                        <option value="xx">Xx</option>
-                    </select>
-                   
-                </article>
-                <article class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <label>Centro de costo</label>
-                    <select name="carlist" form="carform">
-                        <option value="xx">Xx</option>
-                        <option value="xx">XX</option>
-                        <option value="xx">Xx</option>
-                        <option value="xx">Xx</option>
-                    </select>
-
-                </article>
-                <article class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <label>Moneda</label>
-                    <select name="carlist" form="carform">
-                        <option value="xx">Xx</option>
-                        <option value="xx">XX</option>
-                        <option value="xx">Xx</option>
-                        <option value="xx">Xx</option>
-                    </select>
-
-                </article>
-                <article class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <label>Moneda</label>
-                    <select name="carlist" form="carform">
-                        <option value="xx">Xx</option>
-                        <option value="xx">XX</option>
-                        <option value="xx">Xx</option>
-                        <option value="xx">Xx</option>
-                    </select>
-
-                </article>
+                <label>Año</label>
+                <select name="carlist" form="carform">
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                </select>
                 <!-- NEW WIDGET START -->
                 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
