@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PRESUPUESTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PRESUPUESTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'PRESUPUESTO.dbo.CENTRO_COSTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CENTRO_COSTO">
@@ -129,18 +129,6 @@ warning 6002: The table/view 'PRESUPUESTO.dbo.CUENTA_CONTABLE' does not have a p
           <Property Name="LNGIDANNO" Type="int" Nullable="false" />
           <Property Name="STRACIERRE" Type="varchar" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLANNO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLANNO_CUENTACONTABLE">
-          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
-          <Property Name="LNGIDANNO" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLCARGASOCIAL_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLCARGASOCIAL_CUENTACONTABLE">
-          <Property Name="LNGIDCARGASOCIAL" Type="int" />
-          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
-        </EntityType>-->
         <EntityType Name="TBLCARGASSOCIALES">
           <Key>
             <PropertyRef Name="LNGIDCAGASOCIAL" />
@@ -173,12 +161,6 @@ warning 6002: The table/view 'PRESUPUESTO.dbo.TBLCENTROCOSTO_bak' does not have 
           <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
           <Property Name="DTMFECHA" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLCENTROCOSTO_CUENTACONTABLE">
-          <Property Name="LNGIDCENTROCOSTO" Type="int" />
-          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
-        </EntityType>-->
         <EntityType Name="TBLCONFIGURACION">
           <Key>
             <PropertyRef Name="STRCONFIGURACION" />
@@ -441,18 +423,6 @@ warning 6002: The table/view 'PRESUPUESTO.dbo.TBLTIPOCAMBIO' does not have a pri
           <Property Name="STRTIPOGASTO" Type="varchar" MaxLength="30" />
           <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOGASTO_CENTRODECOSTO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLTIPOGASTO_CENTRODECOSTO">
-          <Property Name="LNGIDTIPOGASTO" Type="int" />
-          <Property Name="LNGIDCENTROCOSTO" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOGASTO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLTIPOGASTO_CUENTACONTABLE">
-          <Property Name="LNGIDTIPOGASTO" Type="int" />
-          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
-        </EntityType>-->
         <EntityType Name="TBLTIPOINGRESO">
           <Key>
             <PropertyRef Name="LNGIDTIPOINGRESO" />
@@ -461,18 +431,6 @@ warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOGASTO_CUENTACONTABLE' does 
           <Property Name="STRTIPOINGRESO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CENTROCOSTO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLTIPOINGRESO_CENTROCOSTO">
-          <Property Name="LNGIDTIPOINGRESO" Type="int" />
-          <Property Name="LNGIDCENTROCOSTO" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBLTIPOINGRESO_CUENTACONTABLE">
-          <Property Name="LNGIDTIPOINGRESO" Type="int" />
-          <Property Name="LNGIDCUENTACONTABLE" Type="int" />
-        </EntityType>-->
         <EntityType Name="TBLTIPOLEGISLACION">
           <Key>
             <PropertyRef Name="LNGIDTIPOLEGISLACION" />
@@ -513,24 +471,6 @@ warning 6013: The table/view 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' doe
           <Property Name="STRDOMINIO" Type="varchar" MaxLength="50" />
           <Property Name="STRACTIVO" Type="varchar" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLANNO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLANNO_C__LNGID__4D5F7D71" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLANNO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLANNO_C__LNGID__4E53A1AA" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLCARGASOCIAL_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLCARGAS__LNGID__503BEA1C" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLCARGASOCIAL_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLCARGAS__LNGID__74AE54BC" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLCENTRO__LNGID__51300E55" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLCENTRO__LNGID__5224328E" />-->
         <Association Name="FK__TBLMODULO__LNGID__4D94879B">
           <End Role="TBLMODULO" Type="Self.TBLMODULO" Multiplicity="0..1" />
           <End Role="TBLMODULOITEM" Type="Self.TBLMODULOITEM" Multiplicity="*" />
@@ -699,18 +639,6 @@ error 6004: The table 'PRESUPUESTO.dbo.TBLCENTROCOSTO_CUENTACONTABLE' is referen
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CENTROCOSTO' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLTIPOIN__LNGID__6AEFE058" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CENTROCOSTO' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLTIPOIN__LNGID__6BE40491" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLTIPOIN__LNGID__6CD828CA" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__TBLTIPOIN__LNGID__6DCC4D03" />-->
         <Association Name="FK_TBLPERMISOSUBITEM_TBLITEM">
           <End Role="TBLITEM" Type="Self.TBLITEM" Multiplicity="0..1" />
           <End Role="TBLPERMISOSUBITEM" Type="Self.TBLPERMISOSUBITEM" Multiplicity="*" />
@@ -843,6 +771,12 @@ error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referen
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLPROYECTOCENTRODECOSTO' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_TBLPROYECTOCENTRODECOSTO_TBLCENTROCOSTO" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'PRESUPUESTO.dbo.TBLPROYECTOCENTRODECOSTO' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_TBLPROYECTOCENTRODECOSTO_TBLPROYECTO" />-->
         <EntityContainer Name="PRESUPUESTOModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_ANNO_MODULO" EntityType="Self.TBL_ANNO_MODULO" Schema="dbo" store:Type="Tables" />
@@ -1076,8 +1010,7 @@ error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referen
             <End Role="TBLPROYECCION_GASTO" EntitySet="TBLPROYECCION_GASTO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PRESUPUESTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2490,7 +2423,7 @@ error 6004: The table 'PRESUPUESTO.dbo.TBLTIPOINGRESO_CUENTACONTABLE' is referen
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

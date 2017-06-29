@@ -40,8 +40,9 @@ namespace LD
                 JOIN	TBLCENTROCOSTO t2 ON t2.LNGIDCENTROCOSTO = t.LNGIDCENTROCOSTO
                 WHERE	t2.STRACTIVO = 'S'
              */
-
-            return Model.TBLPROYECTO;
+            // var query = from proy in  Model.TBLPROYECTO
+                         //join proyCC in Model.
+             return Model.TBLPROYECTO;
         }
         public IQueryable<TBLPROYECTO> getProyectosCentrosCostoPorId(int id)
         {
