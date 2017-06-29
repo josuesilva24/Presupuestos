@@ -47,25 +47,7 @@ namespace BL
 
         public List<ProyectoCentroCostosMap> getProyectoCentroCostos()
         {
-            var ListaProyectos = new List<ProyectoCentroCostosMap>();
-            foreach (var item in CentroCostosLd.getProyectosCentrosCosto().ToList())
-            {
-                ListaProyectos.Add
-                    (
-                        new ProyectoCentroCostosMap
-                        {
-                            IdBD = item.Id,
-                            Descripcion = item.DESCRIPCION,
-                            Codigo = item.CODIGO,
-                            Estado = item.ACTIVO == true ? "Activo" : "Inactivo",
-                            CentroCosto = "CentroCosto"
-                        }
-                    );
-            }
-
-            return ListaProyectos;
+            return CentroCostosLd.GetProyectosCentrosCosto().ToList().ToList();
         }
-        //no hay nada diff
-
     }
 }
