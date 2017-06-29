@@ -24,7 +24,7 @@ namespace WS_PresupuestoSis
          List<CentroCostosMap> getCentrosCosto();
 
         [OperationContract]
-        bool updateCentroCosto(int id, string estado);
+        bool updateCentroCosto(int id, bool estado);
 
         [OperationContract]
         List<ProyectoCentroCostosMap> getProyectosCentrosCosto();
@@ -37,7 +37,7 @@ namespace WS_PresupuestoSis
         bool UpdateInflaciones(int id, string semestreI, string semestreII);
 
         [OperationContract]
-        bool AddInflaciones(string anno, string semestreI, string semestreII);
+        bool AddInflaciones(int anno, string semestreI, string semestreII);
         #endregion
     }
 

@@ -51,146 +51,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CENTRO_COSTO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="Centro_Costos.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="CUENTA_CONTABLE.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="Cuenta_Contable.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="PRESUPUESTOEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRESUPUESTOEntities.Context.tt</DependentUpon>
+    <Compile Include="Inflacion.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="PRESUPUESTOEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PRESUPUESTOEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRESUPUESTOEntities.edmx</DependentUpon>
+    <Compile Include="Moneda.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="ProyeccionEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyeccionEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBLANNO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="ProyeccionEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBLCARGASSOCIALES.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="ProyeccionEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="TBLCENTROCOSTO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="PROYECTO.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBLCENTROCOSTO_bak.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="Proyecto_Centro_Costos.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBLCONFIGURACION.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBLCUENTACONTABLE.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
+    <Compile Include="Tipo_Cambio.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBLcuentacontable_bak.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLEMPLEADO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLINFLACION.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLITEM.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLMODULO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLMODULOITEM.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLMONEDA.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPERFIL.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPERMISO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPERMISOSUBITEM.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPRESUPUESTOPROYECCIONINGRESO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPRESUPUESTO_PROYECCION_SALARIO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPROYECCION_GASTO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLPROYECTO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOCAMBIO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOGASTO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOINGRESO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOLEGISLACION.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOPERMISO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOPRESUPUESTO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLTIPOPROYECCION.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLUSUARIO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_ANNO_MODULO.cs">
-      <DependentUpon>PRESUPUESTOEntities.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="PRESUPUESTOEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PRESUPUESTOEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="PRESUPUESTOEntities.edmx.diagram">
-      <DependentUpon>PRESUPUESTOEntities.edmx</DependentUpon>
+    <EntityDeploy Include="ProyeccionEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProyeccionEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ProyeccionEntities.edmx.diagram">
+      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PRESUPUESTOEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PRESUPUESTOEntities.edmx</DependentUpon>
-      <LastGenOutput>PRESUPUESTOEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="PRESUPUESTOEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PRESUPUESTOEntities.edmx</DependentUpon>
-      <LastGenOutput>PRESUPUESTOEntities.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="ProyeccionEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
+      <LastGenOutput>ProyeccionEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ProyeccionEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
+      <LastGenOutput>ProyeccionEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,7 @@ namespace ModelMap
  public   class InflacionMap
     {
         public int IdBD { get; set; }
-        public string Anno { get; set; }
+        public int? Anno { get; set; }
         public string PrimerSemestre { get; set; }
         public string SegundoSemestre { get; set; }
         public DateTime? Fecha { get; set; }

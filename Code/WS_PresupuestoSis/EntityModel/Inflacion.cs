@@ -12,11 +12,12 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuenta_Contable
+    public partial class Inflacion
     {
         public int Id { get; set; }
-        public string Cuenta_Contable1 { get; set; }
-        public string Descripcion { get; set; }
+        public Nullable<int> Ano { get; set; }
+        public string Semetre_1 { get; set; }
+        public string Semestre_2 { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
     }
 }

@@ -22,11 +22,11 @@ namespace BL
                     (
                         new InflacionMap
                         {
-                            IdBD = item.LNGIDINFLACION,
-                            Anno = item.STRAÑO,
-                            PrimerSemestre = item.STRSEMSTRE_1,
-                            SegundoSemestre = item.STRSEMSTRE_2,
-                            Fecha = item.DTMFECHA
+                            IdBD = item.Id,
+                            Anno = item.Ano,
+                            PrimerSemestre = item.Semetre_1,
+                            SegundoSemestre = item.Semestre_2,
+                            Fecha = item.Fecha
                         }
                         );
             }
@@ -39,7 +39,7 @@ namespace BL
             return InflacionLd.updateInflacion(id, semestreI, semestreII);
         }
 
-        public bool AddInflacion(string anno, string semestreI, string semestreII)
+        public bool AddInflacion(int anno, string semestreI, string semestreII)
         {
             return InflacionLd.addInflacion(anno, semestreI, semestreII);
         }

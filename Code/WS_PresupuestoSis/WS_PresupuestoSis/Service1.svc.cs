@@ -17,7 +17,7 @@ namespace WS_PresupuestoSis
         {
             return new CatalogosProces().GetCentrosCosto();
         }
-        public bool updateCentroCosto(int id, string estado)
+        public bool updateCentroCosto(int id, bool estado)
         {
             return new CatalogosProces().UpdateCentrocosto(id, estado);
         }
@@ -55,7 +55,7 @@ namespace WS_PresupuestoSis
             return new InflacionProcess().UdpdateInflacion( id,  semestreI,  semestreII);
         }
 
-        public bool AddInflaciones(string anno, string semestreI, string semestreII)
+        public bool AddInflaciones(int anno, string semestreI, string semestreII)
         {
             return new InflacionProcess().AddInflacion(anno,semestreI,semestreII);
         }

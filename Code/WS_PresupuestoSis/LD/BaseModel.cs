@@ -4,13 +4,13 @@ namespace LD
 {
     public class BaseModel
     {
-        private PRESUPUESTOEntities _dataContext;
-        protected PRESUPUESTOEntities Model
+        private ProyeccionEntities _dataContext;
+        protected ProyeccionEntities Model
         {
             get
             {
                 if (_dataContext == null)
-                    _dataContext = new PRESUPUESTOEntities();
+                    _dataContext = new ProyeccionEntities();
                 return _dataContext;
             }
             set

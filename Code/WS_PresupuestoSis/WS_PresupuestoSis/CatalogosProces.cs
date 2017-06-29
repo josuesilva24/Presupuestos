@@ -18,7 +18,7 @@ namespace WS_PresupuestoSis
         }
 
 
-        public bool UpdateCentrocosto(int id, string estado)
+        public bool UpdateCentrocosto(int id, bool estado)
         {
             return CentroCostosBl.updateCentroCosto(id, estado);
         }

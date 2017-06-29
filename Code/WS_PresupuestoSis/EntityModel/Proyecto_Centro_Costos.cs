@@ -12,11 +12,14 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuenta_Contable
+    public partial class Proyecto_Centro_Costos
     {
-        public int Id { get; set; }
-        public string Cuenta_Contable1 { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
+        public int Id_Proyecto { get; set; }
+        public int Id_Centro_Costos { get; set; }
+        public bool Activo { get; set; }
+        public System.DateTime Fecha { get; set; }
+    
+        public virtual Centro_Costos Centro_Costos { get; set; }
+        public virtual PROYECTO PROYECTO { get; set; }
     }
 }

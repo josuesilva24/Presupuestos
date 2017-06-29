@@ -12,11 +12,12 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuenta_Contable
+    public partial class sysdiagram
     {
-        public int Id { get; set; }
-        public string Cuenta_Contable1 { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
