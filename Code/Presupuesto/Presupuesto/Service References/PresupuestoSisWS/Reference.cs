@@ -286,7 +286,7 @@ namespace Presupuesto.PresupuestoSisWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AnnoField;
+        private System.Nullable<int> AnnoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> FechaField;
@@ -311,12 +311,12 @@ namespace Presupuesto.PresupuestoSisWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Anno {
+        public System.Nullable<int> Anno {
             get {
                 return this.AnnoField;
             }
             set {
-                if ((object.ReferenceEquals(this.AnnoField, value) != true)) {
+                if ((this.AnnoField.Equals(value) != true)) {
                     this.AnnoField = value;
                     this.RaisePropertyChanged("Anno");
                 }
@@ -408,10 +408,10 @@ namespace Presupuesto.PresupuestoSisWS {
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CentroCostosMap[]> getCentrosCostoAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateCentroCosto", ReplyAction="http://tempuri.org/IService1/updateCentroCostoResponse")]
-        bool updateCentroCosto(int id, string estado);
+        bool updateCentroCosto(int id, bool estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateCentroCosto", ReplyAction="http://tempuri.org/IService1/updateCentroCostoResponse")]
-        System.Threading.Tasks.Task<bool> updateCentroCostoAsync(int id, string estado);
+        System.Threading.Tasks.Task<bool> updateCentroCostoAsync(int id, bool estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProyectosCentrosCosto", ReplyAction="http://tempuri.org/IService1/getProyectosCentrosCostoResponse")]
         Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[] getProyectosCentrosCosto();
@@ -432,10 +432,10 @@ namespace Presupuesto.PresupuestoSisWS {
         System.Threading.Tasks.Task<bool> UpdateInflacionesAsync(int id, string semestreI, string semestreII);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddInflaciones", ReplyAction="http://tempuri.org/IService1/AddInflacionesResponse")]
-        bool AddInflaciones(string anno, string semestreI, string semestreII);
+        bool AddInflaciones(int anno, string semestreI, string semestreII);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddInflaciones", ReplyAction="http://tempuri.org/IService1/AddInflacionesResponse")]
-        System.Threading.Tasks.Task<bool> AddInflacionesAsync(string anno, string semestreI, string semestreII);
+        System.Threading.Tasks.Task<bool> AddInflacionesAsync(int anno, string semestreI, string semestreII);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -489,11 +489,11 @@ namespace Presupuesto.PresupuestoSisWS {
             return base.Channel.getCentrosCostoAsync();
         }
         
-        public bool updateCentroCosto(int id, string estado) {
+        public bool updateCentroCosto(int id, bool estado) {
             return base.Channel.updateCentroCosto(id, estado);
         }
         
-        public System.Threading.Tasks.Task<bool> updateCentroCostoAsync(int id, string estado) {
+        public System.Threading.Tasks.Task<bool> updateCentroCostoAsync(int id, bool estado) {
             return base.Channel.updateCentroCostoAsync(id, estado);
         }
         
@@ -521,11 +521,11 @@ namespace Presupuesto.PresupuestoSisWS {
             return base.Channel.UpdateInflacionesAsync(id, semestreI, semestreII);
         }
         
-        public bool AddInflaciones(string anno, string semestreI, string semestreII) {
+        public bool AddInflaciones(int anno, string semestreI, string semestreII) {
             return base.Channel.AddInflaciones(anno, semestreI, semestreII);
         }
         
-        public System.Threading.Tasks.Task<bool> AddInflacionesAsync(string anno, string semestreI, string semestreII) {
+        public System.Threading.Tasks.Task<bool> AddInflacionesAsync(int anno, string semestreI, string semestreII) {
             return base.Channel.AddInflacionesAsync(anno, semestreI, semestreII);
         }
     }

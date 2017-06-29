@@ -30,7 +30,7 @@ namespace Presupuesto.Controllers
         
    public JsonResult updateCentroCosto(string IdBD, string Estado)
         {
-            return new JsonResult() { Data = Channel.updateCentroCosto(Convert.ToInt32(IdBD), Estado) , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = Channel.updateCentroCosto(Convert.ToInt32(IdBD), Convert.ToBoolean(Estado)) , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
 

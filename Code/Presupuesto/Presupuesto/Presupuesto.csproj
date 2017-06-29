@@ -198,6 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CargasSocialesController.cs" />
     <Compile Include="Controllers\CentroCostoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InflacionesController.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Controllers\PPGastosController.cs" />
     <Compile Include="Controllers\PPIngresosController.cs" />
     <Compile Include="Controllers\TipoCambioController.cs" />
+    <Compile Include="Controllers\TipoIngresoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -324,8 +326,10 @@
     <Content Include="fonts\fontawesome4.5\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\CargasSociales\CargasSociales.js" />
     <Content Include="Scripts\CentroCosto\CentroCosto.js" />
     <Content Include="Scripts\CentroCosto\ProyectoCentroCosto.js" />
+    <Content Include="Scripts\Commons\Commons.js" />
     <Content Include="Scripts\demo.min.js" />
     <Content Include="Scripts\Inflaciones\Inflaciones.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -420,6 +424,8 @@
     <Content Include="Views\TipoCambio\Index.cshtml" />
     <Content Include="Views\PPIngresos\Index.cshtml" />
     <Content Include="Views\PPGastos\Index.cshtml" />
+    <Content Include="Views\CargasSociales\Index.cshtml" />
+    <Content Include="Views\TipoIngreso\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
