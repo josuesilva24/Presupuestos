@@ -20,7 +20,7 @@ namespace WS_PresupuestoSis
         {
             return InflacionBL.UdpdateInflacion( id,  semestreI,  semestreII);
         }
-        public bool AddInflacion(string anno, string semestreI, string semestreII)
+        public bool AddInflacion(int anno, string semestreI, string semestreII)
         {
             return InflacionBL.AddInflacion(  anno,  semestreI,  semestreII);
         }

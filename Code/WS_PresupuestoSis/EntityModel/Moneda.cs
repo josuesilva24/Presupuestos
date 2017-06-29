@@ -12,11 +12,20 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuenta_Contable
+    public partial class Moneda
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Moneda()
+        {
+            this.Tipo_Cambio = new HashSet<Tipo_Cambio>();
+        }
+    
         public int Id { get; set; }
-        public string Cuenta_Contable1 { get; set; }
+        public string Moneda1 { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<bool> Activo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tipo_Cambio> Tipo_Cambio { get; set; }
     }
 }

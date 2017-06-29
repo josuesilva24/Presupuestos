@@ -12,11 +12,13 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuenta_Contable
+    public partial class Tipo_Cambio
     {
         public int Id { get; set; }
-        public string Cuenta_Contable1 { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
+        public int Ano { get; set; }
+        public int Id_Moneda { get; set; }
+        public string Mes { get; set; }
+    
+        public virtual Moneda Moneda { get; set; }
     }
 }
