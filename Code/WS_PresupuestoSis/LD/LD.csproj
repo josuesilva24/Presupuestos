@@ -53,6 +53,10 @@
       <Project>{f69e6f39-cf85-4d35-9b3d-bc08c1af27a9}</Project>
       <Name>EntityModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModelMap\ModelMap.csproj">
+      <Project>{4c93a418-102e-4b13-bafd-e5037098b45d}</Project>
+      <Name>ModelMap</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

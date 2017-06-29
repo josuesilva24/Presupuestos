@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using EntityModel;
+using ModelMap;
 
 namespace LD
 {
@@ -29,16 +30,19 @@ namespace LD
             return false;
         }
 
-         public IQueryable<PROYECTO> getProyectosCentrosCosto()
+        public IQueryable<ProyectoCentroCostosMap> GetProyectosCentrosCosto()
         {
-            /*
-                SELECT	t2.* 
-                FROM	TBLPROYECTO pro
-                JOIN	TBLPROYECTOCENTRODECOSTO t ON t.LNGIDPROYECTO = pro.LNGIDPROYECTO
-                JOIN	TBLCENTROCOSTO t2 ON t2.LNGIDCENTROCOSTO = t.LNGIDCENTROCOSTO
-                WHERE	t2.STRACTIVO = 'S'
-             */
-          return Model.PROYECTOes;
+            return from proye in Model.PROYECTOes
+                        join proyCC in Model.Proyecto_Centro_Costos on proye.Id equals proyCC.Id_Proyecto
+                        join CC in Model.Centro_Costos on proyCC.Id_Centro_Costos equals CC.Id
+                        select new ProyectoCentroCostosMap
+                        {
+                            IdBD = proye.Id,
+                            Codigo  = proye.CODIGO,
+                            Estado = proye.ACTIVO,
+                            Descripcion = proye.DESCRIPCION,
+                            CentroCosto = CC.Descripcion
+                        };
 
         }
         public IQueryable<PROYECTO> getProyectosCentrosCostoPorId(int id)

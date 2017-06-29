@@ -13,3 +13,5 @@ Code/WS_PresupuestoSis/LD/obj/
 Code/WS_PresupuestoSis/WS_PresupuestoSis/obj/Debug/build.force
 Code/WS_PresupuestoSis/.vs/WS_PresupuestoSis.sqlite-journal
 Code/WS_PresupuestoSis/.vs/WS_PresupuestoSis.sqlite
+Code/WS_PresupuestoSis/EntityModel/App.Config
+Code/WS_PresupuestoSis/WS_PresupuestoSis/Web.config
