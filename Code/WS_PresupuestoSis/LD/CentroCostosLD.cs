@@ -1,29 +1,27 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 using EntityModel;
 
 namespace LD
 {
     public  class CentroCostosLD:BaseModel
     {
-        public IQueryable<TBLCENTROCOSTO> getCentrosCosto()
+        public IQueryable<Centro_Costos> getCentrosCosto()
         {
-            return Model.TBLCENTROCOSTO;
+            return Model.Centro_Costos;
         }
 
-        public IQueryable<TBLCENTROCOSTO> getCentrosCostoPorId(int id)
+        public IQueryable<Centro_Costos> getCentrosCostoPorId(int id)
         {
-            return  Model.TBLCENTROCOSTO.Where(e => e.LNGIDCENTROCOSTO == id);
+            return  Model.Centro_Costos.Where(e => e.Id == id);
         }
-        public bool updateCentroCosto(int id, string estado)
+        public bool updateCentroCosto(int id, bool estado)
         {
 
             var CC = getCentrosCostoPorId(id).FirstOrDefault();
 
             if (CC != null)
             {
-                CC.STRACTIVO = estado;
+                CC.Activo = estado;
                 Model.SaveChanges();
                 return true;
             }
@@ -31,7 +29,7 @@ namespace LD
             return false;
         }
 
-         public IQueryable<TBLPROYECTO> getProyectosCentrosCosto()
+         public IQueryable<PROYECTO> getProyectosCentrosCosto()
         {
             /*
                 SELECT	t2.* 
@@ -41,11 +39,11 @@ namespace LD
                 WHERE	t2.STRACTIVO = 'S'
              */
 
-            return Model.TBLPROYECTO;
+            return Model.PROYECTOes;
         }
-        public IQueryable<TBLPROYECTO> getProyectosCentrosCostoPorId(int id)
+        public IQueryable<PROYECTO> getProyectosCentrosCostoPorId(int id)
         {
-            return Model.TBLPROYECTO.Where(e => e.LNGIDPROYECTO == id);
+            return Model.PROYECTOes.Where(e => e.Id == id);
         }
 
 

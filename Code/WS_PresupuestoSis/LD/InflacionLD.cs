@@ -4,24 +4,24 @@ namespace LD
 {
     public class InflacionLD:BaseModel
     {
-        public IQueryable<TBLINFLACION> getInflaciones()
+        public IQueryable<Inflacion> getInflaciones()
         {
-            return Model.TBLINFLACION;
+            return Model.Inflacions;
         }
 
-        public IQueryable<TBLINFLACION> getInflacionPorId(int id)
+        public IQueryable<Inflacion> getInflacionPorId(int id)
         {
-            return Model.TBLINFLACION.Where(e => e.LNGIDINFLACION == id);
+            return Model.Inflacions.Where(e => e.Id == id);
         }
         public bool updateInflacion(int id, string semestreI, string semestreII)
         {
 
-            TBLINFLACION Inflacion = getInflacionPorId(id).FirstOrDefault();
+            Inflacion Inflacion = getInflacionPorId(id).FirstOrDefault();
 
             if (Inflacion != null)
             {
-                Inflacion.STRSEMSTRE_1 = semestreI;
-                Inflacion.STRSEMSTRE_2 = semestreII;
+                Inflacion.Semetre_1 = semestreI;
+                Inflacion.Semestre_2 = semestreII;
                 Model.SaveChanges();
                 return true;
             }
@@ -29,17 +29,17 @@ namespace LD
             return false;
         }
 
-        public bool addInflacion( string anno, string semestreI, string semestreII)
+        public bool addInflacion( int anno, string semestreI, string semestreII)
         {
-            var inflaciones= getInflaciones().Where(e=>e.STRAÑO.Equals(anno)).FirstOrDefault();
+            var inflaciones= getInflaciones().Where(e=>e.Ano.Equals(anno)).FirstOrDefault();
             if (inflaciones == null)
             {
-                TBLINFLACION inf = new TBLINFLACION();
-                inf.STRAÑO = anno;
-                inf.STRSEMSTRE_1 = semestreI;
-                inf.STRSEMSTRE_2 = semestreII;
-                inf.DTMFECHA = System.DateTime.Today;
-                Model.TBLINFLACION.Add(inf);
+                var inf = new Inflacion();
+                inf.Ano = anno;
+                inf.Semetre_1 = semestreI;
+                inf.Semestre_2 = semestreII;
+                inf.Fecha = System.DateTime.Today;
+                Model.Inflacions.Add(inf);
                 Model.SaveChanges();
                 return true;
             }

@@ -24,10 +24,10 @@ namespace BL
                     (
                         new CentroCostosMap
                         {
-                            IdBD = item.LNGIDCENTROCOSTO,
-                            Descripcion = item.STRDESCRIPCION,
-                            Codigo = item.STRCODIGO,
-                            Estado = item.STRACTIVO == "S" ? "Activo":"Inactivo"
+                            IdBD = item.Id,
+                            Descripcion = item.Descripcion,
+                            Codigo = item.Codigo,
+                            Estado = item.Activo  ? "Activo":"Inactivo"
                         }
                         );
 
@@ -38,7 +38,7 @@ namespace BL
         }
 
 
-        public bool updateCentroCosto(int id, string estado)
+        public bool updateCentroCosto(int id, bool estado)
         {
           return  CentroCostosLd.updateCentroCosto(id,estado);
 
@@ -54,10 +54,10 @@ namespace BL
                     (
                         new ProyectoCentroCostosMap
                         {
-                            IdBD = item.LNGIDPROYECTO,
-                            Descripcion = item.STRDESCRIPCION,
-                            Codigo = item.STRCODIGO,
-                            Estado = item.STRACTIVO == "S" ? "Activo" : "Inactivo",
+                            IdBD = item.Id,
+                            Descripcion = item.DESCRIPCION,
+                            Codigo = item.CODIGO,
+                            Estado = item.ACTIVO == true ? "Activo" : "Inactivo",
                             CentroCosto = "CentroCosto"
                         }
                     );
