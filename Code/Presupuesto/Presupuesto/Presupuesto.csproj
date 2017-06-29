@@ -202,6 +202,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InflacionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MonedaController.cs" />
+    <Compile Include="Controllers\TipoCambioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -334,9 +336,11 @@
     <Content Include="Scripts\libs\jquery-2.1.1.min.js" />
     <Content Include="Scripts\libs\jquery-ui-1.10.3.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Moneda\Monada.js" />
     <Content Include="Scripts\notification\SmartNotification.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\TipoCambio\TipoCambio.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.CentroCostosMap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -408,6 +412,8 @@
     <Content Include="Views\CentroCosto\Index.cshtml" />
     <Content Include="Views\CentroCosto\ProyectoCentroCosto.cshtml" />
     <Content Include="Views\Inflaciones\Index.cshtml" />
+    <Content Include="Views\Moneda\Index.cshtml" />
+    <Content Include="Views\TipoCambio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
