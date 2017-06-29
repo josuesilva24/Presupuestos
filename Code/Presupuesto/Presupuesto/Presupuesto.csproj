@@ -203,6 +203,8 @@
     <Compile Include="Controllers\InflacionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MonedaController.cs" />
+    <Compile Include="Controllers\PPGastosController.cs" />
+    <Compile Include="Controllers\PPIngresosController.cs" />
     <Compile Include="Controllers\TipoCambioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -338,6 +340,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Moneda\Monada.js" />
     <Content Include="Scripts\notification\SmartNotification.min.js" />
+    <Content Include="Scripts\PPgastos\PPgastos.js" />
+    <Content Include="Scripts\PPingresos\PPingresos.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\TipoCambio\TipoCambio.js" />
@@ -414,6 +418,8 @@
     <Content Include="Views\Inflaciones\Index.cshtml" />
     <Content Include="Views\Moneda\Index.cshtml" />
     <Content Include="Views\TipoCambio\Index.cshtml" />
+    <Content Include="Views\PPIngresos\Index.cshtml" />
+    <Content Include="Views\PPGastos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
