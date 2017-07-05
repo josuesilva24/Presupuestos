@@ -16,6 +16,8 @@
         <AssociationConnector Association="ProyeccionModel.FK_Proyecto_Centro_Costos_Centro_Costos" ManuallyRouted="false" />
         <AssociationConnector Association="ProyeccionModel.FK_Tipo_Cambio_Moneda" ManuallyRouted="false" />
         <AssociationConnector Association="ProyeccionModel.FK_Proyecto_Centro_Costos_PROYECTO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProyeccionModel.Tipo_CuentaContable" Width="1.5" PointX="7.375" PointY="4.75" />
+        <AssociationConnector Association="ProyeccionModel.FK_Cuenta_Contable_Cuenta_Contable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

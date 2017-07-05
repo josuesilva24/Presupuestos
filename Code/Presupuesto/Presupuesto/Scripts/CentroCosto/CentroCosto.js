@@ -81,7 +81,7 @@
         search: false
                       
     });
-    $('#jqgrid').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false });
+    $('#jqgrid').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: true });
 
     jQuery("#jqgrid").jqGrid('inlineNav', "#pjqgrid",{
         edit : true,
@@ -101,7 +101,7 @@
             }
         }
     });
-
+    $("#jqgrid pgbuttons").removeClass("ui-state-disabled")
     /* Add tooltips */
     $('.navtable .ui-pg-button').tooltip({
         container : 'body'

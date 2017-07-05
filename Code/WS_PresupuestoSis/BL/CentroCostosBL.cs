@@ -47,7 +47,23 @@ namespace BL
 
         public List<ProyectoCentroCostosMap> getProyectoCentroCostos()
         {
-            return CentroCostosLd.GetProyectosCentrosCosto().ToList().ToList();
+            return CentroCostosLd.GetProyectosCentrosCosto().ToList();
         }
+
+
+
+        public bool updateProyectosCentrosCosto(int id, bool estado, string codigoCentroCosto)
+        {
+            return CentroCostosLd.updateProyectosCentrosCosto(id, "", estado, codigoCentroCosto);
+        }
+
+
+        //public bool AddProyectosCentrosCosto( bool estado, string codigoCentroCosto)
+        //{
+        //    return CentroCostosLd.updateCentroCosto(estado, codigoCentroCosto);
+
+        //}
+
+
     }
 }

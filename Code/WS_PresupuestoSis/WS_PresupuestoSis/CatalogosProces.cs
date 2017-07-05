@@ -27,5 +27,17 @@ namespace WS_PresupuestoSis
         {
             return CentroCostosBl.getProyectoCentroCostos();
         }
+
+
+        public bool UpdateProyectoPorCentroCosto(int id, bool estado, string codigoCentroCosto)
+        {
+            return CentroCostosBl.updateProyectosCentrosCosto(id, estado, codigoCentroCosto);
+        }
+
+        //public bool AddProyectoPorCentroCosto( bool estado, string codigoCentroCosto)
+        //{
+        //    return CentroCostosBl.updateCentroCosto(id, estado);
+        //}
+
     }
 }
