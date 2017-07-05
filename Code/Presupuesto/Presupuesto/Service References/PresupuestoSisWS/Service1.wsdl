@@ -38,6 +38,12 @@
   <wsdl:message name="IService1_getProyectosCentrosCosto_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProyectosCentrosCostoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateProyectoPorCentroCosto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProyectoPorCentroCosto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProyectoPorCentroCosto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProyectoPorCentroCostoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getInflaciones_InputMessage">
     <wsdl:part name="parameters" element="tns:getInflaciones" />
   </wsdl:message>
@@ -76,6 +82,10 @@
     <wsdl:operation name="getProyectosCentrosCosto">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProyectosCentrosCosto" message="tns:IService1_getProyectosCentrosCosto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProyectosCentrosCostoResponse" message="tns:IService1_getProyectosCentrosCosto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProyectoPorCentroCosto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateProyectoPorCentroCosto" message="tns:IService1_UpdateProyectoPorCentroCosto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateProyectoPorCentroCostoResponse" message="tns:IService1_UpdateProyectoPorCentroCosto_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getInflaciones">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getInflaciones" message="tns:IService1_getInflaciones_InputMessage" />
@@ -130,6 +140,15 @@
     </wsdl:operation>
     <wsdl:operation name="getProyectosCentrosCosto">
       <soap:operation soapAction="http://tempuri.org/IService1/getProyectosCentrosCosto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProyectoPorCentroCosto">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateProyectoPorCentroCosto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

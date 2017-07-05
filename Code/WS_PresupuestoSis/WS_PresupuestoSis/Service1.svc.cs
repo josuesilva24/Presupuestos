@@ -59,5 +59,10 @@ namespace WS_PresupuestoSis
         {
             return new InflacionProcess().AddInflacion(anno,semestreI,semestreII);
         }
+
+        public bool UpdateProyectoPorCentroCosto(int id, bool estado, string codigoCentroCogosto)
+        {
+            return new CatalogosProces().UpdateProyectoPorCentroCosto(id,estado,codigoCentroCogosto);
+        }
     }
 }

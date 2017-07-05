@@ -1,7 +1,15 @@
 ﻿$(document).ready(function () {
     pageSetUp();
 
-    jQuery("#jqgridPCC").jqGrid({
+    ListaCentrosCostoCombo();
+
+
+    function ToActivoInactivo(cellvalue, options, rowObject) {
+        // do something here
+        return cellvalue == true ? "Activo" : "Inactivo";
+    }
+
+    $("#jqgridPCC").jqGrid({
         url: 'getProyectosCentrosCosto',
         editurl: 'clientArray',
         datatype: "json",
@@ -35,8 +43,9 @@
             align: "center",
             editable: true,
             edittype: "select",
+            formatter: ToActivoInactivo,
             editoptions: {
-                value: "S:Activo;N:Inactivo;",
+                value: "true:Activo;false:Inactivo",
             },
             search: false
 
@@ -47,25 +56,27 @@
             search: true,
             edittype: 'select',
             editoptions: {
-                dataUrl: "getCentrosCosto",
+                dataUrl: "getCentrosCostoList",
                 cacheUrlData: false,
                 buildSelect: function (data) {
 
-                    var dataa = data.split('-'), i = 0, s = '<select>', d;
-                    ////while (i < len) {
-                    ////    d = data[i].split(":");
-                    ////    s += '<option value="' + d[0] + '">' + d[0] + '-' + d[1] + '</option>';
-                    ////    i++;
-                    ////}
-                    //for (var i = 0; i <dataa.length; i++) {
-                    //    s += "<option value='" + dataa[i] + "'>" + dataa[i] + "</option>";
+                    var result = JSON.parse(data);
+                    var $select = "<select>";
+                    for (var i = 0; i < result.length; i++) {
+                        $select += '<option value="' + result[i].Value + '">' + result[i].Text + '</option>';
+                    }
+
+                    return $select +"</select>";
+
+                    //var dataa = data, i = 0, s = '<select>', d;
+        
+                    //    for (var i = 0; i < result.length; i++) {
+                    //        $('#CentroCostoList').append('<option value="' + result[i].Value + '">' + result[i].Text + '</option>');
                     //}
-                    s += '</select>';
-                    return s;
+                    //s += '</select>';
+                    //return s;
                 }
             }
-
-
 
         }, ],
         rowNum: 10,
@@ -75,7 +86,7 @@
         toolbarfilter: true,
         viewrecords: true,
         sortorder: "asc",
-        editurl: 'updateCentroCosto',
+        editurl: 'updateProyectoCentroCosto',
         gridComplete: function () {
             //var ids = jQuery("#jqgrid").jqGrid('getDataIDs');
             //for (var i = 0; i < ids.length; i++) {
@@ -144,7 +155,10 @@
     });
 
 
-
+    $("#CentroCostoList").change(function(){
+        var val = $(this).val();
+        updateGrid(val);
+    });
     // remove classes
     $(".ui-jqgrid").removeClass("ui-widget ui-widget-content");
     $(".ui-jqgrid-view").children().removeClass("ui-widget-header ui-state-default");
@@ -196,3 +210,26 @@ _gaq.push(['_trackPageview']);
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
 })();
+
+
+function ListaCentrosCostoCombo() {
+    $.ajax({
+        url: "getCentrosCostoList",
+        cache: false,
+        success: function (result) {
+            for (var i = 0; i < result.length; i++) {
+                $('#CentroCostoList').append('<option value="' + result[i].Value + '">' + result[i].Text + '</option>');
+            }
+            //$("#CentroCostoList option[value=" + $("#AduanaControlHidden").val() + "]").prop('selected', true);
+
+        }
+    });
+}
+
+function updateGrid(CodigoCentroCosto)
+{
+    var grid = $('#jqgridPCC');
+    grid.jqGrid('clearGridData');
+    grid.jqGrid('setGridParam', { url: 'getProyectosPorCentrosCosto?codigo=' + CodigoCentroCosto, datatype: "json", }).trigger("reloadGrid");
+
+}
