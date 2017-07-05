@@ -31,7 +31,7 @@ namespace LD
 
         public bool addInflacion( int anno, string semestreI, string semestreII)
         {
-            var inflaciones= getInflaciones().Where(e=>e.Ano.Equals(anno)).FirstOrDefault();
+            var inflaciones= getInflaciones().Where(e=>e.Ano==anno).FirstOrDefault();
             if (inflaciones == null)
             {
                 var inf = new Inflacion();

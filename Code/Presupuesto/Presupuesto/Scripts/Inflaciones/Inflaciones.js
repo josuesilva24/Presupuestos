@@ -34,7 +34,6 @@
             index: 'PrimerSemestre',
             editable: true,
             search: false,
-            edittype:'number'
 
         },
           {
@@ -42,7 +41,7 @@
               index: 'SegundoSemestre',
               search:false,
               editable: true,
-              edittype: 'number'
+              number: { decimalSeparator: ".", decimalPlaces: 2, defaultValue: '0.00' },
 
           },
    ],
