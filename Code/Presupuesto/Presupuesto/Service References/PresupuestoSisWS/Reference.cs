@@ -186,7 +186,7 @@ namespace Presupuesto.PresupuestoSisWS {
         private string DescripcionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EstadoField;
+        private System.Nullable<bool> EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdBDField;
@@ -241,12 +241,12 @@ namespace Presupuesto.PresupuestoSisWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Estado {
+        public System.Nullable<bool> Estado {
             get {
                 return this.EstadoField;
             }
             set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                if ((this.EstadoField.Equals(value) != true)) {
                     this.EstadoField = value;
                     this.RaisePropertyChanged("Estado");
                 }
@@ -419,6 +419,12 @@ namespace Presupuesto.PresupuestoSisWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProyectosCentrosCosto", ReplyAction="http://tempuri.org/IService1/getProyectosCentrosCostoResponse")]
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[]> getProyectosCentrosCostoAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProyectoPorCentroCosto", ReplyAction="http://tempuri.org/IService1/UpdateProyectoPorCentroCostoResponse")]
+        bool UpdateProyectoPorCentroCosto(int id, bool estado, string codigoCentroCogosto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProyectoPorCentroCosto", ReplyAction="http://tempuri.org/IService1/UpdateProyectoPorCentroCostoResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProyectoPorCentroCostoAsync(int id, bool estado, string codigoCentroCogosto);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getInflaciones", ReplyAction="http://tempuri.org/IService1/getInflacionesResponse")]
         Presupuesto.PresupuestoSisWS.InflacionMap[] getInflaciones();
         
@@ -503,6 +509,14 @@ namespace Presupuesto.PresupuestoSisWS {
         
         public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.ProyectoCentroCostosMap[]> getProyectosCentrosCostoAsync() {
             return base.Channel.getProyectosCentrosCostoAsync();
+        }
+        
+        public bool UpdateProyectoPorCentroCosto(int id, bool estado, string codigoCentroCogosto) {
+            return base.Channel.UpdateProyectoPorCentroCosto(id, estado, codigoCentroCogosto);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProyectoPorCentroCostoAsync(int id, bool estado, string codigoCentroCogosto) {
+            return base.Channel.UpdateProyectoPorCentroCostoAsync(id, estado, codigoCentroCogosto);
         }
         
         public Presupuesto.PresupuestoSisWS.InflacionMap[] getInflaciones() {

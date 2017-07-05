@@ -91,6 +91,9 @@
     <Compile Include="Tipo_Cambio.cs">
       <DependentUpon>ProyeccionEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tipo_CuentaContable.cs">
+      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">

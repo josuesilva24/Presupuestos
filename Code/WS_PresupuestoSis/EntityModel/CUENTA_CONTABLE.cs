@@ -18,5 +18,9 @@ namespace EntityModel
         public string Cuenta_Contable1 { get; set; }
         public string Descripcion { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<int> TipoCuenta { get; set; }
+    
+        public virtual Cuenta_Contable Cuenta_Contable11 { get; set; }
+        public virtual Cuenta_Contable Cuenta_Contable2 { get; set; }
     }
 }

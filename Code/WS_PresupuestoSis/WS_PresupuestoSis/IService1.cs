@@ -28,6 +28,12 @@ namespace WS_PresupuestoSis
 
         [OperationContract]
         List<ProyectoCentroCostosMap> getProyectosCentrosCosto();
+
+
+        [OperationContract]
+        bool UpdateProyectoPorCentroCosto(int id, bool estado, string codigoCentroCogosto);
+
+        
         #endregion
         #region inflacion
         [OperationContract]
