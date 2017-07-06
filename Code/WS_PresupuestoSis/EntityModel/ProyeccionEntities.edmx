@@ -23,7 +23,6 @@
           <Property Name="Cuenta_Contable" Type="varchar" MaxLength="250" />
           <Property Name="Descripcion" Type="varchar(max)" />
           <Property Name="Fecha" Type="datetime" />
-          <Property Name="TipoCuenta" Type="int" />
         </EntityType>
         <EntityType Name="Inflacion">
           <Key>
@@ -86,26 +85,8 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <Property Name="Ano" Type="int" Nullable="false" />
           <Property Name="Id_Moneda" Type="int" Nullable="false" />
           <Property Name="Mes" Type="varchar" MaxLength="50" />
+          <Property Name="Valor" Type="decimal" Precision="18" Scale="10" Nullable="false" />
         </EntityType>
-        <EntityType Name="Tipo_CuentaContable">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TipoCC" Type="nchar" MaxLength="90" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Cuenta_Contable_Cuenta_Contable">
-          <End Role="Cuenta_Contable" Type="Self.Cuenta_Contable" Multiplicity="1" />
-          <End Role="Cuenta_Contable1" Type="Self.Cuenta_Contable" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Cuenta_Contable">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Cuenta_Contable1">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Proyecto_Centro_Costos_Centro_Costos">
           <End Role="Centro_Costos" Type="Self.Centro_Costos" Multiplicity="1" />
           <End Role="Proyecto_Centro_Costos" Type="Self.Proyecto_Centro_Costos" Multiplicity="*" />
@@ -150,7 +131,6 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <EntitySet Name="PROYECTO" EntityType="Self.PROYECTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Cambio" EntityType="Self.Tipo_Cambio" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tipo_CuentaContable" EntityType="Self.Tipo_CuentaContable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proyecto_Centro_Costos" EntityType="Self.Proyecto_Centro_Costos" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Proyecto_Centro_Costos].[Id_Proyecto] AS [Id_Proyecto], 
@@ -159,10 +139,6 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
     [Proyecto_Centro_Costos].[Fecha] AS [Fecha]
     FROM [dbo].[Proyecto_Centro_Costos] AS [Proyecto_Centro_Costos]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_Cuenta_Contable_Cuenta_Contable" Association="Self.FK_Cuenta_Contable_Cuenta_Contable">
-            <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
-            <End Role="Cuenta_Contable1" EntitySet="Cuenta_Contable" />
-          </AssociationSet>
           <AssociationSet Name="FK_Proyecto_Centro_Costos_Centro_Costos" Association="Self.FK_Proyecto_Centro_Costos_Centro_Costos">
             <End Role="Centro_Costos" EntitySet="Centro_Costos" />
             <End Role="Proyecto_Centro_Costos" EntitySet="Proyecto_Centro_Costos" />
@@ -253,6 +229,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <Property Name="Id_Moneda" Type="Int32" Nullable="false" />
           <Property Name="Mes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Moneda" Relationship="Self.FK_Tipo_Cambio_Moneda" FromRole="Tipo_Cambio" ToRole="Moneda" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
         </EntityType>
         <EntityType Name="Proyecto_Centro_Costos">
           <Key>
@@ -370,7 +347,6 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <EntitySetMapping Name="Cuenta_Contable">
             <EntityTypeMapping TypeName="ProyeccionModel.Cuenta_Contable">
               <MappingFragment StoreEntitySet="Cuenta_Contable">
-                <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Cuenta_Contable1" ColumnName="Cuenta_Contable" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -424,6 +400,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <EntitySetMapping Name="Tipo_Cambio">
             <EntityTypeMapping TypeName="ProyeccionModel.Tipo_Cambio">
               <MappingFragment StoreEntitySet="Tipo_Cambio">
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ano" ColumnName="Ano" />
                 <ScalarProperty Name="Id_Moneda" ColumnName="Id_Moneda" />
@@ -442,9 +419,8 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tipo_CuentaContable">
-            <EntityTypeMapping TypeName="ProyeccionModel.Tipo_CuentaContable">
-              <MappingFragment StoreEntitySet="Tipo_CuentaContable">
-                <ScalarProperty Name="TipoCC" ColumnName="TipoCC" />
+            <EntityTypeMapping TypeName="IsTypeOf(ProyeccionModel.Tipo_CuentaContable)">
+              <MappingFragment StoreEntitySet="Tipo_Cambio">
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

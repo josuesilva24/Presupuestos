@@ -18,6 +18,7 @@ namespace EntityModel
         public int Ano { get; set; }
         public int Id_Moneda { get; set; }
         public string Mes { get; set; }
+        public decimal Valor { get; set; }
     
         public virtual Moneda Moneda { get; set; }
     }
