@@ -206,6 +206,7 @@
     <Compile Include="Controllers\MonedaController.cs" />
     <Compile Include="Controllers\PPGastosController.cs" />
     <Compile Include="Controllers\PPIngresosController.cs" />
+    <Compile Include="Controllers\SalariosController.cs" />
     <Compile Include="Controllers\TipoCambioController.cs" />
     <Compile Include="Controllers\TipoIngresoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -426,6 +427,7 @@
     <Content Include="Views\PPGastos\Index.cshtml" />
     <Content Include="Views\CargasSociales\Index.cshtml" />
     <Content Include="Views\TipoIngreso\Index.cshtml" />
+    <Content Include="Views\Salarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
