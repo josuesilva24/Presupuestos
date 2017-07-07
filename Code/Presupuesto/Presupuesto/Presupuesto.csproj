@@ -343,7 +343,7 @@
     <Content Include="Scripts\libs\jquery-2.1.1.min.js" />
     <Content Include="Scripts\libs\jquery-ui-1.10.3.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Moneda\Monada.js" />
+    <Content Include="Scripts\Moneda\Moneda.js" />
     <Content Include="Scripts\notification\SmartNotification.min.js" />
     <Content Include="Scripts\PPgastos\PPgastos.js" />
     <Content Include="Scripts\PPingresos\PPingresos.js" />
@@ -362,6 +362,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.InflacionMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.MonedaMap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\PresupuestoSisWS\Service1.disco" />

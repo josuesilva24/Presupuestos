@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CentroCostosMap.cs" />
     <Compile Include="InflacionMap.cs" />
+    <Compile Include="MonedaMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyecto_Centro_Costo.cs" />
     <Compile Include="TipoCambioMap.cs" />

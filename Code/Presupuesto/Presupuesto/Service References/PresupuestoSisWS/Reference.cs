@@ -385,6 +385,99 @@ namespace Presupuesto.PresupuestoSisWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MonedaMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class MonedaMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Activo {
+            get {
+                return this.ActivoField;
+            }
+            set {
+                if ((this.ActivoField.Equals(value) != true)) {
+                    this.ActivoField = value;
+                    this.RaisePropertyChanged("Activo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PresupuestoSisWS.IService1")]
     public interface IService1 {
@@ -442,6 +535,18 @@ namespace Presupuesto.PresupuestoSisWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddInflaciones", ReplyAction="http://tempuri.org/IService1/AddInflacionesResponse")]
         System.Threading.Tasks.Task<bool> AddInflacionesAsync(int anno, string semestreI, string semestreII);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMoneda", ReplyAction="http://tempuri.org/IService1/GetMonedaResponse")]
+        Presupuesto.PresupuestoSisWS.MonedaMap[] GetMoneda();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMoneda", ReplyAction="http://tempuri.org/IService1/GetMonedaResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.MonedaMap[]> GetMonedaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMoneda", ReplyAction="http://tempuri.org/IService1/AddMonedaResponse")]
+        bool AddMoneda(string moneda, string descripcion, bool activo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMoneda", ReplyAction="http://tempuri.org/IService1/AddMonedaResponse")]
+        System.Threading.Tasks.Task<bool> AddMonedaAsync(string moneda, string descripcion, bool activo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -541,6 +646,22 @@ namespace Presupuesto.PresupuestoSisWS {
         
         public System.Threading.Tasks.Task<bool> AddInflacionesAsync(int anno, string semestreI, string semestreII) {
             return base.Channel.AddInflacionesAsync(anno, semestreI, semestreII);
+        }
+        
+        public Presupuesto.PresupuestoSisWS.MonedaMap[] GetMoneda() {
+            return base.Channel.GetMoneda();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.MonedaMap[]> GetMonedaAsync() {
+            return base.Channel.GetMonedaAsync();
+        }
+        
+        public bool AddMoneda(string moneda, string descripcion, bool activo) {
+            return base.Channel.AddMoneda(moneda, descripcion, activo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddMonedaAsync(string moneda, string descripcion, bool activo) {
+            return base.Channel.AddMonedaAsync(moneda, descripcion, activo);
         }
     }
 }

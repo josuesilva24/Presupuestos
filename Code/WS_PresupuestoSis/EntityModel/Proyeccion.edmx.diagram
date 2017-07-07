@@ -4,20 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="697f1a9f32894430842e7cf1289b1517" Name="Diagram1">
+      <Diagram DiagramId="24bede18b2324d6f9e70266eeebe67ed" Name="Diagram1">
         <EntityTypeShape EntityType="ProyeccionModel.Centro_Costos" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyeccionModel.Cuenta_Contable" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyeccionModel.Inflacion" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyeccionModel.Moneda" Width="1.5" PointX="2.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyeccionModel.Cuenta_Contable" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyeccionModel.Inflacion" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyeccionModel.Moneda" Width="1.5" PointX="4.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyeccionModel.PROYECTO" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyeccionModel.sysdiagram" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyeccionModel.Tipo_Cambio" Width="1.5" PointX="5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyeccionModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyeccionModel.Tipo_Cambio" Width="1.5" PointX="7" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyeccionModel.Tipo_CuentaContable" Width="2.875" PointX="0.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyeccionModel.Proyecto_Centro_Costos" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="ProyeccionModel.FK_Proyecto_Centro_Costos_Centro_Costos" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyeccionModel.FK_Cuenta_Contable_Cuenta_Contable" ManuallyRouted="false" />
         <AssociationConnector Association="ProyeccionModel.FK_Tipo_Cambio_Moneda" ManuallyRouted="false" />
         <AssociationConnector Association="ProyeccionModel.FK_Proyecto_Centro_Costos_PROYECTO" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProyeccionModel.Tipo_CuentaContable" Width="1.5" PointX="7.375" PointY="4.75" />
-        <AssociationConnector Association="ProyeccionModel.FK_Cuenta_Contable_Cuenta_Contable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

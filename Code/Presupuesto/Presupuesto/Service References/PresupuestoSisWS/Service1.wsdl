@@ -62,6 +62,18 @@
   <wsdl:message name="IService1_AddInflaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddInflacionesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetMoneda_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoneda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMoneda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddMoneda_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMoneda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddMoneda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMonedaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -98,6 +110,14 @@
     <wsdl:operation name="AddInflaciones">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddInflaciones" message="tns:IService1_AddInflaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddInflacionesResponse" message="tns:IService1_AddInflaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoneda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMoneda" message="tns:IService1_GetMoneda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMonedaResponse" message="tns:IService1_GetMoneda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMoneda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddMoneda" message="tns:IService1_AddMoneda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddMonedaResponse" message="tns:IService1_AddMoneda_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -176,6 +196,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddInflaciones">
       <soap:operation soapAction="http://tempuri.org/IService1/AddInflaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoneda">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMoneda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMoneda">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddMoneda" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -52,47 +52,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Centro_Costos.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Cuenta_Contable.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Inflacion.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Moneda.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProyeccionEntities.Context.cs">
+    <Compile Include="Proyeccion.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProyeccionEntities.Context.tt</DependentUpon>
+      <DependentUpon>Proyeccion.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProyeccionEntities.cs">
+    <Compile Include="Proyeccion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProyeccionEntities.Designer.cs">
+    <Compile Include="Proyeccion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
+      <DependentUpon>Proyeccion.edmx</DependentUpon>
     </Compile>
     <Compile Include="PROYECTO.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Proyecto_Centro_Costos.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_Cambio.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_CuentaContable.cs">
-      <DependentUpon>ProyeccionEntities.tt</DependentUpon>
+      <DependentUpon>Proyeccion.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -100,27 +100,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <EntityDeploy Include="ProyeccionEntities.edmx">
+    <EntityDeploy Include="Proyeccion.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProyeccionEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>Proyeccion.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ProyeccionEntities.edmx.diagram">
-      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
+    <None Include="Proyeccion.edmx.diagram">
+      <DependentUpon>Proyeccion.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProyeccionEntities.Context.tt">
+    <Content Include="Proyeccion.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
-      <LastGenOutput>ProyeccionEntities.Context.cs</LastGenOutput>
+      <DependentUpon>Proyeccion.edmx</DependentUpon>
+      <LastGenOutput>Proyeccion.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ProyeccionEntities.tt">
+    <Content Include="Proyeccion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProyeccionEntities.edmx</DependentUpon>
-      <LastGenOutput>ProyeccionEntities.cs</LastGenOutput>
+      <DependentUpon>Proyeccion.edmx</DependentUpon>
+      <LastGenOutput>Proyeccion.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

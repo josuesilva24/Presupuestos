@@ -45,6 +45,15 @@ namespace WS_PresupuestoSis
         [OperationContract]
         bool AddInflaciones(int anno, string semestreI, string semestreII);
         #endregion
+
+        #region MonedaMap
+        [OperationContract]
+         List<MonedaMap> GetMoneda();
+
+        [OperationContract]
+        bool AddMoneda(string moneda, string descripcion, bool activo);
+        #endregion
+
     }
 
 

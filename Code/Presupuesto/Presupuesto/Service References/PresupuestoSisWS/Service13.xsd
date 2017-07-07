@@ -47,4 +47,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="InflacionMap" nillable="true" type="tns:InflacionMap" />
+  <xs:complexType name="ArrayOfMonedaMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonedaMap" nillable="true" type="tns:MonedaMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonedaMap" nillable="true" type="tns:ArrayOfMonedaMap" />
+  <xs:complexType name="MonedaMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonedaMap" nillable="true" type="tns:MonedaMap" />
 </xs:schema>

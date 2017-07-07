@@ -27,12 +27,12 @@ namespace EntityModel
     
         public virtual DbSet<Centro_Costos> Centro_Costos { get; set; }
         public virtual DbSet<Cuenta_Contable> Cuenta_Contable { get; set; }
-        public virtual DbSet<Inflacion> Inflacions { get; set; }
-        public virtual DbSet<Moneda> Monedas { get; set; }
-        public virtual DbSet<PROYECTO> PROYECTOes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Inflacion> Inflacion { get; set; }
+        public virtual DbSet<Moneda> Moneda { get; set; }
+        public virtual DbSet<PROYECTO> PROYECTO { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tipo_Cambio> Tipo_Cambio { get; set; }
-        public virtual DbSet<Proyecto_Centro_Costos> Proyecto_Centro_Costos { get; set; }
         public virtual DbSet<Tipo_CuentaContable> Tipo_CuentaContable { get; set; }
+        public virtual DbSet<Proyecto_Centro_Costos> Proyecto_Centro_Costos { get; set; }
     }
 }

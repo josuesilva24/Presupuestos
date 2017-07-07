@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="CatalogosProces.cs" />
     <Compile Include="InflacionProcess.cs" />
+    <Compile Include="MonedaProcess.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

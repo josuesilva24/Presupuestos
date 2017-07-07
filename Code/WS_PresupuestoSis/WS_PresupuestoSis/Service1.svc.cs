@@ -64,5 +64,15 @@ namespace WS_PresupuestoSis
         {
             return new CatalogosProces().UpdateProyectoPorCentroCosto(id,estado,codigoCentroCogosto);
         }
+
+        public List<MonedaMap> GetMoneda()
+        {
+            return new MonedaProcess().GetMoneda();
+        }
+
+        public bool AddMoneda(string moneda, string descripcion, bool activo)
+        {
+            return new MonedaProcess().AddMoneda(moneda,descripcion, activo);
+        }
     }
 }

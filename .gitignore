@@ -62,3 +62,27 @@ Code/Presupuesto/Presupuesto/bin/Microsoft.Owin.xml
 Code/Presupuesto/Presupuesto/bin/Newtonsoft.Json.xml
 Code/Presupuesto/Presupuesto/bin/Presupuesto.dll.config
 Code/Presupuesto/Presupuesto/bin/roslyn/VBCSCompiler.exe.config
+Code/WS_PresupuestoSis/WS_PresupuestoSis/obj/Debug/WS_PresupuestoSis.pdb
+Code/WS_PresupuestoSis/WS_PresupuestoSis/obj/Debug/WS_PresupuestoSis.dll
+Code/WS_PresupuestoSis/WS_PresupuestoSis/obj/Debug/WS_PresupuestoSis.csprojResolveAssemblyReference.cache
+Code/WS_PresupuestoSis/ModelMap/obj/Debug/ModelMap.pdb
+Code/WS_PresupuestoSis/ModelMap/obj/Debug/ModelMap.dll
+Code/WS_PresupuestoSis/ModelMap/obj/Debug/ModelMap.csprojResolveAssemblyReference.cache
+Code/WS_PresupuestoSis/ModelMap/bin/Debug/ModelMap.pdb
+Code/WS_PresupuestoSis/ModelMap/bin/Debug/ModelMap.dll
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/edmxResourcesToEmbed/Proyeccion.ssdl
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/edmxResourcesToEmbed/Proyeccion.msl
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/edmxResourcesToEmbed/Proyeccion.csdl
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/TempPE/Proyeccion.cs.dll
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/TempPE/Proyeccion.Designer.cs.dll
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/EntityModel.pdb
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/EntityModel.dll
+Code/WS_PresupuestoSis/EntityModel/bin/Debug/EntityModel.pdb
+Code/WS_PresupuestoSis/EntityModel/bin/Debug/EntityModel.dll
+Code/WS_PresupuestoSis/EntityModel/bin/Debug/EntityFramework.dll
+Code/WS_PresupuestoSis/EntityModel/bin/Debug/EntityFramework.SqlServer.dll
+Code/WS_PresupuestoSis/BL/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Code/WS_PresupuestoSis/BL/obj/Debug/BL.pdb
+Code/WS_PresupuestoSis/BL/obj/Debug/BL.dll
+Code/WS_PresupuestoSis/BL/obj/Debug/BL.csprojResolveAssemblyReference.cache
+Code/Presupuesto/Presupuesto/Service References/PresupuestoSisWS/Presupuesto.PresupuestoSisWS.MonedaMap.datasource

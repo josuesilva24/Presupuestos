@@ -42,7 +42,7 @@ namespace LD
 
         public IQueryable<ProyectoCentroCostosMap> GetProyectosCentrosCosto()
         {
-            return from proye in Model.PROYECTOes
+            return from proye in Model.PROYECTO
                         join proyCC in Model.Proyecto_Centro_Costos on proye.Id equals proyCC.Id_Proyecto
                         join CC in Model.Centro_Costos on proyCC.Id_Centro_Costos equals CC.Id
                         select new ProyectoCentroCostosMap
@@ -57,12 +57,12 @@ namespace LD
         }
         public IQueryable<PROYECTO> getProyectosCentrosCostoPorId(int id)
         {
-            return Model.PROYECTOes.Where(e => e.Id == id);
+            return Model.PROYECTO.Where(e => e.Id == id);
         }
         public IQueryable<Proyecto_Centro_Costos> getProyectosCentrosCosto(string codigo)
         {
             return from proyCC in Model.Proyecto_Centro_Costos
-                   join proye in Model.PROYECTOes on proyCC.Id_Proyecto equals proye.Id
+                   join proye in Model.PROYECTO on proyCC.Id_Proyecto equals proye.Id
                    join CC in Model.Centro_Costos on proyCC.Id_Centro_Costos equals CC.Id
                    where proye.CODIGO == codigo
                    select proyCC;                
@@ -101,7 +101,7 @@ namespace LD
             ACTIVO=estado
             };
 
-            Model.PROYECTOes.Add(Proyecto);
+            Model.PROYECTO.Add(Proyecto);
             Model.SaveChanges();
 
             Proyecto_Centro_Costos PPC = new Proyecto_Centro_Costos

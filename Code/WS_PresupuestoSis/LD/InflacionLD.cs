@@ -6,12 +6,12 @@ namespace LD
     {
         public IQueryable<Inflacion> getInflaciones()
         {
-            return Model.Inflacions;
+            return Model.Inflacion;
         }
 
         public IQueryable<Inflacion> getInflacionPorId(int id)
         {
-            return Model.Inflacions.Where(e => e.Id == id);
+            return Model.Inflacion.Where(e => e.Id == id);
         }
         public bool updateInflacion(int id, string semestreI, string semestreII)
         {
@@ -39,7 +39,7 @@ namespace LD
                 inf.Semetre_1 = semestreI;
                 inf.Semestre_2 = semestreII;
                 inf.Fecha = System.DateTime.Today;
-                Model.Inflacions.Add(inf);
+                Model.Inflacion.Add(inf);
                 Model.SaveChanges();
                 return true;
             }
