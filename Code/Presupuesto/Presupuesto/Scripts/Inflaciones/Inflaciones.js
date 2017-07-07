@@ -70,12 +70,11 @@
         caption: "Inflación",
         multiselect: false,
         autowidth: true,
+        toolbarfilter: true,
         loadError: function (jqXHR, textStatus, errorThrown) {
             alert(errorThrown);
         },
-        Success: function (result) {
-            alert(result);
-        },
+        loadonce:true
 
     });
     jQuery("#jqgrid").jqGrid('navGrid', "#pjqgrid", {
@@ -85,7 +84,7 @@
         search: false
 
     });
-    $('#jqgrid').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false });
+    $('#jqgrid').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, ignoreCase: true, defaultSearch: 'cn' });
 
     jQuery("#jqgrid").jqGrid('inlineNav', "#pjqgrid", {
         edit: true,
@@ -93,15 +92,12 @@
         del: false,
         editParams: function (val) {
             if (!val) {
-                alert(val.responseText);
-                var grid = $('#jqgrid');
-                grid.trigger('reloadGrid');
-                grid.jqGrid('setGridParam', { url: 'getCentrosCosto', datatype: "json", }).trigger("reloadGrid");
-
-
+                messageError("Error al guardar la información");
+                reloadGrid('jqgrid', 'getInflaciones');
             }
             else {
-                alert("Centro de costo actualizado correctamente");
+                messageExitoso("Información guardada correctamente!");
+                reloadGrid('jqgrid', 'getInflaciones')
             }
         }
     });
