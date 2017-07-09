@@ -208,6 +208,7 @@
     <Compile Include="Controllers\PPIngresosController.cs" />
     <Compile Include="Controllers\SalariosController.cs" />
     <Compile Include="Controllers\TipoCambioController.cs" />
+    <Compile Include="Controllers\TipoCuentaController.cs" />
     <Compile Include="Controllers\TipoIngresoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -350,6 +351,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\TipoCambio\TipoCambio.js" />
+    <Content Include="Scripts\TipoCuenta\TipoCuenta.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.CentroCostosMap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -365,6 +367,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.MonedaMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.CuentaContableMap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\PresupuestoSisWS\Service1.disco" />
@@ -431,6 +436,7 @@
     <Content Include="Views\CargasSociales\Index.cshtml" />
     <Content Include="Views\TipoIngreso\Index.cshtml" />
     <Content Include="Views\Salarios\Index.cshtml" />
+    <Content Include="Views\TipoCuenta\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

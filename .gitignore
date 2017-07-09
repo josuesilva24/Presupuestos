@@ -86,3 +86,5 @@ Code/WS_PresupuestoSis/BL/obj/Debug/BL.pdb
 Code/WS_PresupuestoSis/BL/obj/Debug/BL.dll
 Code/WS_PresupuestoSis/BL/obj/Debug/BL.csprojResolveAssemblyReference.cache
 Code/Presupuesto/Presupuesto/Service References/PresupuestoSisWS/Presupuesto.PresupuestoSisWS.MonedaMap.datasource
+Code/Presupuesto/Presupuesto/Service References/PresupuestoSisWS/Presupuesto.PresupuestoSisWS.CuentaContableMap.datasource
+Code/WS_PresupuestoSis/EntityModel/obj/Debug/EntityModel.csprojResolveAssemblyReference.cache

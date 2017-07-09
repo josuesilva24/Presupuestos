@@ -74,5 +74,13 @@ namespace WS_PresupuestoSis
         {
             return new MonedaProcess().AddMoneda(moneda,descripcion, activo);
         }
+        public List<CuentaContableMap> getCuentaContable()
+        {
+            return new CuentaContableProces().GetCuentaContable();
+        }
+        public bool updateCuetaContable(int id, int tipoCC)
+        {
+            return new CuentaContableProces().updateCuentaContable(id,tipoCC);
+        }
     }
 }

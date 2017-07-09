@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CatalogosProces.cs" />
+    <Compile Include="CuentaContableProces.cs" />
     <Compile Include="InflacionProcess.cs" />
     <Compile Include="MonedaProcess.cs" />
     <Compile Include="Service1.svc.cs">
@@ -130,6 +131,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{c1c2f95a-85f1-4ba1-8916-8dd017046370}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityModel\EntityModel.csproj">
+      <Project>{F69E6F39-CF85-4D35-9B3D-BC08C1AF27A9}</Project>
+      <Name>EntityModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\LD\LD.csproj">
       <Project>{0A764E70-4231-4CF3-9522-09C835F582C2}</Project>

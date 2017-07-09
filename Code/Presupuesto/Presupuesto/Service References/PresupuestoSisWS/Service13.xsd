@@ -62,4 +62,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MonedaMap" nillable="true" type="tns:MonedaMap" />
+  <xs:complexType name="ArrayOfCuentaContableMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuentaContableMap" nillable="true" type="tns:CuentaContableMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuentaContableMap" nillable="true" type="tns:ArrayOfCuentaContableMap" />
+  <xs:complexType name="CuentaContableMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBD" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoCuenta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentaContableMap" nillable="true" type="tns:CuentaContableMap" />
 </xs:schema>

@@ -32,8 +32,9 @@ namespace WS_PresupuestoSis
 
         [OperationContract]
         bool UpdateProyectoPorCentroCosto(int id, bool estado, string codigoCentroCogosto);
+        [OperationContract]
+        bool updateCuetaContable(int id, int tipoCC);
 
-        
         #endregion
         #region inflacion
         [OperationContract]
@@ -53,7 +54,8 @@ namespace WS_PresupuestoSis
         [OperationContract]
         bool AddMoneda(string moneda, string descripcion, bool activo);
         #endregion
-
+        [OperationContract]
+        List<CuentaContableMap> getCuentaContable();
     }
 
 
