@@ -9,6 +9,8 @@ namespace Presupuesto.Controllers
     public class MonedaController : Controller
     {
         // GET: Moneda
+        PresupuestoSisWS.Service1Client Channel = new PresupuestoSisWS.Service1Client();
+
         public ActionResult Index()
         {
             return View();
@@ -16,14 +18,13 @@ namespace Presupuesto.Controllers
 
         public JsonResult getMoneda()
         {
-            return new JsonResult() { Data ="",/* Channel.getMoneda()*/ JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-
+            return new JsonResult() { Data =Channel.GetMoneda(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
-        public JsonResult updateMoneda(string IdBD, string Estado, string Descripcion, string Codigo)
+        public JsonResult updateMoneda(string IdBD, string Estado, string Descripcion, string Nombre)
         {
-            if (IdBD.Equals("jqg1"))
-                return new JsonResult() { Data ="",/* Channel.AddMoneda(Estado, Codigo, Descripcion*/ JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            return new JsonResult() { Data ="",/* Channel.updateMoneda(Convert.ToInt32(IdBD), Codigo, Descripcion*/ JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+          //  if (IdBD.Equals("jqg1"))
+                return new JsonResult() { Data = Channel.AddMoneda(Nombre, Descripcion,Convert.ToBoolean(Estado)) , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+           // return new JsonResult() { Data = Channel(Convert.ToInt32(IdBD), Codigo, Descripcion, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
 

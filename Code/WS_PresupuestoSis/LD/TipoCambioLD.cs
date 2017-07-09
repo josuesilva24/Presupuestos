@@ -8,7 +8,7 @@ namespace LD
         {
             return 
                     from    tipoCambio in Model.Tipo_Cambio
-                    join    moneda in Model.Monedas on tipoCambio.Id_Moneda equals moneda.Id
+                    join    moneda in Model.Moneda on tipoCambio.Id_Moneda equals moneda.Id
                     select  tipoCambio;
         }
     }

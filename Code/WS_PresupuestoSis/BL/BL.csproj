@@ -39,7 +39,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CentroCostosBL.cs" />
+    <Compile Include="CuentaContableBL.cs" />
     <Compile Include="InflacionBL.cs" />
+    <Compile Include="MonedaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
