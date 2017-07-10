@@ -43,6 +43,7 @@
     <Compile Include="CentroCostosMap.cs" />
     <Compile Include="CuentaContableMap.cs" />
     <Compile Include="InflacionMap.cs" />
+    <Compile Include="MesMap.cs" />
     <Compile Include="MonedaMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyecto_Centro_Costo.cs" />

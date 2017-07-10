@@ -17,6 +17,14 @@ namespace BL
 
             foreach (var item in tiposCambio)
             {
+                var meses = new List<MesMap>
+                {
+                    new MesMap
+                    {
+                        Mes = item.Mes,
+                        Valor = item.Valor.Value
+                    }
+                };
                 ListaTiposCambios.Add
                     (
                         new TipoCambioMap
@@ -24,18 +32,16 @@ namespace BL
                             Año = item.Ano,
                             Codigo = item.Moneda.Descripcion,
                             Id = item.Id,
-                            Mes = item.Mes,
-                            Moneda = item.Moneda.Descripcion,
-                            Valor = item.Valor.Value
+                            Meses = meses
                         }
                     );
             };
             return ListaTiposCambios;
         }
 
-        public bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio)
+        public bool AddTipoCambio(int Id, int moneda, int ano, List<MesMap> Meses, string Tipo_Cambio)
         {
-            return TipoCambioLD.AddTipoCambio(Id, moneda, ano, mes, valor, Tipo_Cambio);
+            return TipoCambioLD.AddTipoCambio(Id, moneda, ano, Meses, Tipo_Cambio);
         }
     }
 }
