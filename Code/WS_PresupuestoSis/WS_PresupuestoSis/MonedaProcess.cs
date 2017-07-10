@@ -2,8 +2,6 @@
 using ModelMap;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace WS_PresupuestoSis
 {
@@ -20,6 +18,11 @@ namespace WS_PresupuestoSis
         public bool AddMoneda(string moneda, string descripcion, bool activo)
         {
             return MonedaBL.AddMoneda(moneda, descripcion,activo);
+        }
+
+        public bool UpdateMonedaById(int id, string moneda, string descripcion, bool activo)
+        {
+           return MonedaBL.UpdateMonedaById(id, moneda, descripcion, activo);
         }
     }
 }

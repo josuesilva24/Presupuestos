@@ -19,7 +19,9 @@ namespace EntityModel
         public int Id_Moneda { get; set; }
         public string Mes { get; set; }
         public Nullable<decimal> Valor { get; set; }
+        public Nullable<int> Id_Tipo_Tipo_Cambio { get; set; }
     
         public virtual Moneda Moneda { get; set; }
+        public virtual Tipo_Tipo_Cambio Tipo_Tipo_Cambio { get; set; }
     }
 }
