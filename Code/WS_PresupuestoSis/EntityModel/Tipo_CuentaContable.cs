@@ -14,7 +14,16 @@ namespace EntityModel
     
     public partial class Tipo_CuentaContable
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tipo_CuentaContable()
+        {
+            this.Cuenta_Contable = new HashSet<Cuenta_Contable>();
+        }
+    
         public int Id { get; set; }
         public string TipoCC { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cuenta_Contable> Cuenta_Contable { get; set; }
     }
 }

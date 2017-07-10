@@ -3,8 +3,6 @@ using ModelMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
@@ -38,6 +36,11 @@ namespace BL
         public bool AddMoneda(string moneda, string descripcion, bool activo)
         {
             return MonedaLD.AddMoneda(moneda, descripcion, activo);
+        }
+
+        public bool UpdateMonedaById(int id, string moneda, string descripcion, bool activo)
+        {
+            return MonedaLD.UpdateMonedaById(id, moneda, descripcion, activo);
         }
     }
 }

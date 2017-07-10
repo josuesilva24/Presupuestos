@@ -12,17 +12,18 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuenta_Contable
+    public partial class Tipo_Tipo_Cambio
     {
-        public int Id { get; set; }
-        public string Cuenta_Contable1 { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
-        public Nullable<int> TipoCuenta { get; set; }
-        public Nullable<bool> Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tipo_Tipo_Cambio()
+        {
+            this.Tipo_Cambio = new HashSet<Tipo_Cambio>();
+        }
     
-        public virtual Cuenta_Contable Cuenta_Contable11 { get; set; }
-        public virtual Cuenta_Contable Cuenta_Contable2 { get; set; }
-        public virtual Tipo_CuentaContable Tipo_CuentaContable { get; set; }
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tipo_Cambio> Tipo_Cambio { get; set; }
     }
 }
