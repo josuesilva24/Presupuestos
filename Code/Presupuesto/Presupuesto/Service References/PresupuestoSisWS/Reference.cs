@@ -571,6 +571,131 @@ namespace Presupuesto.PresupuestoSisWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoCambioMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class TipoCambioMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AñoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonedaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ValorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Año {
+            get {
+                return this.AñoField;
+            }
+            set {
+                if ((this.AñoField.Equals(value) != true)) {
+                    this.AñoField = value;
+                    this.RaisePropertyChanged("Año");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codigo {
+            get {
+                return this.CodigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoField, value) != true)) {
+                    this.CodigoField = value;
+                    this.RaisePropertyChanged("Codigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mes {
+            get {
+                return this.MesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MesField, value) != true)) {
+                    this.MesField = value;
+                    this.RaisePropertyChanged("Mes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Moneda {
+            get {
+                return this.MonedaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonedaField, value) != true)) {
+                    this.MonedaField = value;
+                    this.RaisePropertyChanged("Moneda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Valor {
+            get {
+                return this.ValorField;
+            }
+            set {
+                if ((this.ValorField.Equals(value) != true)) {
+                    this.ValorField = value;
+                    this.RaisePropertyChanged("Valor");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PresupuestoSisWS.IService1")]
     public interface IService1 {
@@ -647,11 +772,29 @@ namespace Presupuesto.PresupuestoSisWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMoneda", ReplyAction="http://tempuri.org/IService1/AddMonedaResponse")]
         System.Threading.Tasks.Task<bool> AddMonedaAsync(string moneda, string descripcion, bool activo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateMonedaById", ReplyAction="http://tempuri.org/IService1/UpdateMonedaByIdResponse")]
+        bool UpdateMonedaById(int id, string moneda, string descripcion, bool activo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateMonedaById", ReplyAction="http://tempuri.org/IService1/UpdateMonedaByIdResponse")]
+        System.Threading.Tasks.Task<bool> UpdateMonedaByIdAsync(int id, string moneda, string descripcion, bool activo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCuentaContable", ReplyAction="http://tempuri.org/IService1/getCuentaContableResponse")]
         Presupuesto.PresupuestoSisWS.CuentaContableMap[] getCuentaContable();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCuentaContable", ReplyAction="http://tempuri.org/IService1/getCuentaContableResponse")]
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CuentaContableMap[]> getCuentaContableAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTipoCambio", ReplyAction="http://tempuri.org/IService1/GetAllTipoCambioResponse")]
+        Presupuesto.PresupuestoSisWS.TipoCambioMap[] GetAllTipoCambio();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTipoCambio", ReplyAction="http://tempuri.org/IService1/GetAllTipoCambioResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.TipoCambioMap[]> GetAllTipoCambioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddTipoCambio", ReplyAction="http://tempuri.org/IService1/AddTipoCambioResponse")]
+        bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddTipoCambio", ReplyAction="http://tempuri.org/IService1/AddTipoCambioResponse")]
+        System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -777,12 +920,36 @@ namespace Presupuesto.PresupuestoSisWS {
             return base.Channel.AddMonedaAsync(moneda, descripcion, activo);
         }
         
+        public bool UpdateMonedaById(int id, string moneda, string descripcion, bool activo) {
+            return base.Channel.UpdateMonedaById(id, moneda, descripcion, activo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateMonedaByIdAsync(int id, string moneda, string descripcion, bool activo) {
+            return base.Channel.UpdateMonedaByIdAsync(id, moneda, descripcion, activo);
+        }
+        
         public Presupuesto.PresupuestoSisWS.CuentaContableMap[] getCuentaContable() {
             return base.Channel.getCuentaContable();
         }
         
         public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CuentaContableMap[]> getCuentaContableAsync() {
             return base.Channel.getCuentaContableAsync();
+        }
+        
+        public Presupuesto.PresupuestoSisWS.TipoCambioMap[] GetAllTipoCambio() {
+            return base.Channel.GetAllTipoCambio();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.TipoCambioMap[]> GetAllTipoCambioAsync() {
+            return base.Channel.GetAllTipoCambioAsync();
+        }
+        
+        public bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio) {
+            return base.Channel.AddTipoCambio(Id, moneda, ano, mes, valor, Tipo_Cambio);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio) {
+            return base.Channel.AddTipoCambioAsync(Id, moneda, ano, mes, valor, Tipo_Cambio);
         }
     }
 }

@@ -172,6 +172,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateMonedaById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMonedaByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMonedaByIdResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getCuentaContable">
     <xs:complexType>
       <xs:sequence />
@@ -181,6 +198,37 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="getCuentaContableResult" nillable="true" type="q7:ArrayOfCuentaContableMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTipoCambio">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTipoCambioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllTipoCambioResult" nillable="true" type="q8:ArrayOfTipoCambioMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTipoCambio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="moneda" type="xs:int" />
+        <xs:element minOccurs="0" name="ano" type="xs:int" />
+        <xs:element minOccurs="0" name="mes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Tipo_Cambio" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTipoCambioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddTipoCambioResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

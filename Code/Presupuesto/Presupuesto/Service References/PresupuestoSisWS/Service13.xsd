@@ -77,4 +77,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CuentaContableMap" nillable="true" type="tns:CuentaContableMap" />
+  <xs:complexType name="ArrayOfTipoCambioMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoCambioMap" nillable="true" type="tns:TipoCambioMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoCambioMap" nillable="true" type="tns:ArrayOfTipoCambioMap" />
+  <xs:complexType name="TipoCambioMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Año" type="xs:int" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Mes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoCambioMap" nillable="true" type="tns:TipoCambioMap" />
 </xs:schema>
