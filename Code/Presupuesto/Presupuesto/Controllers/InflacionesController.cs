@@ -20,16 +20,22 @@ namespace Presupuesto.Controllers
         public JsonResult getInflaciones()
         {
             return new JsonResult() { Data = Channel.getInflaciones() , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-
         }
         public JsonResult updateInflacion(string IdBD, string anno, string PrimerSemestre, string SegundoSemestre)
         {
-            if(string.IsNullOrEmpty(IdBD))
-            return new JsonResult() { Data = Channel.AddInflaciones(Convert.ToInt32(anno), PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            return new JsonResult() { Data = Channel.UpdateInflaciones( Convert.ToInt32(IdBD), PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            if (string.IsNullOrEmpty(IdBD))
+            {
+                return new JsonResult() { Data = Channel.AddInflaciones(int.Parse(anno), PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            }
+            return new JsonResult() { Data = Channel.UpdateInflaciones(int.Parse(IdBD), PrimerSemestre, SegundoSemestre), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
 
+        public JsonResult getInflacionesPorAnno(string anno)
+        {
+            int annoAux = int.Parse(anno);
+            return new JsonResult() { Data = Channel.getInflaciones().Where(e=>e.Anno== annoAux), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
 
 
     }
