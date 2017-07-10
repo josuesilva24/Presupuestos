@@ -22,10 +22,9 @@ namespace Presupuesto.Controllers
         }
         public JsonResult updateMoneda(string IdBD, string Estado, string Descripcion, string Nombre)
         {
-       //     if (IdBD.Contains("jqg"))
+           if (IdBD.Contains("jqg"))
                 return new JsonResult() { Data = Channel.AddMoneda(Nombre, Descripcion,Convert.ToBoolean(Estado)) , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-     //      return new JsonResult() { Data = Channel.updateMoneda(Convert.ToInt32(IdBD), Nombre, Descripcion), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-
+               return new JsonResult() { Data = Channel.UpdateMonedaById(int.Parse(IdBD), Nombre, Descripcion, bool.Parse(Estado)), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
 

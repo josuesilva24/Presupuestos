@@ -26,7 +26,30 @@
                 name: 'Moneda',
                 index: 'Moneda',
                 editable: true,
-                hidden: false
+                hidden: false,
+                edittype: 'select',
+                editoptions: {
+                    dataUrl: "..Moneda/getMoneda",
+                    cacheUrlData: false,
+                    buildSelect: function (data) {
+
+                        var result = JSON.parse(data);
+                        var $select = "<select>";
+                        for (var i = 0; i < result.length; i++) {
+                            $select += '<option value="' + result[i].Value + '">' + result[i].Text + '</option>';
+                        }
+
+                        return $select + "</select>";
+
+                        //var dataa = data, i = 0, s = '<select>', d;
+
+                        //    for (var i = 0; i < result.length; i++) {
+                        //        $('#CentroCostoList').append('<option value="' + result[i].Value + '">' + result[i].Text + '</option>');
+                        //}
+                        //s += '</select>';
+                        //return s;
+                    }
+                }
             },
         {
             name: 'Tipo',

@@ -80,11 +80,29 @@
   <wsdl:message name="IService1_AddMoneda_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddMonedaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateMonedaById_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMonedaById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMonedaById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMonedaByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getCuentaContable_InputMessage">
     <wsdl:part name="parameters" element="tns:getCuentaContable" />
   </wsdl:message>
   <wsdl:message name="IService1_getCuentaContable_OutputMessage">
     <wsdl:part name="parameters" element="tns:getCuentaContableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTipoCambio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTipoCambio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddTipoCambio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddTipoCambio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTipoCambioResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -135,9 +153,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddMoneda" message="tns:IService1_AddMoneda_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddMonedaResponse" message="tns:IService1_AddMoneda_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateMonedaById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateMonedaById" message="tns:IService1_UpdateMonedaById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateMonedaByIdResponse" message="tns:IService1_UpdateMonedaById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getCuentaContable">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCuentaContable" message="tns:IService1_getCuentaContable_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCuentaContableResponse" message="tns:IService1_getCuentaContable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTipoCambio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTipoCambio" message="tns:IService1_GetAllTipoCambio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTipoCambioResponse" message="tns:IService1_GetAllTipoCambio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTipoCambio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddTipoCambio" message="tns:IService1_AddTipoCambio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddTipoCambioResponse" message="tns:IService1_AddTipoCambio_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -250,8 +280,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateMonedaById">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateMonedaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getCuentaContable">
       <soap:operation soapAction="http://tempuri.org/IService1/getCuentaContable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTipoCambio">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllTipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTipoCambio">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddTipoCambio" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
