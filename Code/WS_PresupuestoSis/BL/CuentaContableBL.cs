@@ -30,8 +30,7 @@ namespace BL
                         {
                             IdBD = item.Id,
                             Descripcion = item.Descripcion,
-                           // TipoCuenta =  item.TipoCuenta.HasValue==true ? item.TipoCuenta.Value : 0,
-                            TipoCuenta =  item.TipoCuenta.HasValue==true ? tipocuenta.Where(e=> e.Id== item.TipoCuenta.Value).First().TipoCC:"",
+                            TipoCuenta = item.TipoCuenta.HasValue? item.Tipo_CuentaContable.TipoCC:"No Tiene Relacion",
                             Codigo= item.Cuenta_Contable1
                         }
                         );

@@ -1,11 +1,7 @@
 ﻿using ModelMap;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace WS_PresupuestoSis
 {
@@ -36,6 +32,7 @@ namespace WS_PresupuestoSis
         bool updateCuetaContable(int id, int tipoCC);
 
         #endregion
+
         #region inflacion
         [OperationContract]
         List<InflacionMap> getInflaciones();
@@ -47,15 +44,30 @@ namespace WS_PresupuestoSis
         bool AddInflaciones(int anno, string semestreI, string semestreII);
         #endregion
 
-        #region MonedaMap
+        #region Moneda
         [OperationContract]
          List<MonedaMap> GetMoneda();
 
         [OperationContract]
         bool AddMoneda(string moneda, string descripcion, bool activo);
+
+        [OperationContract]
+        bool UpdateMonedaById(int id, string moneda, string descripcion, bool activo);
         #endregion
+
+        #region Cuenta Contable
         [OperationContract]
         List<CuentaContableMap> getCuentaContable();
+        #endregion
+
+        #region Tipo Cambio
+        [OperationContract]
+        List<TipoCambioMap> GetAllTipoCambio();
+        [OperationContract]
+        bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio);
+
+        #endregion
+
     }
 
 

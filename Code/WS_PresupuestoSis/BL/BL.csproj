@@ -43,6 +43,7 @@
     <Compile Include="InflacionBL.cs" />
     <Compile Include="MonedaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tipo_CambioBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">
