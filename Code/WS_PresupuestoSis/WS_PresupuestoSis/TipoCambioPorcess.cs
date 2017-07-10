@@ -15,9 +15,9 @@ namespace WS_PresupuestoSis
             return Tipo_CambioBL.GetAllTipoCambio();
         }
 
-        public bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio)
+        public bool AddTipoCambio(int Id, int moneda, int ano, List<MesMap> meses, string Tipo_Cambio)
         {
-            return Tipo_CambioBL.AddTipoCambio(Id, moneda, ano, mes, valor, Tipo_Cambio);
+            return Tipo_CambioBL.AddTipoCambio(Id, moneda, ano, meses, Tipo_Cambio);
         }
 
     }
