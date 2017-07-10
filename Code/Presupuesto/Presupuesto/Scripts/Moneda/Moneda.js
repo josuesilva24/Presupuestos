@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     pageSetUp();
     function ToActivoInactivo(cellvalue, options, rowObject) {
         // do something here
@@ -27,9 +28,9 @@
         {
             name: 'Nombre',
             index: 'Nombre',
-            editable: true,
             search: false,
-            hidden: false
+            hidden: false,
+            editable:true
         },
         {
             name: 'Descripcion',
@@ -81,16 +82,33 @@
             alert(errorThrown);
         },
         loadonce: true,
-        afterSubmit: function (response, postdata) {
-            if (!response) {
-                messageError("Error al guardar la información");
-                reloadGrid('jqgrid', 'getMoneda');
-            }
-            else {
-                messageExitoso("Moneda actualizada correctamente!");
-                reloadGrid('jqgrid', 'getMoneda');
-            }
-        }
+        //onSelectRow: function (id) {
+        //    //var string = id, substring = "jqg";
+        //    //var grid = $("#jqgrid");
+        //    //var cm = grid.jqGrid('getColProp', 'Nombre');
+        //    //cm.editable = true;
+        //    //if (string.indexOf(substring) !== -1) {
+          
+        //    //    cm.editable = true;
+        //    //}
+        //    //else{
+        //    //    cm.editable = false;
+        //    //}
+        //},
+        //beforeSelectRow: function (id) {
+           
+        //    var string = id, substring = "jqg";
+        //    var grid = $("#jqgrid");
+        //    var cm = grid.jqGrid('getColProp', 'Nombre');
+        //    if (string.indexOf(substring) !== -1) {
+
+        //        cm.editable = true;
+        //    }
+        //    else {
+        //        cm.editable = false;
+        //    }
+        //}
+
 
     });
     jQuery("#jqgrid").jqGrid('navGrid', "#pjqgrid", {
