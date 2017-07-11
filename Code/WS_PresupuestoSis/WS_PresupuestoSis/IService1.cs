@@ -64,7 +64,7 @@ namespace WS_PresupuestoSis
         [OperationContract]
         List<TipoCambioMap> GetAllTipoCambio();
         [OperationContract]
-        bool AddTipoCambio(int Id, int moneda, int ano, List<MesMap> meses, string Tipo_Cambio);
+        bool AddTipoCambio(int Id, int moneda, int ano, Dictionary<string, decimal> meses, string Tipo_Cambio);
 
         #endregion
 

@@ -14,7 +14,7 @@ namespace LD
                     join    moneda in Model.Moneda on tipoCambio.Id_Moneda equals moneda.Id
                     select  tipoCambio;
         }
-        public bool AddTipoCambio(int Id, int moneda, int ano, List<MesMap> Meses, string  Tipo_Cambio)
+        public bool AddTipoCambio(int Id, int moneda, int ano, Dictionary<string, decimal> Meses, string  Tipo_Cambio)
         {
             var tipoCambio = GetAllTipoCambio().Where(x => x.Id.Equals(Id));
             var IdMoneda = 1;
@@ -28,8 +28,8 @@ namespace LD
                     {
                         Ano = ano,
                         Id_Moneda = IdMoneda,
-                        Mes = item.Mes,
-                        Valor = item.Valor,
+                        Mes = item.Key,
+                        Valor = item.Value,
                         Id_Tipo_Tipo_Cambio = Id_Tipo_Tipo_Cambio
                     }
                 );
