@@ -17,7 +17,6 @@ namespace LD
         {
             return Model.Tipo_CuentaContable;
         }
-
         public bool updateCuentaContable(int id, int tipoCC)
         {
 
@@ -32,5 +31,6 @@ namespace LD
 
             return false;
         }
+
     }
 }

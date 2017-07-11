@@ -88,6 +88,11 @@ namespace WS_PresupuestoSis
         {
             return new CuentaContableProces().updateCuentaContable(id, tipoCC);
         }
+
+        public List<TipoCuentaContableMap> GetTipoCuentaContable()
+        {
+            return new CuentaContableProces().GetTipoCuentaContable();
+        }
         #endregion
 
         #region Tipo Cambio

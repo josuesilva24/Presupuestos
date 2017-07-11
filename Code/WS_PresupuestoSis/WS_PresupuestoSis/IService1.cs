@@ -58,6 +58,8 @@ namespace WS_PresupuestoSis
         #region Cuenta Contable
         [OperationContract]
         List<CuentaContableMap> getCuentaContable();
+        [OperationContract]
+        List<TipoCuentaContableMap> GetTipoCuentaContable();
         #endregion
 
         #region Tipo Cambio

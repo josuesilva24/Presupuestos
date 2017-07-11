@@ -48,5 +48,24 @@ namespace BL
 
         }
 
+        public List<TipoCuentaContableMap> GetTipoCuentaContable()
+        {
+            var ListTipoCuentaContable = new List<TipoCuentaContableMap>();
+            var TipoCuentaContable = CuentaContableLD.getTipoCuenta().ToList();
+
+            foreach (var item in TipoCuentaContable)
+            {
+                ListTipoCuentaContable.Add
+                    (
+                        new TipoCuentaContableMap
+                        {
+                            Id = item.Id,
+                            Descripcion = item.TipoCC
+                        }
+                    );
+            }
+            return ListTipoCuentaContable;
+
+        }
     }
 }
