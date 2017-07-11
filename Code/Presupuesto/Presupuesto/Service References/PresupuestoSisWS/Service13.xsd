@@ -88,10 +88,22 @@
       <xs:element minOccurs="0" name="Año" type="xs:int" />
       <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Mes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Meses" nillable="true" type="tns:ArrayOfMesMap" />
       <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoCambioMap" nillable="true" type="tns:TipoCambioMap" />
+  <xs:complexType name="ArrayOfMesMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MesMap" nillable="true" type="tns:MesMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMesMap" nillable="true" type="tns:ArrayOfMesMap" />
+  <xs:complexType name="MesMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MesMap" nillable="true" type="tns:MesMap" />
 </xs:schema>

@@ -39,7 +39,7 @@ namespace BL
             return ListaTiposCambios;
         }
 
-        public bool AddTipoCambio(int Id, int moneda, int ano, List<MesMap> Meses, string Tipo_Cambio)
+        public bool AddTipoCambio(int Id, int moneda, int ano, Dictionary<string, decimal> Meses, string Tipo_Cambio)
         {
             return TipoCambioLD.AddTipoCambio(Id, moneda, ano, Meses, Tipo_Cambio);
         }

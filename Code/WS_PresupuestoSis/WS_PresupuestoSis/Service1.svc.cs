@@ -96,7 +96,7 @@ namespace WS_PresupuestoSis
             return new TipoCambioPorcess().GetAllTipoCambio();
         }
 
-        public bool AddTipoCambio(int Id, int moneda, int ano, List<MesMap> meses, string Tipo_Cambio)
+        public bool AddTipoCambio(int Id, int moneda, int ano, Dictionary<string,decimal> meses, string Tipo_Cambio)
         {
             return new TipoCambioPorcess().AddTipoCambio(Id, moneda, ano, meses, Tipo_Cambio);
         }

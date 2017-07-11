@@ -590,13 +590,10 @@ namespace Presupuesto.PresupuestoSisWS {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MesField;
+        private Presupuesto.PresupuestoSisWS.MesMap[] MesesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MonedaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ValorField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -648,14 +645,14 @@ namespace Presupuesto.PresupuestoSisWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mes {
+        public Presupuesto.PresupuestoSisWS.MesMap[] Meses {
             get {
-                return this.MesField;
+                return this.MesesField;
             }
             set {
-                if ((object.ReferenceEquals(this.MesField, value) != true)) {
-                    this.MesField = value;
-                    this.RaisePropertyChanged("Mes");
+                if ((object.ReferenceEquals(this.MesesField, value) != true)) {
+                    this.MesesField = value;
+                    this.RaisePropertyChanged("Meses");
                 }
             }
         }
@@ -669,6 +666,54 @@ namespace Presupuesto.PresupuestoSisWS {
                 if ((object.ReferenceEquals(this.MonedaField, value) != true)) {
                     this.MonedaField = value;
                     this.RaisePropertyChanged("Moneda");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MesMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class MesMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ValorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mes {
+            get {
+                return this.MesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MesField, value) != true)) {
+                    this.MesField = value;
+                    this.RaisePropertyChanged("Mes");
                 }
             }
         }
@@ -791,10 +836,10 @@ namespace Presupuesto.PresupuestoSisWS {
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.TipoCambioMap[]> GetAllTipoCambioAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddTipoCambio", ReplyAction="http://tempuri.org/IService1/AddTipoCambioResponse")]
-        bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio);
+        bool AddTipoCambio(int Id, int moneda, int ano, System.Collections.Generic.Dictionary<string, decimal> meses, string Tipo_Cambio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddTipoCambio", ReplyAction="http://tempuri.org/IService1/AddTipoCambioResponse")]
-        System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio);
+        System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, System.Collections.Generic.Dictionary<string, decimal> meses, string Tipo_Cambio);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -944,12 +989,12 @@ namespace Presupuesto.PresupuestoSisWS {
             return base.Channel.GetAllTipoCambioAsync();
         }
         
-        public bool AddTipoCambio(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio) {
-            return base.Channel.AddTipoCambio(Id, moneda, ano, mes, valor, Tipo_Cambio);
+        public bool AddTipoCambio(int Id, int moneda, int ano, System.Collections.Generic.Dictionary<string, decimal> meses, string Tipo_Cambio) {
+            return base.Channel.AddTipoCambio(Id, moneda, ano, meses, Tipo_Cambio);
         }
         
-        public System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, string mes, decimal valor, string Tipo_Cambio) {
-            return base.Channel.AddTipoCambioAsync(Id, moneda, ano, mes, valor, Tipo_Cambio);
+        public System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, System.Collections.Generic.Dictionary<string, decimal> meses, string Tipo_Cambio) {
+            return base.Channel.AddTipoCambioAsync(Id, moneda, ano, meses, Tipo_Cambio);
         }
     }
 }

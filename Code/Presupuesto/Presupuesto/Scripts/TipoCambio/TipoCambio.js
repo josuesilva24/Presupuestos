@@ -29,14 +29,14 @@
                 hidden: false,
                 edittype: 'select',
                 editoptions: {
-                    dataUrl: "..Moneda/getMoneda",
+                    dataUrl: "getMoneda",
                     cacheUrlData: false,
                     buildSelect: function (data) {
 
                         var result = JSON.parse(data);
                         var $select = "<select>";
                         for (var i = 0; i < result.length; i++) {
-                            $select += '<option value="' + result[i].Value + '">' + result[i].Text + '</option>';
+                            $select += '<option value="' + result[i].id + '">' + result[i].Descripcion + '</option>';
                         }
 
                         return $select + "</select>";
@@ -57,7 +57,7 @@
             editable: true,
             edittype: 'select',
             search: true,
-            editoptions: { value: "Presupuesto:Presupuesto;Proyeccion:Proyeccion" }
+            editoptions: { value: "1:Presupuesto;2:Proyeccion" }
         },
         {
             name: 'Descripcion',
@@ -157,7 +157,7 @@
         toolbarfilter: true,
         viewrecords: true,
         sortorder: "asc",
-        editurl: '',
+        editurl: 'updateTipoCambio',
         gridComplete: function () {
             //var ids = jQuery("#jqgrid").jqGrid('getDataIDs');
             //for (var i = 0; i < ids.length; i++) {
