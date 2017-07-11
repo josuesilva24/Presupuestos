@@ -68,6 +68,11 @@ namespace WS_PresupuestoSis
 
         #endregion
 
+        #region Cargas Sociales
+         List<CargasSocialesMap> GetAllCargasSociales();
+        #endregion
+
+
     }
 
 

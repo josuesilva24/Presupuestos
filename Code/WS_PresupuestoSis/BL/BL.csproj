@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargasSocialesBL.cs" />
     <Compile Include="CentroCostosBL.cs" />
     <Compile Include="CuentaContableBL.cs" />
     <Compile Include="InflacionBL.cs" />
