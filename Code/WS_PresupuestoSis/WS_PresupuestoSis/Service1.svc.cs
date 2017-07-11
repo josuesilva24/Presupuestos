@@ -102,5 +102,12 @@ namespace WS_PresupuestoSis
         }
         #endregion
 
+        #region Cargas Sociales
+        public List<CargasSocialesMap> GetAllCargasSociales()
+        {
+            return new CargasSocialesProcess().GetAllCargasSociales();
+        }
+        #endregion
+
     }
 }

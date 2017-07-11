@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargasSocialesLD.cs" />
     <Compile Include="CuentaContableLD.cs" />
     <Compile Include="InflacionLD.cs" />
     <Compile Include="BaseModel.cs" />

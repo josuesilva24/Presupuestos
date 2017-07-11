@@ -21,6 +21,8 @@
         <EntityTypeShape EntityType="ProyeccionModel.Tipo_Tipo_Cambio" Width="1.5" PointX="4.375" PointY="8.875" />
         <AssociationConnector Association="ProyeccionModel.FK_Cuenta_Contable_Tipo_CuentaContable" />
         <AssociationConnector Association="ProyeccionModel.FK_Tipo_Cambio_Tipo_Tipo_Cambio" />
+        <EntityTypeShape EntityType="ProyeccionModel.Cargas_Sociales" Width="1.5" PointX="5" PointY="11.375" />
+        <AssociationConnector Association="ProyeccionModel.FK_Cargas_Sociales_Cuenta_Contable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

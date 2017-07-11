@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ProyeccionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cargas_Sociales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Cuenta_Contable" Type="int" Nullable="false" />
+          <Property Name="Porcentaje" Type="decimal" Precision="18" Scale="10" Nullable="false" />
+        </EntityType>
         <EntityType Name="Centro_Costos">
           <Key>
             <PropertyRef Name="Id" />
@@ -104,6 +112,18 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Cargas_Sociales_Cuenta_Contable">
+          <End Role="Cuenta_Contable" Type="Self.Cuenta_Contable" Multiplicity="1" />
+          <End Role="Cargas_Sociales" Type="Self.Cargas_Sociales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta_Contable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cargas_Sociales">
+              <PropertyRef Name="Id_Cuenta_Contable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Cuenta_Contable_Tipo_CuentaContable">
           <End Role="Tipo_CuentaContable" Type="Self.Tipo_CuentaContable" Multiplicity="0..1" />
           <End Role="Cuenta_Contable" Type="Self.Cuenta_Contable" Multiplicity="*" />
@@ -165,6 +185,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ProyeccionModelStoreContainer">
+          <EntitySet Name="Cargas_Sociales" EntityType="Self.Cargas_Sociales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Centro_Costos" EntityType="Self.Centro_Costos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cuenta_Contable" EntityType="Self.Cuenta_Contable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inflacion" EntityType="Self.Inflacion" Schema="dbo" store:Type="Tables" />
@@ -182,6 +203,10 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
     [Proyecto_Centro_Costos].[Fecha] AS [Fecha]
     FROM [dbo].[Proyecto_Centro_Costos] AS [Proyecto_Centro_Costos]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_Cargas_Sociales_Cuenta_Contable" Association="Self.FK_Cargas_Sociales_Cuenta_Contable">
+            <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
+            <End Role="Cargas_Sociales" EntitySet="Cargas_Sociales" />
+          </AssociationSet>
           <AssociationSet Name="FK_Cuenta_Contable_Tipo_CuentaContable" Association="Self.FK_Cuenta_Contable_Tipo_CuentaContable">
             <End Role="Tipo_CuentaContable" EntitySet="Tipo_CuentaContable" />
             <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
@@ -231,6 +256,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <NavigationProperty Name="Cuenta_Contable2" Relationship="Self.FK_Cuenta_Contable_Cuenta_Contable" FromRole="Cuenta_Contable1" ToRole="Cuenta_Contable" />
           <Property Name="Estado" Type="Boolean" />
           <NavigationProperty Name="Tipo_CuentaContable" Relationship="ProyeccionModel.FK_Cuenta_Contable_Tipo_CuentaContable" FromRole="Cuenta_Contable" ToRole="Tipo_CuentaContable" />
+          <NavigationProperty Name="Cargas_Sociales" Relationship="ProyeccionModel.FK_Cargas_Sociales_Cuenta_Contable" FromRole="Cuenta_Contable" ToRole="Cargas_Sociales" />
         </EntityType>
         <EntityType Name="Inflacion">
           <Key>
@@ -391,6 +417,11 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             <End Role="Tipo_Tipo_Cambio" EntitySet="Tipo_Tipo_Cambio" />
             <End Role="Tipo_Cambio" EntitySet="Tipo_Cambio" />
           </AssociationSet>
+          <EntitySet Name="Cargas_Sociales" EntityType="ProyeccionModel.Cargas_Sociales" />
+          <AssociationSet Name="FK_Cargas_Sociales_Cuenta_Contable" Association="ProyeccionModel.FK_Cargas_Sociales_Cuenta_Contable">
+            <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
+            <End Role="Cargas_Sociales" EntitySet="Cargas_Sociales" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Tipo_Tipo_Cambio">
           <Key>
@@ -421,6 +452,27 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             </Principal>
             <Dependent Role="Tipo_Cambio">
               <PropertyRef Name="Id_Tipo_Tipo_Cambio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cargas_Sociales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Cuenta_Contable" Type="Int32" Nullable="false" />
+          <Property Name="Porcentaje" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+          <NavigationProperty Name="Cuenta_Contable" Relationship="ProyeccionModel.FK_Cargas_Sociales_Cuenta_Contable" FromRole="Cargas_Sociales" ToRole="Cuenta_Contable" />
+        </EntityType>
+        <Association Name="FK_Cargas_Sociales_Cuenta_Contable">
+          <End Type="ProyeccionModel.Cuenta_Contable" Role="Cuenta_Contable" Multiplicity="1" />
+          <End Type="ProyeccionModel.Cargas_Sociales" Role="Cargas_Sociales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta_Contable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cargas_Sociales">
+              <PropertyRef Name="Id_Cuenta_Contable" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -530,6 +582,15 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             <EntityTypeMapping TypeName="ProyeccionModel.Tipo_Tipo_Cambio">
               <MappingFragment StoreEntitySet="Tipo_Tipo_Cambio">
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cargas_Sociales">
+            <EntityTypeMapping TypeName="ProyeccionModel.Cargas_Sociales">
+              <MappingFragment StoreEntitySet="Cargas_Sociales">
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="Id_Cuenta_Contable" ColumnName="Id_Cuenta_Contable" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

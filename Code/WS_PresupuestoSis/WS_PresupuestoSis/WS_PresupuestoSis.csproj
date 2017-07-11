@@ -102,6 +102,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargasSocialesProcess.cs" />
     <Compile Include="CatalogosProces.cs" />
     <Compile Include="CuentaContableProces.cs" />
     <Compile Include="InflacionProcess.cs" />

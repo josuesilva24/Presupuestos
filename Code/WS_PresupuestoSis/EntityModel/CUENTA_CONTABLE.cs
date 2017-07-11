@@ -14,6 +14,12 @@ namespace EntityModel
     
     public partial class Cuenta_Contable
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Cuenta_Contable()
+        {
+            this.Cargas_Sociales = new HashSet<Cargas_Sociales>();
+        }
+    
         public int Id { get; set; }
         public string Cuenta_Contable1 { get; set; }
         public string Descripcion { get; set; }
@@ -24,5 +30,7 @@ namespace EntityModel
         public virtual Cuenta_Contable Cuenta_Contable11 { get; set; }
         public virtual Cuenta_Contable Cuenta_Contable2 { get; set; }
         public virtual Tipo_CuentaContable Tipo_CuentaContable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cargas_Sociales> Cargas_Sociales { get; set; }
     }
 }
