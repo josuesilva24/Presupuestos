@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnosMap.cs" />
     <Compile Include="CargasSocialesMap.cs" />
     <Compile Include="CentroCostosMap.cs" />
     <Compile Include="CuentaContableMap.cs" />
     <Compile Include="InflacionMap.cs" />
+    <Compile Include="IngresosMap.cs" />
     <Compile Include="MesMap.cs" />
     <Compile Include="MonedaMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

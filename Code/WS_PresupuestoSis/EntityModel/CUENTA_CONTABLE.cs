@@ -18,6 +18,7 @@ namespace EntityModel
         public Cuenta_Contable()
         {
             this.Cargas_Sociales = new HashSet<Cargas_Sociales>();
+            this.Ingresos = new HashSet<Ingresos>();
         }
     
         public int Id { get; set; }
@@ -32,5 +33,7 @@ namespace EntityModel
         public virtual Tipo_CuentaContable Tipo_CuentaContable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cargas_Sociales> Cargas_Sociales { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ingresos> Ingresos { get; set; }
     }
 }

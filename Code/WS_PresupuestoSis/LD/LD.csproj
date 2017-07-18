@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnosLD.cs" />
     <Compile Include="CargasSocialesLD.cs" />
     <Compile Include="CuentaContableLD.cs" />
     <Compile Include="InflacionLD.cs" />
     <Compile Include="BaseModel.cs" />
     <Compile Include="CentroCostosLD.cs" />
+    <Compile Include="IngresosLD.cs" />
     <Compile Include="MonedaLD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoCambioLD.cs" />

@@ -106,6 +106,7 @@
     <Compile Include="CatalogosProces.cs" />
     <Compile Include="CuentaContableProces.cs" />
     <Compile Include="InflacionProcess.cs" />
+    <Compile Include="IngresosProcess.cs" />
     <Compile Include="MonedaProcess.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
