@@ -74,6 +74,11 @@ namespace WS_PresupuestoSis
          List<CargasSocialesMap> GetAllCargasSociales();
         #endregion
 
+        #region Ingresos
+        [OperationContract]
+        List<IngresosMap> GetAllIngresos();
+        #endregion
+
 
     }
 

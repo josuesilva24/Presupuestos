@@ -12,23 +12,29 @@ namespace EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Centro_Costos
+    public partial class Anos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Centro_Costos()
+        public Anos()
         {
-            this.Proyecto_Centro_Costos = new HashSet<Proyecto_Centro_Costos>();
             this.Ingresos = new HashSet<Ingresos>();
         }
     
         public int Id { get; set; }
-        public string Descripcion { get; set; }
-        public string Codigo { get; set; }
-        public bool Activo { get; set; }
-        public System.DateTime Fecha { get; set; }
+        public int Ano { get; set; }
+        public Nullable<decimal> Enero { get; set; }
+        public Nullable<decimal> Febrero { get; set; }
+        public Nullable<decimal> Marzo { get; set; }
+        public Nullable<decimal> Abril { get; set; }
+        public Nullable<decimal> Mayo { get; set; }
+        public Nullable<decimal> Junio { get; set; }
+        public Nullable<decimal> Julio { get; set; }
+        public Nullable<decimal> Agosto { get; set; }
+        public Nullable<decimal> Septiembre { get; set; }
+        public Nullable<decimal> Octubre { get; set; }
+        public Nullable<decimal> Noviembre { get; set; }
+        public Nullable<decimal> Diciembre { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Proyecto_Centro_Costos> Proyecto_Centro_Costos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ingresos> Ingresos { get; set; }
     }

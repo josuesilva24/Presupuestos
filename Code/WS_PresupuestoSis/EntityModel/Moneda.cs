@@ -18,6 +18,7 @@ namespace EntityModel
         public Moneda()
         {
             this.Tipo_Cambio = new HashSet<Tipo_Cambio>();
+            this.Ingresos = new HashSet<Ingresos>();
         }
     
         public int Id { get; set; }
@@ -27,5 +28,7 @@ namespace EntityModel
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tipo_Cambio> Tipo_Cambio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ingresos> Ingresos { get; set; }
     }
 }

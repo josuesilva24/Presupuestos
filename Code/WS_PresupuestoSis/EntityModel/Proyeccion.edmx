@@ -5,6 +5,25 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ProyeccionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Anos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="Enero" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Febrero" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Marzo" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Abril" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Mayo" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Junio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Julio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Agosto" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Septiembre" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Octubre" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Noviembre" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Diciembre" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
         <EntityType Name="Cargas_Sociales">
           <Key>
             <PropertyRef Name="Id" />
@@ -43,6 +62,20 @@
           <Property Name="Semetre_1" Type="varchar" MaxLength="250" />
           <Property Name="Semestre_2" Type="varchar" MaxLength="250" />
           <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Ingresos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Cuenta_Contable" Type="int" Nullable="false" />
+          <Property Name="Id_Centro_Costos" Type="int" Nullable="false" />
+          <Property Name="Id_Tipo_Moneda" Type="int" Nullable="false" />
+          <Property Name="Id_Anos" Type="int" Nullable="false" />
+          <Property Name="Lineal" Type="bit" Nullable="false" />
+          <Property Name="Puntual" Type="bit" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar(max)" />
+          <Property Name="Monto" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="Moneda">
           <Key>
@@ -136,6 +169,54 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Ingresos_Anos">
+          <End Role="Anos" Type="Self.Anos" Multiplicity="1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Anos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_Centro_Costos">
+          <End Role="Centro_Costos" Type="Self.Centro_Costos" Multiplicity="1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Centro_Costos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Centro_Costos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_Cuenta_Contable">
+          <End Role="Cuenta_Contable" Type="Self.Cuenta_Contable" Multiplicity="1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta_Contable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Cuenta_Contable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_Moneda">
+          <End Role="Moneda" Type="Self.Moneda" Multiplicity="1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moneda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Tipo_Moneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Proyecto_Centro_Costos_Centro_Costos">
           <End Role="Centro_Costos" Type="Self.Centro_Costos" Multiplicity="1" />
           <End Role="Proyecto_Centro_Costos" Type="Self.Proyecto_Centro_Costos" Multiplicity="*" />
@@ -185,10 +266,12 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ProyeccionModelStoreContainer">
+          <EntitySet Name="Anos" EntityType="Self.Anos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cargas_Sociales" EntityType="Self.Cargas_Sociales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Centro_Costos" EntityType="Self.Centro_Costos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cuenta_Contable" EntityType="Self.Cuenta_Contable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inflacion" EntityType="Self.Inflacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingresos" EntityType="Self.Ingresos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moneda" EntityType="Self.Moneda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROYECTO" EntityType="Self.PROYECTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -210,6 +293,22 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <AssociationSet Name="FK_Cuenta_Contable_Tipo_CuentaContable" Association="Self.FK_Cuenta_Contable_Tipo_CuentaContable">
             <End Role="Tipo_CuentaContable" EntitySet="Tipo_CuentaContable" />
             <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Anos" Association="Self.FK_Ingresos_Anos">
+            <End Role="Anos" EntitySet="Anos" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Centro_Costos" Association="Self.FK_Ingresos_Centro_Costos">
+            <End Role="Centro_Costos" EntitySet="Centro_Costos" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Cuenta_Contable" Association="Self.FK_Ingresos_Cuenta_Contable">
+            <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Moneda" Association="Self.FK_Ingresos_Moneda">
+            <End Role="Moneda" EntitySet="Moneda" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
           </AssociationSet>
           <AssociationSet Name="FK_Proyecto_Centro_Costos_Centro_Costos" Association="Self.FK_Proyecto_Centro_Costos_Centro_Costos">
             <End Role="Centro_Costos" EntitySet="Centro_Costos" />
@@ -242,6 +341,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Proyecto_Centro_Costos" Relationship="Self.FK_Proyecto_Centro_Costos_Centro_Costos" FromRole="Centro_Costos" ToRole="Proyecto_Centro_Costos" />
+          <NavigationProperty Name="Ingresos" Relationship="ProyeccionModel.FK_Ingresos_Centro_Costos" FromRole="Centro_Costos" ToRole="Ingresos" />
         </EntityType>
         <EntityType Name="Cuenta_Contable">
           <Key>
@@ -257,6 +357,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <Property Name="Estado" Type="Boolean" />
           <NavigationProperty Name="Tipo_CuentaContable" Relationship="ProyeccionModel.FK_Cuenta_Contable_Tipo_CuentaContable" FromRole="Cuenta_Contable" ToRole="Tipo_CuentaContable" />
           <NavigationProperty Name="Cargas_Sociales" Relationship="ProyeccionModel.FK_Cargas_Sociales_Cuenta_Contable" FromRole="Cuenta_Contable" ToRole="Cargas_Sociales" />
+          <NavigationProperty Name="Ingresos" Relationship="ProyeccionModel.FK_Ingresos_Cuenta_Contable" FromRole="Cuenta_Contable" ToRole="Ingresos" />
         </EntityType>
         <EntityType Name="Inflacion">
           <Key>
@@ -277,6 +378,7 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
           <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Activo" Type="Boolean" />
           <NavigationProperty Name="Tipo_Cambio" Relationship="Self.FK_Tipo_Cambio_Moneda" FromRole="Moneda" ToRole="Tipo_Cambio" />
+          <NavigationProperty Name="Ingresos" Relationship="ProyeccionModel.FK_Ingresos_Moneda" FromRole="Moneda" ToRole="Ingresos" />
         </EntityType>
         <EntityType Name="PROYECTO">
           <Key>
@@ -422,6 +524,24 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
             <End Role="Cargas_Sociales" EntitySet="Cargas_Sociales" />
           </AssociationSet>
+          <EntitySet Name="Anos" EntityType="ProyeccionModel.Anos" />
+          <EntitySet Name="Ingresos" EntityType="ProyeccionModel.Ingresos" />
+          <AssociationSet Name="FK_Ingresos_Anos" Association="ProyeccionModel.FK_Ingresos_Anos">
+            <End Role="Anos" EntitySet="Anos" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Centro_Costos" Association="ProyeccionModel.FK_Ingresos_Centro_Costos">
+            <End Role="Centro_Costos" EntitySet="Centro_Costos" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Cuenta_Contable" Association="ProyeccionModel.FK_Ingresos_Cuenta_Contable">
+            <End Role="Cuenta_Contable" EntitySet="Cuenta_Contable" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_Moneda" Association="ProyeccionModel.FK_Ingresos_Moneda">
+            <End Role="Moneda" EntitySet="Moneda" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Tipo_Tipo_Cambio">
           <Key>
@@ -473,6 +593,92 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             </Principal>
             <Dependent Role="Cargas_Sociales">
               <PropertyRef Name="Id_Cuenta_Contable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Anos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="Enero" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Febrero" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Marzo" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Abril" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Mayo" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Junio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Julio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Agosto" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Septiembre" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Octubre" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Noviembre" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Diciembre" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Ingresos" Relationship="ProyeccionModel.FK_Ingresos_Anos" FromRole="Anos" ToRole="Ingresos" />
+        </EntityType>
+        <EntityType Name="Ingresos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Cuenta_Contable" Type="Int32" Nullable="false" />
+          <Property Name="Id_Centro_Costos" Type="Int32" Nullable="false" />
+          <Property Name="Id_Tipo_Moneda" Type="Int32" Nullable="false" />
+          <Property Name="Id_Anos" Type="Int32" Nullable="false" />
+          <Property Name="Lineal" Type="Boolean" Nullable="false" />
+          <Property Name="Puntual" Type="Boolean" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Monto" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Anos" Relationship="ProyeccionModel.FK_Ingresos_Anos" FromRole="Ingresos" ToRole="Anos" />
+          <NavigationProperty Name="Centro_Costos" Relationship="ProyeccionModel.FK_Ingresos_Centro_Costos" FromRole="Ingresos" ToRole="Centro_Costos" />
+          <NavigationProperty Name="Cuenta_Contable" Relationship="ProyeccionModel.FK_Ingresos_Cuenta_Contable" FromRole="Ingresos" ToRole="Cuenta_Contable" />
+          <NavigationProperty Name="Moneda" Relationship="ProyeccionModel.FK_Ingresos_Moneda" FromRole="Ingresos" ToRole="Moneda" />
+        </EntityType>
+        <Association Name="FK_Ingresos_Anos">
+          <End Type="ProyeccionModel.Anos" Role="Anos" Multiplicity="1" />
+          <End Type="ProyeccionModel.Ingresos" Role="Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Anos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_Centro_Costos">
+          <End Type="ProyeccionModel.Centro_Costos" Role="Centro_Costos" Multiplicity="1" />
+          <End Type="ProyeccionModel.Ingresos" Role="Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Centro_Costos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Centro_Costos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_Cuenta_Contable">
+          <End Type="ProyeccionModel.Cuenta_Contable" Role="Cuenta_Contable" Multiplicity="1" />
+          <End Type="ProyeccionModel.Ingresos" Role="Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta_Contable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Cuenta_Contable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_Moneda">
+          <End Type="ProyeccionModel.Moneda" Role="Moneda" Multiplicity="1" />
+          <End Type="ProyeccionModel.Ingresos" Role="Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moneda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="Id_Tipo_Moneda" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -590,6 +796,41 @@ warning 6002: The table/view 'Proyeccion.dbo.Proyecto_Centro_Costos' does not ha
             <EntityTypeMapping TypeName="ProyeccionModel.Cargas_Sociales">
               <MappingFragment StoreEntitySet="Cargas_Sociales">
                 <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="Id_Cuenta_Contable" ColumnName="Id_Cuenta_Contable" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anos">
+            <EntityTypeMapping TypeName="ProyeccionModel.Anos">
+              <MappingFragment StoreEntitySet="Anos">
+                <ScalarProperty Name="Diciembre" ColumnName="Diciembre" />
+                <ScalarProperty Name="Noviembre" ColumnName="Noviembre" />
+                <ScalarProperty Name="Octubre" ColumnName="Octubre" />
+                <ScalarProperty Name="Septiembre" ColumnName="Septiembre" />
+                <ScalarProperty Name="Agosto" ColumnName="Agosto" />
+                <ScalarProperty Name="Julio" ColumnName="Julio" />
+                <ScalarProperty Name="Junio" ColumnName="Junio" />
+                <ScalarProperty Name="Mayo" ColumnName="Mayo" />
+                <ScalarProperty Name="Abril" ColumnName="Abril" />
+                <ScalarProperty Name="Marzo" ColumnName="Marzo" />
+                <ScalarProperty Name="Febrero" ColumnName="Febrero" />
+                <ScalarProperty Name="Enero" ColumnName="Enero" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingresos">
+            <EntityTypeMapping TypeName="ProyeccionModel.Ingresos">
+              <MappingFragment StoreEntitySet="Ingresos">
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Puntual" ColumnName="Puntual" />
+                <ScalarProperty Name="Lineal" ColumnName="Lineal" />
+                <ScalarProperty Name="Id_Anos" ColumnName="Id_Anos" />
+                <ScalarProperty Name="Id_Tipo_Moneda" ColumnName="Id_Tipo_Moneda" />
+                <ScalarProperty Name="Id_Centro_Costos" ColumnName="Id_Centro_Costos" />
                 <ScalarProperty Name="Id_Cuenta_Contable" ColumnName="Id_Cuenta_Contable" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

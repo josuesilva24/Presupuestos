@@ -36,5 +36,7 @@ namespace EntityModel
         public virtual DbSet<Proyecto_Centro_Costos> Proyecto_Centro_Costos { get; set; }
         public virtual DbSet<Tipo_Tipo_Cambio> Tipo_Tipo_Cambio { get; set; }
         public virtual DbSet<Cargas_Sociales> Cargas_Sociales { get; set; }
+        public virtual DbSet<Anos> Anos { get; set; }
+        public virtual DbSet<Ingresos> Ingresos { get; set; }
     }
 }

@@ -20,6 +20,10 @@ namespace LD
             Model.SaveChanges();
             return true;
         }
+        public int GetIdMonedas(int IdMoneda)
+        {
+            return GetMonedas().Where(x => x.Id.Equals(IdMoneda)).FirstOrDefault().Id;
+        }
         public bool UpdateMonedaById(int id, string moneda, string descripcion, bool activo)
         {
             var Moneda = GetMonedas().Where(x => x.Id.Equals(id)).FirstOrDefault();

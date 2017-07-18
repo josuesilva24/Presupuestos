@@ -114,5 +114,11 @@ namespace WS_PresupuestoSis
         }
         #endregion
 
+        #region Ingresos
+        public List<IngresosMap> GetAllIngresos()
+        {
+            return new IngresosProcess().GetAllIngresos();
+        }
+        #endregion
     }
 }
