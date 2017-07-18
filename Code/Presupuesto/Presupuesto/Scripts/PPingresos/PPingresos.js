@@ -169,6 +169,29 @@
         }
     });
 
+
+    $('#PopUpIngreso').click(function () {
+        craaGridCuentas();
+        $('#dialog_simple').dialog('open');
+        return false;
+
+    });
+
+    $('#dialog_simple').dialog({
+        autoOpen: false,
+        width: 600,
+        resizable: false,
+        modal: true,
+        title: "Lista de cuentas de ingreso ",
+        buttons: [ {
+            html: "<i class='fa fa-times' id='buttonClose'></i>&nbsp; Cancel",
+            "class": "btn btn-default",
+            click: function () {
+                $(this).dialog("close");
+            }
+        }]
+    });
+
     /* Add tooltips */
     $('.navtable .ui-pg-button').tooltip({
         container: 'body'
@@ -183,56 +206,166 @@
         jQuery("#jqgrid").jqGrid('setSelection', "13");
     });
 
+    
 
+    $('#PopUpCentroCosto').click(function () {
+        craaGridCentroCosto();
+        $('#jqgridCentroCosto').dialog('open');
+        return false;
 
-    // remove classes
-    $(".ui-jqgrid").removeClass("ui-widget ui-widget-content");
-    $(".ui-jqgrid-view").children().removeClass("ui-widget-header ui-state-default");
-    $(".ui-jqgrid-labels, .ui-search-toolbar").children().removeClass("ui-state-default ui-th-column ui-th-ltr");
-    $(".ui-jqgrid-pager").removeClass("ui-state-default");
-    $(".ui-jqgrid").removeClass("ui-widget-content");
+    });
 
-    // add classes
-    $(".ui-jqgrid-htable").addClass("table table-bordered table-hover");
-    $(".ui-jqgrid-btable").addClass("table table-bordered table-striped");
-
-    $(".ui-pg-div").removeClass().addClass("btn btn-sm btn-primary");
-    $(".ui-icon.ui-icon-plus").removeClass().addClass("fa fa-plus");
-    $(".ui-icon.ui-icon-pencil").removeClass().addClass("fa fa-pencil");
-    $(".ui-icon.ui-icon-trash").removeClass().addClass("fa fa-trash-o");
-    $(".ui-icon.ui-icon-search").removeClass().addClass("fa fa-search");
-    $(".ui-icon.ui-icon-refresh").removeClass().addClass("fa fa-refresh");
-    $(".ui-icon.ui-icon-disk").removeClass().addClass("fa fa-save").parent(".btn-primary").removeClass("btn-primary").addClass("btn-success");
-    $(".ui-icon.ui-icon-cancel").removeClass().addClass("fa fa-times").parent(".btn-primary").removeClass("btn-primary").addClass("btn-danger");
-
-    $(".ui-icon.ui-icon-seek-prev").wrap("<div class='btn btn-sm btn-default'></div>");
-    $(".ui-icon.ui-icon-seek-prev").removeClass().addClass("fa fa-backward");
-
-    $(".ui-icon.ui-icon-seek-first").wrap("<div class='btn btn-sm btn-default'></div>");
-    $(".ui-icon.ui-icon-seek-first").removeClass().addClass("fa fa-fast-backward");
-
-    $(".ui-icon.ui-icon-seek-next").wrap("<div class='btn btn-sm btn-default'></div>");
-    $(".ui-icon.ui-icon-seek-next").removeClass().addClass("fa fa-forward");
-
-    $(".ui-icon.ui-icon-seek-end").wrap("<div class='btn btn-sm btn-default'></div>");
-    $(".ui-icon.ui-icon-seek-end").removeClass().addClass("fa fa-fast-forward");
+    $('#jqgridCentroCosto').dialog({
+        autoOpen: false,
+        width: 600,
+        resizable: false,
+        modal: true,
+        title: "Lista de Centro de costo ",
+        buttons: [{
+            html: "<i class='fa fa-times' id='buttonCloseCC'></i>&nbsp; Cancel",
+            "class": "btn btn-default",
+            click: function () {
+                $(this).dialog("close");
+            }
+        }]
+    });
+    jqgriAdd();
+    AddClasesGrid();
 
 })
 
-$(window).on('resize.jqGrid', function () {
-    $("#jqgrid").jqGrid('setGridWidth', $("#content").width());
-})
+function craaGridCuentas()
+{
 
+    jQuery("#jqgridCuentaContable").jqGrid({
+        url: 'getCuentaContable',
+         editurl: 'clientArray',
+        datatype: "json",
+        height: 'auto',
+        colNames: ['', 'IdBD', 'Codigo', 'Descripción'],
+        colModel: [{
+            name: 'act',
+            index: 'act',
+            sortable: false,
+            search: false,
+            hidden: true
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-_gaq.push(['_trackPageview']);
+        },
+           {
+               name: 'IdBD',
+               index: 'IdBD',
+               editable: true,
+               hidden: true
+           },
+               {
+                   name: 'Codigo',
+                   index: 'Codigo',
+                   editable: false,
+               },
+        {
+            name: 'Descripcion',
+            index: 'Descripcion',
+            editable: false,
+            width:400,
+        }],
+        rowNum: 10,
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        pager: '#pjqgridCuentaContable',
+        sortname: 'id',
+        toolbarfilter: true,
+        viewrecords: true,
+        sortorder: "asc",
+        editurl: '',
+        onSelectRow: function (rowid, selected) {
+            if (rowid != null) {
+                var a = $(this);
+                var rowData = $('#jqgridCuentaContable').getRowData(rowid);
+                $("#buttonClose").click();
+                $("#PopUpIngreso").text(rowData['Codigo']);
+            }
+        },
+        gridComplete: function () {
+        },
+        caption: "Cuentas Contables",
+        multiselect: false,
+        autowidth: true,
+        loadError: function (jqXHR, textStatus, errorThrown) {
+            alert(errorThrown);
+        },
+        Success: function (result) {
+            alert(result);
+        },
+        loadonce: true
 
-(function () {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();
+    });
+    $('#jqgridCuentaContable').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, ignoreCase: true, defaultSearch: 'cn' });
+  //  $('#jqgridCuentaContable').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, ignoreCase: true, defaultSearch: 'cn' });
+}
+
+function craaGridCentroCosto()
+{
+    jQuery("#jqgridCentroCosto").jqGrid({
+        url: 'getCentrosCosto',
+          editurl: 'clientArray',
+        datatype: "json",
+        height: 'auto',
+        colNames: ['', 'IdBD', 'Descripción', 'Código'],
+        colModel: [{
+            name: 'act',
+            index: 'act',
+            sortable: false,
+            search: false,
+            hidden: true
+
+        },
+           {
+               name: 'IdBD',
+               index: 'IdBD',
+               editable: true,
+               hidden: true
+           },
+        {
+            name: 'Descripcion',
+            index: 'Descripcion',
+            editable: false
+        }, {
+            name: 'Codigo',
+            index: 'Codigo',
+            editable: false,
+            width:400
+        }],
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        pager: '#pjqgridCentroCosto',
+        sortname: 'id',
+        toolbarfilter: true,
+        viewrecords: true,
+        sortorder: "asc",
+        editurl: '',
+        gridComplete: function () {
+        },
+        caption: "Centros de costos",
+        multiselect: false,
+        autowidth: true,
+        onSelectRow: function (rowid, selected) {
+            if (rowid != null) {
+                var a = $(this);
+                var rowData = $('#jqgridCentroCosto').getRowData(rowid);
+                $("#buttonCloseCC").click();
+                $("#PopUpCentroCosto").text(rowData['Codigo']);
+            }
+        },
+        loadError: function (jqXHR, textStatus, errorThrown) {
+            alert(errorThrown);
+        },
+        Success: function (result) {
+            alert(result);
+        },
+        loadonce: true
+
+    });
+
+    $('#jqgridCentroCosto').jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, ignoreCase: true, defaultSearch: 'cn' });
+
+}

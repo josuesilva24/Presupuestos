@@ -2,11 +2,11 @@
     pageSetUp();
 
     jQuery("#jqgrid").jqGrid({
-        url: '',
+        url: 'getCargasSociales',
         //  editurl: 'clientArray',
         datatype: "json",
         height: 'auto',
-        colNames: ['', 'IdBD', 'Cuenta Contable', 'Descripción', 'Porcentaje'],
+        colNames: ['', 'Id', 'Cuenta Contable', 'Descripción', 'Porcentaje'],
         colModel: [{
             name: 'act',
             index: 'act',
@@ -16,8 +16,8 @@
 
         },
            {
-               name: 'IdBD',
-               index: 'IdBD',
+               name: 'Id',
+               index: 'Id',
                editable: true,
                hidden: true
            },
@@ -65,7 +65,7 @@
             //});
             //  }
         },
-        caption: "Inflación",
+        caption: "Cargas Sociales",
         multiselect: false,
         autowidth: true,
         loadError: function (jqXHR, textStatus, errorThrown) {
@@ -94,7 +94,7 @@
                 alert(val.responseText);
                 var grid = $('#jqgrid');
                 grid.trigger('reloadGrid');
-                grid.jqGrid('setGridParam', { url: 'getCentrosCosto', datatype: "json", }).trigger("reloadGrid");
+                grid.jqGrid('setGridParam', { url: 'getCargasSociales', datatype: "json", }).trigger("reloadGrid");
 
 
             }

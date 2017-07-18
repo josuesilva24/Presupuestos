@@ -9,9 +9,12 @@ namespace Presupuesto.Controllers
     public class TipoIngresoController : Controller
     {
         // GET: TipoIngreso
+        PresupuestoSisWS.Service1Client Channel = new PresupuestoSisWS.Service1Client();
+
         public ActionResult Index()
         {
             return View();
         }
+
     }
 }

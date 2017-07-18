@@ -19,9 +19,7 @@ namespace Presupuesto.Controllers
         }
         public JsonResult getMoneda()
         {
-           
-
-            return new JsonResult() { Data = Channel.GetMoneda(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = Channel.GetMoneda().Where(e=>e.Activo==true), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult getTipoCambio(string anno)

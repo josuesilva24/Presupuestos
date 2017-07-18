@@ -106,4 +106,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MesMap" nillable="true" type="tns:MesMap" />
+  <xs:complexType name="ArrayOfCargasSocialesMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CargasSocialesMap" nillable="true" type="tns:CargasSocialesMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCargasSocialesMap" nillable="true" type="tns:ArrayOfCargasSocialesMap" />
+  <xs:complexType name="CargasSocialesMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaContable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Porcentaje" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CargasSocialesMap" nillable="true" type="tns:CargasSocialesMap" />
 </xs:schema>

@@ -20,6 +20,12 @@ namespace Presupuesto.Controllers
         {
             return new JsonResult() { Data =Channel.GetMoneda(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
+        public JsonResult getMonedaActiva()
+        {
+            return new JsonResult() { Data = Channel.GetMoneda().Where(e => e.Activo == true), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+
         public JsonResult updateMoneda(string IdBD, string Estado, string Descripcion, string Nombre)
         {
            if (IdBD.Contains("jqg"))

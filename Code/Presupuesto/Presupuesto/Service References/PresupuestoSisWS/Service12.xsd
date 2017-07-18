@@ -232,4 +232,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllCargasSociales">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCargasSocialesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllCargasSocialesResult" nillable="true" type="q10:ArrayOfCargasSocialesMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
