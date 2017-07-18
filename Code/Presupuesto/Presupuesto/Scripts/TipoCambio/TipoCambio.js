@@ -29,7 +29,7 @@
                 hidden: false,
                 edittype: 'select',
                 editoptions: {
-                    dataUrl: "getMoneda",
+                    dataUrl: "~/Modena/getMonedaActiva",
                     cacheUrlData: false,
                     buildSelect: function (data) {
 

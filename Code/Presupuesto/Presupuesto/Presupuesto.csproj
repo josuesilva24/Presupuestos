@@ -380,6 +380,9 @@
     <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.TipoCambioMap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.CargasSocialesMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\PresupuestoSisWS\Service1.disco" />
     <None Include="Service References\PresupuestoSisWS\configuration91.svcinfo" />
     <None Include="Service References\PresupuestoSisWS\configuration.svcinfo" />
