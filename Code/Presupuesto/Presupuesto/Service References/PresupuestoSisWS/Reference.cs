@@ -741,6 +741,83 @@ namespace Presupuesto.PresupuestoSisWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CargasSocialesMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class CargasSocialesMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CuentaContableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PorcentajeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CuentaContable {
+            get {
+                return this.CuentaContableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CuentaContableField, value) != true)) {
+                    this.CuentaContableField = value;
+                    this.RaisePropertyChanged("CuentaContable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Porcentaje {
+            get {
+                return this.PorcentajeField;
+            }
+            set {
+                if ((this.PorcentajeField.Equals(value) != true)) {
+                    this.PorcentajeField = value;
+                    this.RaisePropertyChanged("Porcentaje");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PresupuestoSisWS.IService1")]
     public interface IService1 {
@@ -840,6 +917,12 @@ namespace Presupuesto.PresupuestoSisWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddTipoCambio", ReplyAction="http://tempuri.org/IService1/AddTipoCambioResponse")]
         System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, System.Collections.Generic.Dictionary<string, decimal> meses, string Tipo_Cambio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCargasSociales", ReplyAction="http://tempuri.org/IService1/GetAllCargasSocialesResponse")]
+        Presupuesto.PresupuestoSisWS.CargasSocialesMap[] GetAllCargasSociales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCargasSociales", ReplyAction="http://tempuri.org/IService1/GetAllCargasSocialesResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CargasSocialesMap[]> GetAllCargasSocialesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -995,6 +1078,14 @@ namespace Presupuesto.PresupuestoSisWS {
         
         public System.Threading.Tasks.Task<bool> AddTipoCambioAsync(int Id, int moneda, int ano, System.Collections.Generic.Dictionary<string, decimal> meses, string Tipo_Cambio) {
             return base.Channel.AddTipoCambioAsync(Id, moneda, ano, meses, Tipo_Cambio);
+        }
+        
+        public Presupuesto.PresupuestoSisWS.CargasSocialesMap[] GetAllCargasSociales() {
+            return base.Channel.GetAllCargasSociales();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CargasSocialesMap[]> GetAllCargasSocialesAsync() {
+            return base.Channel.GetAllCargasSocialesAsync();
         }
     }
 }
