@@ -42,10 +42,19 @@
             formatter: SinTipoCuenta,
             edittype: "select",
             editoptions: {
-                value: "1:Ingreso;2:Salario Costa Rica;3:Gasto",
-            },
-            search: false
+                dataUrl: "getTipoCuentaContable",
+                cacheUrlData: false,
+                buildSelect: function (data) {
 
+                    var result = JSON.parse(data);
+                    var $select = "<select>";
+                    for (var i = 0; i < result.length; i++) {
+                        $select += '<option value="' + result[i].id + '">' + result[i].Descripcion + '</option>';
+                    }
+
+                    return $select + "</select>";
+                }
+            }
         }],
         rowNum: 10,
         rowList: [10, 20, 30],
@@ -122,7 +131,7 @@
 
 
     AddClasesGrid();
+    jqgriAdd();
 
 })
 
-jqgriAdd();

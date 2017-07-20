@@ -217,6 +217,7 @@
     <Compile Include="Models\CargaGasto.cs" />
     <Compile Include="Models\CentroCostos.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IngresoMap.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MesMap.cs" />
     <Compile Include="Models\TipoCambioMap.cs" />
@@ -381,6 +382,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.CargasSocialesMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.IngresosMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PresupuestoSisWS\Presupuesto.PresupuestoSisWS.TipoCuentaContableMap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\PresupuestoSisWS\Service1.disco" />

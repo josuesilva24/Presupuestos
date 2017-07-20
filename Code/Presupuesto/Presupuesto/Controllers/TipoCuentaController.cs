@@ -22,6 +22,14 @@ namespace Presupuesto.Controllers
 
         }
 
+        public JsonResult getTipoCuentaContable()
+        {
+            return new JsonResult() { Data = Channel.GetTipoCuentaContable(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+        }
+
+
+
         public JsonResult updateCuentaContable(string IdBD, string TipoCuenta)
         {
             return new JsonResult() { Data = Channel.updateCuetaContable(Convert.ToInt32(IdBD),Convert.ToInt32(TipoCuenta)), JsonRequestBehavior = JsonRequestBehavior.AllowGet };

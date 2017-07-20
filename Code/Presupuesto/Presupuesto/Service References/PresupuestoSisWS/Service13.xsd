@@ -77,6 +77,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CuentaContableMap" nillable="true" type="tns:CuentaContableMap" />
+  <xs:complexType name="ArrayOfTipoCuentaContableMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoCuentaContableMap" nillable="true" type="tns:TipoCuentaContableMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoCuentaContableMap" nillable="true" type="tns:ArrayOfTipoCuentaContableMap" />
+  <xs:complexType name="TipoCuentaContableMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoCuentaContableMap" nillable="true" type="tns:TipoCuentaContableMap" />
   <xs:complexType name="ArrayOfTipoCambioMap">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoCambioMap" nillable="true" type="tns:TipoCambioMap" />
@@ -120,4 +133,43 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CargasSocialesMap" nillable="true" type="tns:CargasSocialesMap" />
+  <xs:complexType name="ArrayOfIngresosMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IngresosMap" nillable="true" type="tns:IngresosMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIngresosMap" nillable="true" type="tns:ArrayOfIngresosMap" />
+  <xs:complexType name="IngresosMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" nillable="true" type="tns:AnosMap" />
+      <xs:element minOccurs="0" name="CentroCostos" nillable="true" type="tns:CentroCostosMap" />
+      <xs:element minOccurs="0" name="CuentaContable" nillable="true" type="tns:CuentaContableMap" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lineal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Moneda" nillable="true" type="tns:MonedaMap" />
+      <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Puntual" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IngresosMap" nillable="true" type="tns:IngresosMap" />
+  <xs:complexType name="AnosMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abril" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Agosto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ano" type="xs:int" />
+      <xs:element minOccurs="0" name="Diciembre" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Enero" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Febrero" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Julio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Junio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Marzo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Mayo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Noviembre" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Octubre" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Septiembre" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnosMap" nillable="true" type="tns:AnosMap" />
 </xs:schema>

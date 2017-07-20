@@ -573,6 +573,67 @@ namespace Presupuesto.PresupuestoSisWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoCuentaContableMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class TipoCuentaContableMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TipoCambioMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
     [System.SerializableAttribute()]
     public partial class TipoCambioMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -818,6 +879,432 @@ namespace Presupuesto.PresupuestoSisWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IngresosMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class IngresosMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Presupuesto.PresupuestoSisWS.AnosMap AnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Presupuesto.PresupuestoSisWS.CentroCostosMap CentroCostosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Presupuesto.PresupuestoSisWS.CuentaContableMap CuentaContableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LinealField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Presupuesto.PresupuestoSisWS.MonedaMap MonedaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal MontoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool PuntualField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Presupuesto.PresupuestoSisWS.AnosMap Ano {
+            get {
+                return this.AnoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnoField, value) != true)) {
+                    this.AnoField = value;
+                    this.RaisePropertyChanged("Ano");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Presupuesto.PresupuestoSisWS.CentroCostosMap CentroCostos {
+            get {
+                return this.CentroCostosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CentroCostosField, value) != true)) {
+                    this.CentroCostosField = value;
+                    this.RaisePropertyChanged("CentroCostos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Presupuesto.PresupuestoSisWS.CuentaContableMap CuentaContable {
+            get {
+                return this.CuentaContableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CuentaContableField, value) != true)) {
+                    this.CuentaContableField = value;
+                    this.RaisePropertyChanged("CuentaContable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Lineal {
+            get {
+                return this.LinealField;
+            }
+            set {
+                if ((this.LinealField.Equals(value) != true)) {
+                    this.LinealField = value;
+                    this.RaisePropertyChanged("Lineal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Presupuesto.PresupuestoSisWS.MonedaMap Moneda {
+            get {
+                return this.MonedaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonedaField, value) != true)) {
+                    this.MonedaField = value;
+                    this.RaisePropertyChanged("Moneda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Monto {
+            get {
+                return this.MontoField;
+            }
+            set {
+                if ((this.MontoField.Equals(value) != true)) {
+                    this.MontoField = value;
+                    this.RaisePropertyChanged("Monto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Puntual {
+            get {
+                return this.PuntualField;
+            }
+            set {
+                if ((this.PuntualField.Equals(value) != true)) {
+                    this.PuntualField = value;
+                    this.RaisePropertyChanged("Puntual");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AnosMap", Namespace="http://schemas.datacontract.org/2004/07/ModelMap")]
+    [System.SerializableAttribute()]
+    public partial class AnosMap : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal AbrilField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal AgostoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DiciembreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal EneroField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal FebreroField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal JulioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal JunioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal MarzoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal MayoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal NoviembreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal OctubreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SeptiembreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Abril {
+            get {
+                return this.AbrilField;
+            }
+            set {
+                if ((this.AbrilField.Equals(value) != true)) {
+                    this.AbrilField = value;
+                    this.RaisePropertyChanged("Abril");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Agosto {
+            get {
+                return this.AgostoField;
+            }
+            set {
+                if ((this.AgostoField.Equals(value) != true)) {
+                    this.AgostoField = value;
+                    this.RaisePropertyChanged("Agosto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Ano {
+            get {
+                return this.AnoField;
+            }
+            set {
+                if ((this.AnoField.Equals(value) != true)) {
+                    this.AnoField = value;
+                    this.RaisePropertyChanged("Ano");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Diciembre {
+            get {
+                return this.DiciembreField;
+            }
+            set {
+                if ((this.DiciembreField.Equals(value) != true)) {
+                    this.DiciembreField = value;
+                    this.RaisePropertyChanged("Diciembre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Enero {
+            get {
+                return this.EneroField;
+            }
+            set {
+                if ((this.EneroField.Equals(value) != true)) {
+                    this.EneroField = value;
+                    this.RaisePropertyChanged("Enero");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Febrero {
+            get {
+                return this.FebreroField;
+            }
+            set {
+                if ((this.FebreroField.Equals(value) != true)) {
+                    this.FebreroField = value;
+                    this.RaisePropertyChanged("Febrero");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Julio {
+            get {
+                return this.JulioField;
+            }
+            set {
+                if ((this.JulioField.Equals(value) != true)) {
+                    this.JulioField = value;
+                    this.RaisePropertyChanged("Julio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Junio {
+            get {
+                return this.JunioField;
+            }
+            set {
+                if ((this.JunioField.Equals(value) != true)) {
+                    this.JunioField = value;
+                    this.RaisePropertyChanged("Junio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Marzo {
+            get {
+                return this.MarzoField;
+            }
+            set {
+                if ((this.MarzoField.Equals(value) != true)) {
+                    this.MarzoField = value;
+                    this.RaisePropertyChanged("Marzo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Mayo {
+            get {
+                return this.MayoField;
+            }
+            set {
+                if ((this.MayoField.Equals(value) != true)) {
+                    this.MayoField = value;
+                    this.RaisePropertyChanged("Mayo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Noviembre {
+            get {
+                return this.NoviembreField;
+            }
+            set {
+                if ((this.NoviembreField.Equals(value) != true)) {
+                    this.NoviembreField = value;
+                    this.RaisePropertyChanged("Noviembre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Octubre {
+            get {
+                return this.OctubreField;
+            }
+            set {
+                if ((this.OctubreField.Equals(value) != true)) {
+                    this.OctubreField = value;
+                    this.RaisePropertyChanged("Octubre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Septiembre {
+            get {
+                return this.SeptiembreField;
+            }
+            set {
+                if ((this.SeptiembreField.Equals(value) != true)) {
+                    this.SeptiembreField = value;
+                    this.RaisePropertyChanged("Septiembre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PresupuestoSisWS.IService1")]
     public interface IService1 {
@@ -906,6 +1393,12 @@ namespace Presupuesto.PresupuestoSisWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCuentaContable", ReplyAction="http://tempuri.org/IService1/getCuentaContableResponse")]
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CuentaContableMap[]> getCuentaContableAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTipoCuentaContable", ReplyAction="http://tempuri.org/IService1/GetTipoCuentaContableResponse")]
+        Presupuesto.PresupuestoSisWS.TipoCuentaContableMap[] GetTipoCuentaContable();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTipoCuentaContable", ReplyAction="http://tempuri.org/IService1/GetTipoCuentaContableResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.TipoCuentaContableMap[]> GetTipoCuentaContableAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTipoCambio", ReplyAction="http://tempuri.org/IService1/GetAllTipoCambioResponse")]
         Presupuesto.PresupuestoSisWS.TipoCambioMap[] GetAllTipoCambio();
         
@@ -923,6 +1416,12 @@ namespace Presupuesto.PresupuestoSisWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCargasSociales", ReplyAction="http://tempuri.org/IService1/GetAllCargasSocialesResponse")]
         System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CargasSocialesMap[]> GetAllCargasSocialesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllIngresos", ReplyAction="http://tempuri.org/IService1/GetAllIngresosResponse")]
+        Presupuesto.PresupuestoSisWS.IngresosMap[] GetAllIngresos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllIngresos", ReplyAction="http://tempuri.org/IService1/GetAllIngresosResponse")]
+        System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.IngresosMap[]> GetAllIngresosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1064,6 +1563,14 @@ namespace Presupuesto.PresupuestoSisWS {
             return base.Channel.getCuentaContableAsync();
         }
         
+        public Presupuesto.PresupuestoSisWS.TipoCuentaContableMap[] GetTipoCuentaContable() {
+            return base.Channel.GetTipoCuentaContable();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.TipoCuentaContableMap[]> GetTipoCuentaContableAsync() {
+            return base.Channel.GetTipoCuentaContableAsync();
+        }
+        
         public Presupuesto.PresupuestoSisWS.TipoCambioMap[] GetAllTipoCambio() {
             return base.Channel.GetAllTipoCambio();
         }
@@ -1086,6 +1593,14 @@ namespace Presupuesto.PresupuestoSisWS {
         
         public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.CargasSocialesMap[]> GetAllCargasSocialesAsync() {
             return base.Channel.GetAllCargasSocialesAsync();
+        }
+        
+        public Presupuesto.PresupuestoSisWS.IngresosMap[] GetAllIngresos() {
+            return base.Channel.GetAllIngresos();
+        }
+        
+        public System.Threading.Tasks.Task<Presupuesto.PresupuestoSisWS.IngresosMap[]> GetAllIngresosAsync() {
+            return base.Channel.GetAllIngresosAsync();
         }
     }
 }

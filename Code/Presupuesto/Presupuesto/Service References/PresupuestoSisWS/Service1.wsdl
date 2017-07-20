@@ -93,6 +93,12 @@
   <wsdl:message name="IService1_getCuentaContable_OutputMessage">
     <wsdl:part name="parameters" element="tns:getCuentaContableResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetTipoCuentaContable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTipoCuentaContable" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTipoCuentaContable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTipoCuentaContableResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetAllTipoCambio_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllTipoCambio" />
   </wsdl:message>
@@ -110,6 +116,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetAllCargasSociales_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCargasSocialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllIngresos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllIngresos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllIngresos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllIngresosResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -168,6 +180,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCuentaContable" message="tns:IService1_getCuentaContable_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCuentaContableResponse" message="tns:IService1_getCuentaContable_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetTipoCuentaContable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTipoCuentaContable" message="tns:IService1_GetTipoCuentaContable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTipoCuentaContableResponse" message="tns:IService1_GetTipoCuentaContable_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllTipoCambio">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTipoCambio" message="tns:IService1_GetAllTipoCambio_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTipoCambioResponse" message="tns:IService1_GetAllTipoCambio_OutputMessage" />
@@ -179,6 +195,10 @@
     <wsdl:operation name="GetAllCargasSociales">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllCargasSociales" message="tns:IService1_GetAllCargasSociales_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllCargasSocialesResponse" message="tns:IService1_GetAllCargasSociales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllIngresos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllIngresos" message="tns:IService1_GetAllIngresos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllIngresosResponse" message="tns:IService1_GetAllIngresos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -309,6 +329,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTipoCuentaContable">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTipoCuentaContable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllTipoCambio">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllTipoCambio" style="document" />
       <wsdl:input>
@@ -329,6 +358,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllCargasSociales">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllCargasSociales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllIngresos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllIngresos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

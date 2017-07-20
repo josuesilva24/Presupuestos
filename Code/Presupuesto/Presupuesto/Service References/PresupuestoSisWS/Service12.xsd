@@ -202,6 +202,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetTipoCuentaContable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTipoCuentaContableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetTipoCuentaContableResult" nillable="true" type="q8:ArrayOfTipoCuentaContableMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllTipoCambio">
     <xs:complexType>
       <xs:sequence />
@@ -210,7 +222,7 @@
   <xs:element name="GetAllTipoCambioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllTipoCambioResult" nillable="true" type="q8:ArrayOfTipoCambioMap" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllTipoCambioResult" nillable="true" type="q9:ArrayOfTipoCambioMap" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -220,7 +232,7 @@
         <xs:element minOccurs="0" name="Id" type="xs:int" />
         <xs:element minOccurs="0" name="moneda" type="xs:int" />
         <xs:element minOccurs="0" name="ano" type="xs:int" />
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="meses" nillable="true" type="q9:ArrayOfKeyValueOfstringdecimal" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="meses" nillable="true" type="q10:ArrayOfKeyValueOfstringdecimal" />
         <xs:element minOccurs="0" name="Tipo_Cambio" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -240,7 +252,19 @@
   <xs:element name="GetAllCargasSocialesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllCargasSocialesResult" nillable="true" type="q10:ArrayOfCargasSocialesMap" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllCargasSocialesResult" nillable="true" type="q11:ArrayOfCargasSocialesMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllIngresos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllIngresosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ModelMap" minOccurs="0" name="GetAllIngresosResult" nillable="true" type="q12:ArrayOfIngresosMap" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
