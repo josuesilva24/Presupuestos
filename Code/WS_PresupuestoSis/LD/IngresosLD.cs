@@ -18,7 +18,7 @@ namespace LD
 
         #endregion
 
-        public IQueryable<Ingresos> AddIngresos(int  moneda, string descripcion, int ano, decimal enero, 
+        public int AddIngresosWithReturnId(int  moneda, string descripcion, int ano, decimal enero, 
                                 decimal febrero, decimal marzo, decimal abril, decimal mayo, 
                                 decimal junio, decimal julio, decimal agosto, decimal septiembre, 
                                 decimal octubre, decimal noviembre, decimal diciembre, bool lineal, 
@@ -37,7 +37,9 @@ namespace LD
                  Id_Centro_Costos = idCentroCostos,
                  Id_Cuenta_Contable = iCuentaContable
             });
-            return ingreso as IQueryable<Ingresos>;
+            Model.SaveChanges();
+            
+            return ingreso.Id;
         }
 
         public List<IngresosMap> GetAllIngresos()

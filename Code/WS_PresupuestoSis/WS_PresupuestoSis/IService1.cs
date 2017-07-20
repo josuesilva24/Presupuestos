@@ -78,6 +78,12 @@ namespace WS_PresupuestoSis
         #region Ingresos
         [OperationContract]
         List<IngresosMap> GetAllIngresos();
+        [OperationContract]
+        int AddIngresosWithReturnId(int moneda, string descripcion, int ano, decimal enero,
+                                decimal febrero, decimal marzo, decimal abril, decimal mayo,
+                                decimal junio, decimal julio, decimal agosto, decimal septiembre,
+                                decimal octubre, decimal noviembre, decimal diciembre, bool lineal,
+                                bool puntual, decimal monto, int idCentroCostos, int iCuentaContable);
         #endregion
 
 
